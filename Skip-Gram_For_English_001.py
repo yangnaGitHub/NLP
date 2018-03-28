@@ -12,11 +12,12 @@ import random
 from collections import Counter
 
 def loading_data():
-    with open('text8', 'r') as fd:
+    with open('data\\text8', 'r') as fd:#windows使用\\
         words = fd.read()
     return words
 
 def preprocess(text, freq=5):
+    #预处理
     text = text.lower()
     text = text.replace('.', ' <PERIOD> ')
     text = text.replace(',', ' <COMMA> ')
@@ -50,9 +51,9 @@ train_words = [w for w in int_words if prob_drop[w] < threshold]
 
 def get_targets(words, idx, window_size=5):
     target_window = np.random.randint(1, window_size+1)
-    start_point = idx - target_window if (idx - target_window) > 0 else 0
+    start_point = idx - target_window if (idx - target_window) > 0 else 0#上限溢界处理
     end_point = idx + target_window
-    targets = set(words[start_point: idx] + words[idx+1: end_point+1])
+    targets = set(words[start_point: idx] + words[idx+1: end_point+1])#滑窗
     return list(targets)
 
 def get_batchs(words, batch_size, window_size=5):
@@ -65,7 +66,7 @@ def get_batchs(words, batch_size, window_size=5):
             batch_y = get_targets(batch, index, window_size)
             x.extend([val]*len(batch_y))
             y.extend(batch_y)
-        yield x, y
+        yield x, y#生成器节省内存,所有使用range的地方可替换成xrange(iterator),版本不支援所以没有用
     
 vocab_size = len(int_to_vocab)
 embedding_size = 200
@@ -122,7 +123,7 @@ with tf.Session(graph=train_graph) as sess:
                 realloss = 0
                 start = time.time()
             if iteration % 1000 == 0:
-                sim = similarity.eval()
+                sim = similarity.eval()#等于sess.run(similarity)
                 print(type(sim))
                 for index in range(valid_size):
                     valid_word = int_to_vocab[valid_examples[index]]
@@ -134,12 +135,11 @@ with tf.Session(graph=train_graph) as sess:
                         log = '%s %s,' % (log, close_word)
                     print(log)
             iteration += 1
-    save_path = saver.save(sess, 'E:\\MyOwner\\MyCode\\python\\SL\\English_001.ckpt')#设置绝对路径
+    save_path = saver.save(sess, 'E:\\MyOwner\\MyCode\\python\\SL\\English_001.ckpt')#如果使用相对路径出错,请试一下使用绝对路径,不然报错
     embed_mat = sess.run(normalized_embedding)
 
-
-#%matplotlib inline#内嵌画图,有了%matplotlib inline 就可以省掉plt.show()了
-#%config InlineBackend.figure_format = 'retina'#呈现分辨率较高的图像
+#%matplotlib inline#内嵌画图,有了%matplotlib inline 就可以省掉plt.show()了(JupterNoteBook使用)
+#%config InlineBackend.figure_format = 'retina'#高分辨率显示器适用,呈现分辨率较高的图像
 import matplotlib.pyplot as plt
 #数据是均匀采样于一个高维欧氏空间中的低维流形,流形学习就是从高维采样数据中恢复低维流形结构
 #高维空间中的低维流形,一遍聚类一遍降维,其实也是一种比较好的自动聚类方法
@@ -153,4 +153,3 @@ fig, ax = plt.subplots(figsize=(14, 14))
 for idx in range(viz_words):
     plt.scatter(*embed_tsne[idx, :], color='steelblue')
     plt.annotate(int_to_vocab[idx], (embed_tsne[idx, 0], embed_tsne[idx, 1]), alpha=0.7)#添加解释
-    
