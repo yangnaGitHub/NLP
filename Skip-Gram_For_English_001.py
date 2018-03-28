@@ -12,7 +12,7 @@ import random
 from collections import Counter
 
 def loading_data():
-    with open('data\\text8', 'r') as fd:#windows使用\\
+    with open('Skip-Gram_For_English_001', 'r') as fd:
         words = fd.read()
     return words
 
@@ -135,7 +135,7 @@ with tf.Session(graph=train_graph) as sess:
                         log = '%s %s,' % (log, close_word)
                     print(log)
             iteration += 1
-    save_path = saver.save(sess, 'E:\\MyOwner\\MyCode\\python\\SL\\English_001.ckpt')#如果使用相对路径出错,请试一下使用绝对路径,不然报错
+    save_path = saver.save(sess, 'E:\\MyOwner\\MyCode\\python\\SL\\English_001.ckpt')#如果使用相对路径出错,请试一下使用绝对路径,windows使用\\
     embed_mat = sess.run(normalized_embedding)
 
 #%matplotlib inline#内嵌画图,有了%matplotlib inline 就可以省掉plt.show()了(JupterNoteBook使用)
