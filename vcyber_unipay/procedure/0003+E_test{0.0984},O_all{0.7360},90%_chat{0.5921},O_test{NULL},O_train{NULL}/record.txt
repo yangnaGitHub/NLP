@@ -1,0 +1,5 @@
+使用模型:
+LSTM ==> LSTM\model_record\LSTM_01 ==> 使用全部结果去做attention
+
+使用模型配置文件:
+LSTM ==> LSTM\model_record\LSTM_01\conf\module_001.cfg

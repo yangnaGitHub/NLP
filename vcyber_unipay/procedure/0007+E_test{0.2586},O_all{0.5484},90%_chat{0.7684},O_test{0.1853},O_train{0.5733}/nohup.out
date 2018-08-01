@@ -1,0 +1,1237 @@
+[data.py][data:__init__] data initial
+[data.py][data:get_data] expend count:8189, 10143835, 561, 38631
+[Allmodule.py][module:retrain] retrain start
+[Allmodule.py][module:retrain] DML_methods_str['LSTMOp']
+[module.py][Lstm:construct] embedding:(?, 122, 256)
+[module.py][Lstm:construct] outputs:(?, 122, 256),(?, 122, 256)
+[module.py][Lstm:construct] scores&predictions:(?, 561),Tensor("output/predictions:0", shape=(?,), dtype=int64)
+[opmodule.py][LSTMOp:train] require_improvement: 79248
+[data.py][data:get_batch_data] train_x:(10143835,),train_y:(10143835,),test_x:(38631, 122),test_y:(38631, 561)
+[data.py][data:get_batch_data] num_batches_per_epoch:79249
+[data.py][data:get_batch_data] Epoch:1
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0019526408286765218,平均准确率:0.0019526408286765218,最高准确率:0.0019526408286765218
+[opmodule.py][LSTMOp:train] total_batch:      0, Train Loss:    6.3, Train Acc:   0.00%, Val Loss: 1.9e+03, Val Acc:   0.00%, Time: 0:01:02 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0352243036031723,平均准确率:0.8686657547950745,最高准确率:0.9802665114402771
+[opmodule.py][LSTMOp:train] total_batch:    128, Train Loss:    0.2, Train Acc:  96.09%, Val Loss: 2.3e+03, Val Acc:   1.48%, Time: 0:02:41 *
+[opmodule.py][LSTMOp:train] total_batch:    256, Train Loss:   0.17, Train Acc:  96.88%, Val Loss: 2.1e+03, Val Acc:   1.43%, Time: 0:04:15 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.05092822015285492,平均准确率:0.8237938284873962,最高准确率:0.987098753452301
+[opmodule.py][LSTMOp:train] total_batch:    384, Train Loss: 0.0064, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   1.64%, Time: 0:05:48 *
+[opmodule.py][LSTMOp:train] total_batch:    512, Train Loss:  0.042, Train Acc:  99.22%, Val Loss: 2.3e+03, Val Acc:   1.53%, Time: 0:07:21 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06903047859668732,平均准确率:0.8157129287719727,最高准确率:0.9986967444419861
+[opmodule.py][LSTMOp:train] total_batch:    640, Train Loss:  0.081, Train Acc:  97.66%, Val Loss: 2.2e+03, Val Acc:   1.75%, Time: 0:09:00 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.02165212482213974,平均准确率:0.6282414197921753,最高准确率:0.9993295669555664
+[opmodule.py][LSTMOp:train] total_batch:    768, Train Loss:  0.021, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.44%, Time: 0:10:37 *
+[opmodule.py][LSTMOp:train] total_batch:    896, Train Loss:  0.093, Train Acc:  98.44%, Val Loss: 2.4e+03, Val Acc:   1.83%, Time: 0:12:13 
+[opmodule.py][LSTMOp:train] total_batch:   1024, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 2.3e+03, Val Acc:   1.87%, Time: 0:13:45 
+[opmodule.py][LSTMOp:train] total_batch:   1152, Train Loss:  0.053, Train Acc:  98.44%, Val Loss: 2.3e+03, Val Acc:   2.10%, Time: 0:15:17 
+[opmodule.py][LSTMOp:train] total_batch:   1280, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.01%, Time: 0:16:50 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.036971405148506165,平均准确率:0.7291435599327087,最高准确率:0.9989979863166809
+[opmodule.py][LSTMOp:train] total_batch:   1408, Train Loss:   0.13, Train Acc:  97.66%, Val Loss: 2.3e+03, Val Acc:   2.46%, Time: 0:18:31 *
+[opmodule.py][LSTMOp:train] total_batch:   1536, Train Loss:  0.015, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   2.00%, Time: 0:20:03 
+[opmodule.py][LSTMOp:train] total_batch:   1664, Train Loss: 0.0074, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   2.25%, Time: 0:21:37 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06088339164853096,平均准确率:0.8382521271705627,最高准确率:0.9999856948852539
+[opmodule.py][LSTMOp:train] total_batch:   1792, Train Loss: 0.00062, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.62%, Time: 0:23:17 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.09664463251829147,平均准确率:0.7631091475486755,最高准确率:0.9998164772987366
+[opmodule.py][LSTMOp:train] total_batch:   1920, Train Loss: 0.00027, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.68%, Time: 0:24:57 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.048865269869565964,平均准确率:0.7424232959747314,最高准确率:0.9999573230743408
+[opmodule.py][LSTMOp:train] total_batch:   2048, Train Loss:  0.013, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   2.70%, Time: 0:26:36 *
+[opmodule.py][LSTMOp:train] total_batch:   2176, Train Loss:  0.023, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.34%, Time: 0:28:16 
+[opmodule.py][LSTMOp:train] total_batch:   2304, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   2.63%, Time: 0:29:57 
+[opmodule.py][LSTMOp:train] total_batch:   2432, Train Loss:  3e-05, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   2.09%, Time: 0:31:39 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.049162838608026505,平均准确率:0.5773210525512695,最高准确率:0.9997846484184265
+[opmodule.py][LSTMOp:train] total_batch:   2560, Train Loss: 5.8e-05, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   3.87%, Time: 0:33:30 *
+[opmodule.py][LSTMOp:train] total_batch:   2688, Train Loss:   0.11, Train Acc:  97.66%, Val Loss: 2.2e+03, Val Acc:   2.83%, Time: 0:35:07 
+[opmodule.py][LSTMOp:train] total_batch:   2816, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   3.09%, Time: 0:36:47 
+[opmodule.py][LSTMOp:train] total_batch:   2944, Train Loss: 0.00038, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   2.63%, Time: 0:38:28 
+[opmodule.py][LSTMOp:train] total_batch:   3072, Train Loss:  0.054, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   2.94%, Time: 0:40:07 
+[opmodule.py][LSTMOp:train] total_batch:   3200, Train Loss:  0.068, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   2.56%, Time: 0:41:46 
+[opmodule.py][LSTMOp:train] total_batch:   3328, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 2.6e+03, Val Acc:   2.97%, Time: 0:43:26 
+[opmodule.py][LSTMOp:train] total_batch:   3456, Train Loss:  0.045, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   2.95%, Time: 0:45:06 
+[opmodule.py][LSTMOp:train] total_batch:   3584, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   3.13%, Time: 0:46:45 
+[opmodule.py][LSTMOp:train] total_batch:   3712, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   2.57%, Time: 0:48:26 
+[opmodule.py][LSTMOp:train] total_batch:   3840, Train Loss: 0.00098, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   2.60%, Time: 0:50:06 
+[opmodule.py][LSTMOp:train] total_batch:   3968, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   2.12%, Time: 0:51:45 
+[opmodule.py][LSTMOp:train] total_batch:   4096, Train Loss: 2.5e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   3.70%, Time: 0:53:26 
+[opmodule.py][LSTMOp:train] total_batch:   4224, Train Loss: 8.2e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   3.18%, Time: 0:55:08 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.1112058088183403,平均准确率:0.6203614473342896,最高准确率:0.9999210834503174
+[opmodule.py][LSTMOp:train] total_batch:   4352, Train Loss: 0.0071, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   4.67%, Time: 0:56:56 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.031030604615807533,平均准确率:0.5556211471557617,最高准确率:0.9995935559272766
+[opmodule.py][LSTMOp:train] total_batch:   4480, Train Loss: 6.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   4.79%, Time: 0:58:44 *
+[opmodule.py][LSTMOp:train] total_batch:   4608, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   3.55%, Time: 1:00:23 
+[opmodule.py][LSTMOp:train] total_batch:   4736, Train Loss:  6e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   4.62%, Time: 1:02:03 
+[opmodule.py][LSTMOp:train] total_batch:   4864, Train Loss: 3.8e-06, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   4.16%, Time: 1:03:42 
+[opmodule.py][LSTMOp:train] total_batch:   4992, Train Loss:   0.06, Train Acc:  98.44%, Val Loss: 2.4e+03, Val Acc:   3.89%, Time: 1:05:24 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.036080554127693176,平均准确率:0.6097160577774048,最高准确率:0.9999812841415405
+[opmodule.py][LSTMOp:train] total_batch:   5120, Train Loss: 0.0056, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   5.07%, Time: 1:07:09 *
+[opmodule.py][LSTMOp:train] total_batch:   5248, Train Loss: 2.2e-05, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   4.09%, Time: 1:08:47 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0519343838095665,平均准确率:0.5775002241134644,最高准确率:0.9999978542327881
+[opmodule.py][LSTMOp:train] total_batch:   5376, Train Loss: 0.0004, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   5.26%, Time: 1:10:31 *
+[opmodule.py][LSTMOp:train] total_batch:   5504, Train Loss: 8.5e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   4.12%, Time: 1:12:09 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.056758053600788116,平均准确率:0.5462660789489746,最高准确率:0.9999415874481201
+[opmodule.py][LSTMOp:train] total_batch:   5632, Train Loss:  0.012, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   5.82%, Time: 1:13:55 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04775460809469223,平均准确率:0.609878420829773,最高准确率:0.999958872795105
+[opmodule.py][LSTMOp:train] total_batch:   5760, Train Loss: 0.0064, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.27%, Time: 1:15:40 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.05466229096055031,平均准确率:0.5746512413024902,最高准确率:0.999993085861206
+[opmodule.py][LSTMOp:train] total_batch:   5888, Train Loss: 2.5e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.53%, Time: 1:17:23 *
+[opmodule.py][LSTMOp:train] total_batch:   6016, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.77%, Time: 1:19:02 
+[opmodule.py][LSTMOp:train] total_batch:   6144, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.37%, Time: 1:20:42 
+[opmodule.py][LSTMOp:train] total_batch:   6272, Train Loss: 4.7e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   4.92%, Time: 1:22:22 
+[opmodule.py][LSTMOp:train] total_batch:   6400, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   4.00%, Time: 1:24:01 
+[opmodule.py][LSTMOp:train] total_batch:   6528, Train Loss:  0.049, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   4.09%, Time: 1:25:38 
+[opmodule.py][LSTMOp:train] total_batch:   6656, Train Loss:  0.014, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   5.28%, Time: 1:27:16 
+[opmodule.py][LSTMOp:train] total_batch:   6784, Train Loss:  0.045, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   5.50%, Time: 1:28:54 
+[opmodule.py][LSTMOp:train] total_batch:   6912, Train Loss:  0.012, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   4.70%, Time: 1:30:32 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03163773566484451,平均准确率:0.563765287399292,最高准确率:0.9998488426208496
+[opmodule.py][LSTMOp:train] total_batch:   7040, Train Loss: 6.1e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.56%, Time: 1:32:18 *
+[opmodule.py][LSTMOp:train] total_batch:   7168, Train Loss: 5.3e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   4.41%, Time: 1:33:57 
+[opmodule.py][LSTMOp:train] total_batch:   7296, Train Loss: 7.1e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   4.87%, Time: 1:35:34 
+[opmodule.py][LSTMOp:train] total_batch:   7424, Train Loss: 4.6e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.58%, Time: 1:37:15 
+[opmodule.py][LSTMOp:train] total_batch:   7552, Train Loss: 0.0077, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   5.38%, Time: 1:38:54 
+[opmodule.py][LSTMOp:train] total_batch:   7680, Train Loss:  0.045, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   5.69%, Time: 1:40:32 
+[opmodule.py][LSTMOp:train] total_batch:   7808, Train Loss:  0.031, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   6.13%, Time: 1:42:12 
+[opmodule.py][LSTMOp:train] total_batch:   7936, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.29%, Time: 1:43:52 
+[opmodule.py][LSTMOp:train] total_batch:   8064, Train Loss: 0.0023, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   5.15%, Time: 1:45:32 
+[opmodule.py][LSTMOp:train] total_batch:   8192, Train Loss: 3.5e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.12%, Time: 1:47:11 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04379420727491379,平均准确率:0.7132174372673035,最高准确率:0.9983301758766174
+[opmodule.py][LSTMOp:train] total_batch:   8320, Train Loss: 1.6e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   7.07%, Time: 1:48:59 *
+[opmodule.py][LSTMOp:train] total_batch:   8448, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.19%, Time: 1:50:38 
+[opmodule.py][LSTMOp:train] total_batch:   8576, Train Loss: 0.0074, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.14%, Time: 1:52:18 
+[opmodule.py][LSTMOp:train] total_batch:   8704, Train Loss:  0.073, Train Acc:  98.44%, Val Loss: 2.9e+03, Val Acc:   6.33%, Time: 1:53:58 
+[opmodule.py][LSTMOp:train] total_batch:   8832, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   6.06%, Time: 1:55:38 
+[opmodule.py][LSTMOp:train] total_batch:   8960, Train Loss:  0.032, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   6.42%, Time: 1:57:17 
+[opmodule.py][LSTMOp:train] total_batch:   9088, Train Loss: 1.7e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.85%, Time: 1:58:56 
+[opmodule.py][LSTMOp:train] total_batch:   9216, Train Loss:  0.023, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.14%, Time: 2:00:34 
+[opmodule.py][LSTMOp:train] total_batch:   9344, Train Loss: 1.6e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.15%, Time: 2:02:16 
+[opmodule.py][LSTMOp:train] total_batch:   9472, Train Loss: 0.00079, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.88%, Time: 2:03:55 
+[opmodule.py][LSTMOp:train] total_batch:   9600, Train Loss: 2.2e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.84%, Time: 2:05:35 
+[opmodule.py][LSTMOp:train] total_batch:   9728, Train Loss: 0.0036, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.97%, Time: 2:07:14 
+[opmodule.py][LSTMOp:train] total_batch:   9856, Train Loss: 0.00034, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.31%, Time: 2:08:55 
+[opmodule.py][LSTMOp:train] total_batch:   9984, Train Loss:  0.051, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   6.18%, Time: 2:10:34 
+[opmodule.py][LSTMOp:train] total_batch:  10112, Train Loss: 0.00019, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.35%, Time: 2:12:12 
+[opmodule.py][LSTMOp:train] total_batch:  10240, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.49%, Time: 2:13:54 
+[opmodule.py][LSTMOp:train] total_batch:  10368, Train Loss: 0.0068, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.66%, Time: 2:15:33 
+[opmodule.py][LSTMOp:train] total_batch:  10496, Train Loss:  0.037, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   6.77%, Time: 2:17:14 
+[opmodule.py][LSTMOp:train] total_batch:  10624, Train Loss: 0.00073, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.34%, Time: 2:18:55 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04812781885266304,平均准确率:0.7345871329307556,最高准确率:0.9999992847442627
+[opmodule.py][LSTMOp:train] total_batch:  10752, Train Loss: 0.0034, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.71%, Time: 2:20:41 *
+[opmodule.py][LSTMOp:train] total_batch:  10880, Train Loss:  0.062, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   6.90%, Time: 2:22:20 
+[opmodule.py][LSTMOp:train] total_batch:  11008, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.28%, Time: 2:24:02 
+[opmodule.py][LSTMOp:train] total_batch:  11136, Train Loss:  0.001, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.30%, Time: 2:25:40 
+[opmodule.py][LSTMOp:train] total_batch:  11264, Train Loss: 0.00073, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   4.99%, Time: 2:27:21 
+[opmodule.py][LSTMOp:train] total_batch:  11392, Train Loss:  0.027, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   4.69%, Time: 2:29:02 
+[opmodule.py][LSTMOp:train] total_batch:  11520, Train Loss: 7.1e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   4.80%, Time: 2:30:41 
+[opmodule.py][LSTMOp:train] total_batch:  11648, Train Loss: 1.8e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   4.67%, Time: 2:32:20 
+[opmodule.py][LSTMOp:train] total_batch:  11776, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   5.23%, Time: 2:34:01 
+[opmodule.py][LSTMOp:train] total_batch:  11904, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.12%, Time: 2:35:42 
+[opmodule.py][LSTMOp:train] total_batch:  12032, Train Loss: 0.00015, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   7.04%, Time: 2:37:21 
+[opmodule.py][LSTMOp:train] total_batch:  12160, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.81%, Time: 2:39:02 
+[opmodule.py][LSTMOp:train] total_batch:  12288, Train Loss:   0.02, Train Acc:  98.44%, Val Loss: 2.5e+03, Val Acc:   6.97%, Time: 2:40:43 
+[opmodule.py][LSTMOp:train] total_batch:  12416, Train Loss: 0.00034, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.78%, Time: 2:42:24 
+[opmodule.py][LSTMOp:train] total_batch:  12544, Train Loss: 1.9e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.67%, Time: 2:44:05 
+[opmodule.py][LSTMOp:train] total_batch:  12672, Train Loss: 0.0029, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.66%, Time: 2:45:45 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06458553671836853,平均准确率:0.822148323059082,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:  12800, Train Loss:  0.056, Train Acc:  97.66%, Val Loss: 3.1e+03, Val Acc:   8.11%, Time: 2:47:31 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.057649705559015274,平均准确率:0.8135968446731567,最高准确率:0.9999998807907104
+[opmodule.py][LSTMOp:train] total_batch:  12928, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.23%, Time: 2:49:18 *
+[opmodule.py][LSTMOp:train] total_batch:  13056, Train Loss: 0.00086, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   8.03%, Time: 2:50:57 
+[opmodule.py][LSTMOp:train] total_batch:  13184, Train Loss: 0.0017, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.74%, Time: 2:52:37 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03814470395445824,平均准确率:0.7711668610572815,最高准确率:0.9999929666519165
+[opmodule.py][LSTMOp:train] total_batch:  13312, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   8.30%, Time: 2:54:22 *
+[opmodule.py][LSTMOp:train] total_batch:  13440, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   7.29%, Time: 2:55:55 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.035361360758543015,平均准确率:0.7735781073570251,最高准确率:0.9999991655349731
+[opmodule.py][LSTMOp:train] total_batch:  13568, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.41%, Time: 2:57:30 *
+[opmodule.py][LSTMOp:train] total_batch:  13696, Train Loss: 0.00045, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.09%, Time: 2:59:03 
+[opmodule.py][LSTMOp:train] total_batch:  13824, Train Loss: 0.0022, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.15%, Time: 3:00:32 
+[opmodule.py][LSTMOp:train] total_batch:  13952, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.23%, Time: 3:02:01 
+[opmodule.py][LSTMOp:train] total_batch:  14080, Train Loss:  0.042, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   7.81%, Time: 3:03:31 
+[opmodule.py][LSTMOp:train] total_batch:  14208, Train Loss: 5.4e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.38%, Time: 3:05:01 
+[opmodule.py][LSTMOp:train] total_batch:  14336, Train Loss: 0.00043, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.37%, Time: 3:06:33 
+[opmodule.py][LSTMOp:train] total_batch:  14464, Train Loss: 7.2e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.76%, Time: 3:08:02 
+[opmodule.py][LSTMOp:train] total_batch:  14592, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   6.75%, Time: 3:09:33 
+[opmodule.py][LSTMOp:train] total_batch:  14720, Train Loss: 4.5e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   5.82%, Time: 3:11:04 
+[opmodule.py][LSTMOp:train] total_batch:  14848, Train Loss:  0.014, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.94%, Time: 3:12:34 
+[opmodule.py][LSTMOp:train] total_batch:  14976, Train Loss: 6.3e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.61%, Time: 3:14:04 
+[opmodule.py][LSTMOp:train] total_batch:  15104, Train Loss: 0.0073, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.89%, Time: 3:15:35 
+[opmodule.py][LSTMOp:train] total_batch:  15232, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.26%, Time: 3:17:05 
+[opmodule.py][LSTMOp:train] total_batch:  15360, Train Loss: 0.0017, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.67%, Time: 3:18:34 
+[opmodule.py][LSTMOp:train] total_batch:  15488, Train Loss: 6.9e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.27%, Time: 3:20:04 
+[opmodule.py][LSTMOp:train] total_batch:  15616, Train Loss: 0.0026, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.34%, Time: 3:21:34 
+[opmodule.py][LSTMOp:train] total_batch:  15744, Train Loss:  8e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.82%, Time: 3:23:05 
+[opmodule.py][LSTMOp:train] total_batch:  15872, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.80%, Time: 3:24:34 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06480822712182999,平均准确率:0.721008837223053,最高准确率:0.9999935626983643
+[opmodule.py][LSTMOp:train] total_batch:  16000, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   8.48%, Time: 3:26:14 *
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.07246731966733932,平均准确率:0.7271132469177246,最高准确率:0.9999943971633911
+[opmodule.py][LSTMOp:train] total_batch:  16128, Train Loss: 0.0071, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.79%, Time: 3:27:47 *
+[opmodule.py][LSTMOp:train] total_batch:  16256, Train Loss: 3.8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.31%, Time: 3:29:17 
+[opmodule.py][LSTMOp:train] total_batch:  16384, Train Loss: 0.00048, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.92%, Time: 3:30:47 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.10682234168052673,平均准确率:0.769365668296814,最高准确率:0.9999208450317383
+[opmodule.py][LSTMOp:train] total_batch:  16512, Train Loss:  7e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.26%, Time: 3:32:22 *
+[opmodule.py][LSTMOp:train] total_batch:  16640, Train Loss:  0.089, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   8.05%, Time: 3:33:51 
+[opmodule.py][LSTMOp:train] total_batch:  16768, Train Loss: 9.7e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.27%, Time: 3:35:20 
+[opmodule.py][LSTMOp:train] total_batch:  16896, Train Loss: 1.7e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.57%, Time: 3:36:52 
+[opmodule.py][LSTMOp:train] total_batch:  17024, Train Loss: 2.9e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.19%, Time: 3:38:23 
+[opmodule.py][LSTMOp:train] total_batch:  17152, Train Loss: 0.0039, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.52%, Time: 3:39:54 
+[opmodule.py][LSTMOp:train] total_batch:  17280, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.51%, Time: 3:41:25 
+[opmodule.py][LSTMOp:train] total_batch:  17408, Train Loss: 0.0033, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.30%, Time: 3:42:55 
+[opmodule.py][LSTMOp:train] total_batch:  17536, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   7.45%, Time: 3:44:25 
+[opmodule.py][LSTMOp:train] total_batch:  17664, Train Loss: 7.7e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.46%, Time: 3:45:55 
+[opmodule.py][LSTMOp:train] total_batch:  17792, Train Loss: 2.4e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.58%, Time: 3:47:24 
+[opmodule.py][LSTMOp:train] total_batch:  17920, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.95%, Time: 3:48:56 
+[opmodule.py][LSTMOp:train] total_batch:  18048, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.63%, Time: 3:50:35 
+[opmodule.py][LSTMOp:train] total_batch:  18176, Train Loss: 4.8e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.54%, Time: 3:52:15 
+[opmodule.py][LSTMOp:train] total_batch:  18304, Train Loss: 0.0016, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.19%, Time: 3:53:56 
+[opmodule.py][LSTMOp:train] total_batch:  18432, Train Loss: 1.9e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.29%, Time: 3:55:36 
+[opmodule.py][LSTMOp:train] total_batch:  18560, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.14%, Time: 3:57:17 
+[opmodule.py][LSTMOp:train] total_batch:  18688, Train Loss: 0.00078, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.42%, Time: 3:58:57 
+[opmodule.py][LSTMOp:train] total_batch:  18816, Train Loss: 2.6e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.56%, Time: 4:00:37 
+[opmodule.py][LSTMOp:train] total_batch:  18944, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.20%, Time: 4:02:16 
+[opmodule.py][LSTMOp:train] total_batch:  19072, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   8.53%, Time: 4:03:57 
+[opmodule.py][LSTMOp:train] total_batch:  19200, Train Loss:  0.069, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   8.36%, Time: 4:05:37 
+[opmodule.py][LSTMOp:train] total_batch:  19328, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   8.44%, Time: 4:07:19 
+[opmodule.py][LSTMOp:train] total_batch:  19456, Train Loss: 0.00033, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.09%, Time: 4:08:59 
+[opmodule.py][LSTMOp:train] total_batch:  19584, Train Loss: 2.3e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.90%, Time: 4:10:39 
+[opmodule.py][LSTMOp:train] total_batch:  19712, Train Loss: 0.0043, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.13%, Time: 4:12:20 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.09247249364852905,平均准确率:0.7679473161697388,最高准确率:0.9999474287033081
+[opmodule.py][LSTMOp:train] total_batch:  19840, Train Loss:  0.024, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   9.31%, Time: 4:14:10 *
+[opmodule.py][LSTMOp:train] total_batch:  19968, Train Loss: 1.6e-06, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.10%, Time: 4:15:48 
+[opmodule.py][LSTMOp:train] total_batch:  20096, Train Loss: 9.5e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   8.98%, Time: 4:17:27 
+[opmodule.py][LSTMOp:train] total_batch:  20224, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.35%, Time: 4:19:06 
+[opmodule.py][LSTMOp:train] total_batch:  20352, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.15%, Time: 4:20:49 
+[opmodule.py][LSTMOp:train] total_batch:  20480, Train Loss: 4.9e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.22%, Time: 4:22:28 
+[opmodule.py][LSTMOp:train] total_batch:  20608, Train Loss:  0.042, Train Acc:  98.44%, Val Loss: 2.5e+03, Val Acc:   8.49%, Time: 4:24:09 
+[opmodule.py][LSTMOp:train] total_batch:  20736, Train Loss: 7.4e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.47%, Time: 4:25:49 
+[opmodule.py][LSTMOp:train] total_batch:  20864, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.29%, Time: 4:27:28 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.08995819836854935,平均准确率:0.8303011655807495,最高准确率:0.9999954700469971
+[opmodule.py][LSTMOp:train] total_batch:  20992, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   9.60%, Time: 4:29:22 *
+[opmodule.py][LSTMOp:train] total_batch:  21120, Train Loss: 0.0059, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.17%, Time: 4:31:01 
+[opmodule.py][LSTMOp:train] total_batch:  21248, Train Loss: 8.9e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.16%, Time: 4:32:40 
+[opmodule.py][LSTMOp:train] total_batch:  21376, Train Loss: 6.2e-08, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   8.72%, Time: 4:34:20 
+[opmodule.py][LSTMOp:train] total_batch:  21504, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.83%, Time: 4:36:00 
+[opmodule.py][LSTMOp:train] total_batch:  21632, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.29%, Time: 4:37:41 
+[opmodule.py][LSTMOp:train] total_batch:  21760, Train Loss:  4e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.15%, Time: 4:39:21 
+[opmodule.py][LSTMOp:train] total_batch:  21888, Train Loss: 0.00029, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.41%, Time: 4:41:03 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06319956481456757,平均准确率:0.8228786587715149,最高准确率:0.9999974966049194
+[opmodule.py][LSTMOp:train] total_batch:  22016, Train Loss: 0.0054, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.75%, Time: 4:42:52 *
+[opmodule.py][LSTMOp:train] total_batch:  22144, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.55%, Time: 4:44:32 
+[opmodule.py][LSTMOp:train] total_batch:  22272, Train Loss: 0.0047, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.89%, Time: 4:46:13 
+[opmodule.py][LSTMOp:train] total_batch:  22400, Train Loss: 1.1e-07, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   8.61%, Time: 4:47:53 
+[opmodule.py][LSTMOp:train] total_batch:  22528, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   7.37%, Time: 4:49:34 
+[opmodule.py][LSTMOp:train] total_batch:  22656, Train Loss:  2e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.37%, Time: 4:51:16 
+[opmodule.py][LSTMOp:train] total_batch:  22784, Train Loss: 4.1e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.76%, Time: 4:52:56 
+[opmodule.py][LSTMOp:train] total_batch:  22912, Train Loss: 0.00067, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   7.73%, Time: 4:54:37 
+[opmodule.py][LSTMOp:train] total_batch:  23040, Train Loss:  5e-08, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.27%, Time: 4:56:18 
+[opmodule.py][LSTMOp:train] total_batch:  23168, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.52%, Time: 4:57:58 
+[opmodule.py][LSTMOp:train] total_batch:  23296, Train Loss: 0.00033, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.25%, Time: 4:59:39 
+[opmodule.py][LSTMOp:train] total_batch:  23424, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.99%, Time: 5:01:18 
+[opmodule.py][LSTMOp:train] total_batch:  23552, Train Loss:  0.073, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.74%, Time: 5:03:00 
+[opmodule.py][LSTMOp:train] total_batch:  23680, Train Loss:  0.064, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.89%, Time: 5:04:38 
+[opmodule.py][LSTMOp:train] total_batch:  23808, Train Loss: 5.9e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   9.64%, Time: 5:06:19 
+[opmodule.py][LSTMOp:train] total_batch:  23936, Train Loss: 0.00027, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   9.37%, Time: 5:07:58 
+[opmodule.py][LSTMOp:train] total_batch:  24064, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.48%, Time: 5:09:38 
+[opmodule.py][LSTMOp:train] total_batch:  24192, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.01%, Time: 5:11:18 
+[opmodule.py][LSTMOp:train] total_batch:  24320, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   9.04%, Time: 5:12:59 
+[opmodule.py][LSTMOp:train] total_batch:  24448, Train Loss: 4.2e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.66%, Time: 5:14:40 
+[opmodule.py][LSTMOp:train] total_batch:  24576, Train Loss: 2.5e-08, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.43%, Time: 5:16:20 
+[opmodule.py][LSTMOp:train] total_batch:  24704, Train Loss: 4.4e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   8.91%, Time: 5:18:00 
+[opmodule.py][LSTMOp:train] total_batch:  24832, Train Loss: 0.00031, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   8.93%, Time: 5:19:43 
+[opmodule.py][LSTMOp:train] total_batch:  24960, Train Loss: 5.4e-05, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.58%, Time: 5:21:22 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.07324796915054321,平均准确率:0.8212330937385559,最高准确率:0.9999991655349731
+[opmodule.py][LSTMOp:train] total_batch:  25088, Train Loss: 0.0032, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:  10.16%, Time: 5:23:09 *
+[opmodule.py][LSTMOp:train] total_batch:  25216, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:   9.66%, Time: 5:24:50 
+[opmodule.py][LSTMOp:train] total_batch:  25344, Train Loss: 6.7e-06, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:   9.86%, Time: 5:26:28 
+[opmodule.py][LSTMOp:train] total_batch:  25472, Train Loss: 1.9e-07, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:   8.95%, Time: 5:28:10 
+[opmodule.py][LSTMOp:train] total_batch:  25600, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 1.7e+03, Val Acc:   9.14%, Time: 5:29:48 
+[opmodule.py][LSTMOp:train] total_batch:  25728, Train Loss: 0.0075, Train Acc:  99.22%, Val Loss: 2.1e+03, Val Acc:   8.82%, Time: 5:31:30 
+[opmodule.py][LSTMOp:train] total_batch:  25856, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 1.9e+03, Val Acc:   9.52%, Time: 5:33:11 
+[opmodule.py][LSTMOp:train] total_batch:  25984, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:   8.86%, Time: 5:34:48 
+[opmodule.py][LSTMOp:train] total_batch:  26112, Train Loss: 0.00041, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.99%, Time: 5:36:17 
+[opmodule.py][LSTMOp:train] total_batch:  26240, Train Loss: 2.4e-05, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   8.86%, Time: 5:37:46 
+[opmodule.py][LSTMOp:train] total_batch:  26368, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.14%, Time: 5:39:16 
+[opmodule.py][LSTMOp:train] total_batch:  26496, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   8.47%, Time: 5:40:45 
+[opmodule.py][LSTMOp:train] total_batch:  26624, Train Loss:   0.03, Train Acc:  99.22%, Val Loss: 2.2e+03, Val Acc:   8.65%, Time: 5:42:15 
+[opmodule.py][LSTMOp:train] total_batch:  26752, Train Loss: 8.7e-07, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:   9.11%, Time: 5:43:47 
+[opmodule.py][LSTMOp:train] total_batch:  26880, Train Loss: 5.6e-05, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.06%, Time: 5:45:16 
+[opmodule.py][LSTMOp:train] total_batch:  27008, Train Loss: 2.9e-07, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.27%, Time: 5:46:55 
+[opmodule.py][LSTMOp:train] total_batch:  27136, Train Loss: 9.4e-06, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   9.56%, Time: 5:48:35 
+[opmodule.py][LSTMOp:train] total_batch:  27264, Train Loss: 5.9e-07, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   9.63%, Time: 5:50:14 
+[opmodule.py][LSTMOp:train] total_batch:  27392, Train Loss: 0.00054, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   9.78%, Time: 5:51:55 
+[opmodule.py][LSTMOp:train] total_batch:  27520, Train Loss:  0.043, Train Acc:  99.22%, Val Loss:  2e+03, Val Acc:   8.92%, Time: 5:53:35 
+[opmodule.py][LSTMOp:train] total_batch:  27648, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.84%, Time: 5:55:17 
+[opmodule.py][LSTMOp:train] total_batch:  27776, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   9.35%, Time: 5:56:57 
+[opmodule.py][LSTMOp:train] total_batch:  27904, Train Loss: 0.00053, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.17%, Time: 5:58:39 
+[opmodule.py][LSTMOp:train] total_batch:  28032, Train Loss: 5.9e-05, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   8.66%, Time: 6:00:19 
+[opmodule.py][LSTMOp:train] total_batch:  28160, Train Loss: 0.0018, Train Acc: 100.00%, Val Loss: 1.7e+03, Val Acc:   9.01%, Time: 6:01:58 
+[opmodule.py][LSTMOp:train] total_batch:  28288, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 1.7e+03, Val Acc:   8.89%, Time: 6:03:39 
+[opmodule.py][LSTMOp:train] total_batch:  28416, Train Loss: 3.4e-06, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   9.05%, Time: 6:05:21 
+[opmodule.py][LSTMOp:train] total_batch:  28544, Train Loss: 6.7e-06, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   9.68%, Time: 6:07:03 
+[opmodule.py][LSTMOp:train] total_batch:  28672, Train Loss: 1.9e-05, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.68%, Time: 6:08:44 
+[opmodule.py][LSTMOp:train] total_batch:  28800, Train Loss: 0.0076, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.28%, Time: 6:10:26 
+[opmodule.py][LSTMOp:train] total_batch:  28928, Train Loss: 2.4e-06, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   7.95%, Time: 6:12:06 
+[opmodule.py][LSTMOp:train] total_batch:  29056, Train Loss:  0.016, Train Acc:  99.22%, Val Loss:  2e+03, Val Acc:   8.67%, Time: 6:13:48 
+[opmodule.py][LSTMOp:train] total_batch:  29184, Train Loss: 0.00019, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   9.39%, Time: 6:15:28 
+[opmodule.py][LSTMOp:train] total_batch:  29312, Train Loss: 2.3e-07, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:  10.07%, Time: 6:17:10 
+[opmodule.py][LSTMOp:train] total_batch:  29440, Train Loss: 9.2e-07, Train Acc: 100.00%, Val Loss: 1.7e+03, Val Acc:   8.73%, Time: 6:18:51 
+[opmodule.py][LSTMOp:train] total_batch:  29568, Train Loss:  1e-06, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   9.13%, Time: 6:20:31 
+[opmodule.py][LSTMOp:train] total_batch:  29696, Train Loss: 4.5e-07, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.17%, Time: 6:22:11 
+[opmodule.py][LSTMOp:train] total_batch:  29824, Train Loss:  0.076, Train Acc:  99.22%, Val Loss: 1.9e+03, Val Acc:   8.92%, Time: 6:23:52 
+[opmodule.py][LSTMOp:train] total_batch:  29952, Train Loss: 4.9e-06, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   8.59%, Time: 6:25:31 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.07804444432258606,平均准确率:0.7274810075759888,最高准确率:0.9999971389770508
+[opmodule.py][LSTMOp:train] total_batch:  30080, Train Loss: 1.9e-06, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:  10.92%, Time: 6:27:19 *
+[opmodule.py][LSTMOp:train] total_batch:  30208, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 2.1e+03, Val Acc:   9.28%, Time: 6:29:00 
+[opmodule.py][LSTMOp:train] total_batch:  30336, Train Loss: 1.5e-07, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   9.38%, Time: 6:30:39 
+[opmodule.py][LSTMOp:train] total_batch:  30464, Train Loss: 6.7e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.24%, Time: 6:32:10 
+[opmodule.py][LSTMOp:train] total_batch:  30592, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.62%, Time: 6:33:39 
+[opmodule.py][LSTMOp:train] total_batch:  30720, Train Loss:  0.023, Train Acc:  99.22%, Val Loss: 1.8e+03, Val Acc:   9.13%, Time: 6:35:07 
+[opmodule.py][LSTMOp:train] total_batch:  30848, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:   9.47%, Time: 6:36:35 
+[opmodule.py][LSTMOp:train] total_batch:  30976, Train Loss: 6.7e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.06%, Time: 6:38:06 
+[opmodule.py][LSTMOp:train] total_batch:  31104, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   8.99%, Time: 6:39:38 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.10041975975036621,平均准确率:0.7801084518432617,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:  31232, Train Loss: 3.8e-05, Train Acc: 100.00%, Val Loss: 1.9e+03, Val Acc:  11.16%, Time: 6:41:16 *
+[opmodule.py][LSTMOp:train] total_batch:  31360, Train Loss:   0.01, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   8.88%, Time: 6:42:48 
+[opmodule.py][LSTMOp:train] total_batch:  31488, Train Loss: 0.00035, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.15%, Time: 6:44:16 
+[opmodule.py][LSTMOp:train] total_batch:  31616, Train Loss: 0.0096, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   8.95%, Time: 6:45:48 
+[opmodule.py][LSTMOp:train] total_batch:  31744, Train Loss:  0.051, Train Acc:  98.44%, Val Loss: 2.3e+03, Val Acc:   9.02%, Time: 6:47:18 
+[opmodule.py][LSTMOp:train] total_batch:  31872, Train Loss:  0.014, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   8.51%, Time: 6:48:46 
+[opmodule.py][LSTMOp:train] total_batch:  32000, Train Loss: 0.00091, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:   9.15%, Time: 6:50:16 
+[opmodule.py][LSTMOp:train] total_batch:  32128, Train Loss:  0.001, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   9.16%, Time: 6:51:45 
+[opmodule.py][LSTMOp:train] total_batch:  32256, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   9.58%, Time: 6:53:15 
+[opmodule.py][LSTMOp:train] total_batch:  32384, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   9.26%, Time: 6:54:46 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.056218914687633514,平均准确率:0.5252655744552612,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:  32512, Train Loss: 0.00017, Train Acc: 100.00%, Val Loss: 1.8e+03, Val Acc:  22.70%, Time: 6:56:28 *
+[opmodule.py][LSTMOp:train] total_batch:  32640, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss:  2e+03, Val Acc:  19.09%, Time: 6:57:58 
+[opmodule.py][LSTMOp:train] total_batch:  32768, Train Loss: 0.0094, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.52%, Time: 6:59:28 
+[opmodule.py][LSTMOp:train] total_batch:  32896, Train Loss: 3.5e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.22%, Time: 7:00:58 
+[opmodule.py][LSTMOp:train] total_batch:  33024, Train Loss: 2.1e-07, Train Acc: 100.00%, Val Loss: 2.2e+03, Val Acc:   9.23%, Time: 7:02:28 
+[opmodule.py][LSTMOp:train] total_batch:  33152, Train Loss: 3.8e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.26%, Time: 7:03:57 
+[opmodule.py][LSTMOp:train] total_batch:  33280, Train Loss: 3.1e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.15%, Time: 7:05:29 
+[opmodule.py][LSTMOp:train] total_batch:  33408, Train Loss: 5.7e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.99%, Time: 7:06:59 
+[opmodule.py][LSTMOp:train] total_batch:  33536, Train Loss: 9.5e-08, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.28%, Time: 7:08:30 
+[opmodule.py][LSTMOp:train] total_batch:  33664, Train Loss: 4.3e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  10.54%, Time: 7:10:00 
+[opmodule.py][LSTMOp:train] total_batch:  33792, Train Loss: 0.00032, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.25%, Time: 7:11:29 
+[opmodule.py][LSTMOp:train] total_batch:  33920, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.92%, Time: 7:12:59 
+[opmodule.py][LSTMOp:train] total_batch:  34048, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.76%, Time: 7:14:29 
+[opmodule.py][LSTMOp:train] total_batch:  34176, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.59%, Time: 7:15:58 
+[opmodule.py][LSTMOp:train] total_batch:  34304, Train Loss: 3.7e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.47%, Time: 7:17:28 
+[opmodule.py][LSTMOp:train] total_batch:  34432, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.22%, Time: 7:18:58 
+[opmodule.py][LSTMOp:train] total_batch:  34560, Train Loss: 7.9e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.39%, Time: 7:20:27 
+[opmodule.py][LSTMOp:train] total_batch:  34688, Train Loss: 0.00082, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.06%, Time: 7:21:59 
+[opmodule.py][LSTMOp:train] total_batch:  34816, Train Loss: 4.9e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.12%, Time: 7:23:30 
+[opmodule.py][LSTMOp:train] total_batch:  34944, Train Loss: 1.2e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.04%, Time: 7:25:02 
+[opmodule.py][LSTMOp:train] total_batch:  35072, Train Loss:  0.047, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   9.27%, Time: 7:26:32 
+[opmodule.py][LSTMOp:train] total_batch:  35200, Train Loss:  0.005, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   8.75%, Time: 7:28:02 
+[opmodule.py][LSTMOp:train] total_batch:  35328, Train Loss: 1.8e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.18%, Time: 7:29:30 
+[opmodule.py][LSTMOp:train] total_batch:  35456, Train Loss: 7.7e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.21%, Time: 7:31:09 
+[opmodule.py][LSTMOp:train] total_batch:  35584, Train Loss: 1.7e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.62%, Time: 7:32:47 
+[opmodule.py][LSTMOp:train] total_batch:  35712, Train Loss: 7.5e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.83%, Time: 7:34:28 
+[opmodule.py][LSTMOp:train] total_batch:  35840, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   7.47%, Time: 7:36:08 
+[opmodule.py][LSTMOp:train] total_batch:  35968, Train Loss: 1.7e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.31%, Time: 7:37:48 
+[opmodule.py][LSTMOp:train] total_batch:  36096, Train Loss: 0.0026, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.20%, Time: 7:39:29 
+[opmodule.py][LSTMOp:train] total_batch:  36224, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.33%, Time: 7:41:09 
+[opmodule.py][LSTMOp:train] total_batch:  36352, Train Loss: 5.6e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.35%, Time: 7:42:48 
+[opmodule.py][LSTMOp:train] total_batch:  36480, Train Loss: 3.9e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.61%, Time: 7:44:29 
+[opmodule.py][LSTMOp:train] total_batch:  36608, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.57%, Time: 7:46:08 
+[opmodule.py][LSTMOp:train] total_batch:  36736, Train Loss:  0.029, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   9.75%, Time: 7:47:50 
+[opmodule.py][LSTMOp:train] total_batch:  36864, Train Loss: 7.5e-08, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.23%, Time: 7:49:31 
+[opmodule.py][LSTMOp:train] total_batch:  36992, Train Loss: 0.00035, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.23%, Time: 7:51:12 
+[opmodule.py][LSTMOp:train] total_batch:  37120, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.29%, Time: 7:52:52 
+[opmodule.py][LSTMOp:train] total_batch:  37248, Train Loss: 2.7e-08, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.81%, Time: 7:54:32 
+[opmodule.py][LSTMOp:train] total_batch:  37376, Train Loss: 2.8e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.84%, Time: 7:56:11 
+[opmodule.py][LSTMOp:train] total_batch:  37504, Train Loss: 5.6e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.11%, Time: 7:57:52 
+[opmodule.py][LSTMOp:train] total_batch:  37632, Train Loss: 0.0028, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.05%, Time: 7:59:33 
+[opmodule.py][LSTMOp:train] total_batch:  37760, Train Loss: 3.1e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.76%, Time: 8:01:13 
+[opmodule.py][LSTMOp:train] total_batch:  37888, Train Loss: 4.8e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.64%, Time: 8:02:54 
+[opmodule.py][LSTMOp:train] total_batch:  38016, Train Loss: 2.5e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.57%, Time: 8:04:35 
+[opmodule.py][LSTMOp:train] total_batch:  38144, Train Loss: 7.9e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.50%, Time: 8:06:17 
+[opmodule.py][LSTMOp:train] total_batch:  38272, Train Loss: 6.2e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.73%, Time: 8:07:58 
+[opmodule.py][LSTMOp:train] total_batch:  38400, Train Loss: 1.5e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.75%, Time: 8:09:40 
+[opmodule.py][LSTMOp:train] total_batch:  38528, Train Loss: 1.5e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.87%, Time: 8:11:20 
+[opmodule.py][LSTMOp:train] total_batch:  38656, Train Loss: 3.1e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.89%, Time: 8:13:01 
+[opmodule.py][LSTMOp:train] total_batch:  38784, Train Loss: 4.3e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.07%, Time: 8:14:43 
+[opmodule.py][LSTMOp:train] total_batch:  38912, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.90%, Time: 8:16:22 
+[opmodule.py][LSTMOp:train] total_batch:  39040, Train Loss: 5.5e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.70%, Time: 8:18:03 
+[opmodule.py][LSTMOp:train] total_batch:  39168, Train Loss: 0.00077, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.48%, Time: 8:19:43 
+[opmodule.py][LSTMOp:train] total_batch:  39296, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.21%, Time: 8:21:23 
+[opmodule.py][LSTMOp:train] total_batch:  39424, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.23%, Time: 8:23:04 
+[opmodule.py][LSTMOp:train] total_batch:  39552, Train Loss: 0.00021, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.89%, Time: 8:24:44 
+[opmodule.py][LSTMOp:train] total_batch:  39680, Train Loss:   0.08, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   8.93%, Time: 8:26:23 
+[opmodule.py][LSTMOp:train] total_batch:  39808, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.87%, Time: 8:28:02 
+[opmodule.py][LSTMOp:train] total_batch:  39936, Train Loss: 5.7e-08, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.49%, Time: 8:29:42 
+[opmodule.py][LSTMOp:train] total_batch:  40064, Train Loss: 0.0078, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   8.95%, Time: 8:31:22 
+[opmodule.py][LSTMOp:train] total_batch:  40192, Train Loss: 0.00041, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  10.42%, Time: 8:33:03 
+[opmodule.py][LSTMOp:train] total_batch:  40320, Train Loss:  2e-05, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  11.32%, Time: 8:34:45 
+[opmodule.py][LSTMOp:train] total_batch:  40448, Train Loss: 0.0022, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.38%, Time: 8:36:27 
+[opmodule.py][LSTMOp:train] total_batch:  40576, Train Loss: 8.8e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.54%, Time: 8:38:07 
+[opmodule.py][LSTMOp:train] total_batch:  40704, Train Loss: 7.5e-08, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.39%, Time: 8:39:47 
+[opmodule.py][LSTMOp:train] total_batch:  40832, Train Loss: 4.5e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.35%, Time: 8:41:28 
+[opmodule.py][LSTMOp:train] total_batch:  40960, Train Loss: 7.7e-08, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.29%, Time: 8:43:08 
+[opmodule.py][LSTMOp:train] total_batch:  41088, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.51%, Time: 8:44:46 
+[opmodule.py][LSTMOp:train] total_batch:  41216, Train Loss: 0.0096, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   8.50%, Time: 8:46:25 
+[opmodule.py][LSTMOp:train] total_batch:  41344, Train Loss: 0.00053, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.55%, Time: 8:48:06 
+[opmodule.py][LSTMOp:train] total_batch:  41472, Train Loss: 5.1e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.77%, Time: 8:49:49 
+[opmodule.py][LSTMOp:train] total_batch:  41600, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.88%, Time: 8:51:31 
+[opmodule.py][LSTMOp:train] total_batch:  41728, Train Loss: 5.4e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.83%, Time: 8:53:12 
+[opmodule.py][LSTMOp:train] total_batch:  41856, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   8.77%, Time: 8:54:54 
+[opmodule.py][LSTMOp:train] total_batch:  41984, Train Loss: 7.6e-07, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.80%, Time: 8:56:35 
+[opmodule.py][LSTMOp:train] total_batch:  42112, Train Loss: 7.2e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.68%, Time: 8:58:15 
+[opmodule.py][LSTMOp:train] total_batch:  42240, Train Loss: 0.00061, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   8.89%, Time: 8:59:54 
+[opmodule.py][LSTMOp:train] total_batch:  42368, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.81%, Time: 9:01:32 
+[opmodule.py][LSTMOp:train] total_batch:  42496, Train Loss:  1e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.05%, Time: 9:03:14 
+[opmodule.py][LSTMOp:train] total_batch:  42624, Train Loss:   0.15, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   8.97%, Time: 9:04:56 
+[opmodule.py][LSTMOp:train] total_batch:  42752, Train Loss: 8.2e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.65%, Time: 9:06:38 
+[opmodule.py][LSTMOp:train] total_batch:  42880, Train Loss:   0.11, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   9.08%, Time: 9:08:16 
+[opmodule.py][LSTMOp:train] total_batch:  43008, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.87%, Time: 9:09:45 
+[opmodule.py][LSTMOp:train] total_batch:  43136, Train Loss: 2.3e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.49%, Time: 9:11:15 
+[opmodule.py][LSTMOp:train] total_batch:  43264, Train Loss: 9.9e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.20%, Time: 9:12:43 
+[opmodule.py][LSTMOp:train] total_batch:  43392, Train Loss: 6.2e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.72%, Time: 9:14:13 
+[opmodule.py][LSTMOp:train] total_batch:  43520, Train Loss: 5.8e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.98%, Time: 9:15:44 
+[opmodule.py][LSTMOp:train] total_batch:  43648, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   9.15%, Time: 9:17:12 
+[opmodule.py][LSTMOp:train] total_batch:  43776, Train Loss: 1.5e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.06%, Time: 9:18:40 
+[opmodule.py][LSTMOp:train] total_batch:  43904, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   9.04%, Time: 9:20:10 
+[opmodule.py][LSTMOp:train] total_batch:  44032, Train Loss: 0.0009, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   9.15%, Time: 9:21:40 
+[opmodule.py][LSTMOp:train] total_batch:  44160, Train Loss: 4.4e-08, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.62%, Time: 9:23:09 
+[opmodule.py][LSTMOp:train] total_batch:  44288, Train Loss: 2.5e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  11.96%, Time: 9:24:39 
+[opmodule.py][LSTMOp:train] total_batch:  44416, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.72%, Time: 9:26:10 
+[opmodule.py][LSTMOp:train] total_batch:  44544, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.13%, Time: 9:27:40 
+[opmodule.py][LSTMOp:train] total_batch:  44672, Train Loss: 2.4e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.35%, Time: 9:29:10 
+[opmodule.py][LSTMOp:train] total_batch:  44800, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.77%, Time: 9:30:39 
+[opmodule.py][LSTMOp:train] total_batch:  44928, Train Loss:  5e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.75%, Time: 9:32:08 
+[opmodule.py][LSTMOp:train] total_batch:  45056, Train Loss: 0.00026, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  10.78%, Time: 9:33:47 
+[opmodule.py][LSTMOp:train] total_batch:  45184, Train Loss: 0.0041, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.34%, Time: 9:35:26 
+[opmodule.py][LSTMOp:train] total_batch:  45312, Train Loss: 0.0034, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  10.93%, Time: 9:37:06 
+[opmodule.py][LSTMOp:train] total_batch:  45440, Train Loss: 2.4e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  12.52%, Time: 9:38:47 
+[opmodule.py][LSTMOp:train] total_batch:  45568, Train Loss: 1.8e-05, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  16.57%, Time: 9:40:28 
+[opmodule.py][LSTMOp:train] total_batch:  45696, Train Loss: 0.00054, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  17.88%, Time: 9:42:10 
+[opmodule.py][LSTMOp:train] total_batch:  45824, Train Loss:  0.049, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.92%, Time: 9:43:49 
+[opmodule.py][LSTMOp:train] total_batch:  45952, Train Loss: 1.7e-07, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  14.42%, Time: 9:45:30 
+[opmodule.py][LSTMOp:train] total_batch:  46080, Train Loss: 0.00077, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  12.72%, Time: 9:47:13 
+[opmodule.py][LSTMOp:train] total_batch:  46208, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  11.68%, Time: 9:48:54 
+[opmodule.py][LSTMOp:train] total_batch:  46336, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.46%, Time: 9:50:35 
+[opmodule.py][LSTMOp:train] total_batch:  46464, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   7.51%, Time: 9:52:16 
+[opmodule.py][LSTMOp:train] total_batch:  46592, Train Loss: 8.8e-08, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.92%, Time: 9:53:56 
+[opmodule.py][LSTMOp:train] total_batch:  46720, Train Loss: 9.9e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.78%, Time: 9:55:37 
+[opmodule.py][LSTMOp:train] total_batch:  46848, Train Loss:  0.042, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   8.98%, Time: 9:57:18 
+[opmodule.py][LSTMOp:train] total_batch:  46976, Train Loss:  3e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.62%, Time: 9:58:58 
+[opmodule.py][LSTMOp:train] total_batch:  47104, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   8.55%, Time: 10:00:40 
+[opmodule.py][LSTMOp:train] total_batch:  47232, Train Loss: 8.5e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.94%, Time: 10:02:21 
+[opmodule.py][LSTMOp:train] total_batch:  47360, Train Loss:  0.018, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   9.10%, Time: 10:04:01 
+[opmodule.py][LSTMOp:train] total_batch:  47488, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.82%, Time: 10:05:42 
+[opmodule.py][LSTMOp:train] total_batch:  47616, Train Loss:  0.062, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   8.72%, Time: 10:07:23 
+[opmodule.py][LSTMOp:train] total_batch:  47744, Train Loss:  0.033, Train Acc:  98.44%, Val Loss: 2.7e+03, Val Acc:   8.59%, Time: 10:09:03 
+[opmodule.py][LSTMOp:train] total_batch:  47872, Train Loss: 0.00021, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.86%, Time: 10:10:43 
+[opmodule.py][LSTMOp:train] total_batch:  48000, Train Loss: 3.2e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.90%, Time: 10:12:24 
+[opmodule.py][LSTMOp:train] total_batch:  48128, Train Loss: 9.8e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.74%, Time: 10:14:06 
+[opmodule.py][LSTMOp:train] total_batch:  48256, Train Loss: 9.7e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.40%, Time: 10:15:49 
+[opmodule.py][LSTMOp:train] total_batch:  48384, Train Loss: 1.7e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.74%, Time: 10:17:32 
+[opmodule.py][LSTMOp:train] total_batch:  48512, Train Loss: 0.00064, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.83%, Time: 10:19:14 
+[opmodule.py][LSTMOp:train] total_batch:  48640, Train Loss: 3.9e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.23%, Time: 10:20:57 
+[opmodule.py][LSTMOp:train] total_batch:  48768, Train Loss: 0.00051, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.77%, Time: 10:22:38 
+[opmodule.py][LSTMOp:train] total_batch:  48896, Train Loss: 0.0004, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.14%, Time: 10:24:18 
+[opmodule.py][LSTMOp:train] total_batch:  49024, Train Loss: 6.6e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.01%, Time: 10:26:00 
+[opmodule.py][LSTMOp:train] total_batch:  49152, Train Loss:  6e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.00%, Time: 10:27:42 
+[opmodule.py][LSTMOp:train] total_batch:  49280, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.35%, Time: 10:29:23 
+[opmodule.py][LSTMOp:train] total_batch:  49408, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   8.47%, Time: 10:31:03 
+[opmodule.py][LSTMOp:train] total_batch:  49536, Train Loss: 0.0005, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.49%, Time: 10:32:44 
+[opmodule.py][LSTMOp:train] total_batch:  49664, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.57%, Time: 10:34:25 
+[opmodule.py][LSTMOp:train] total_batch:  49792, Train Loss: 0.00021, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.71%, Time: 10:36:06 
+[opmodule.py][LSTMOp:train] total_batch:  49920, Train Loss: 6.2e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.40%, Time: 10:37:49 
+[opmodule.py][LSTMOp:train] total_batch:  50048, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.1e+03, Val Acc:   8.87%, Time: 10:39:32 
+[opmodule.py][LSTMOp:train] total_batch:  50176, Train Loss: 1.8e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   7.94%, Time: 10:41:13 
+[opmodule.py][LSTMOp:train] total_batch:  50304, Train Loss: 6.5e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.78%, Time: 10:42:53 
+[opmodule.py][LSTMOp:train] total_batch:  50432, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  10.75%, Time: 10:44:33 
+[opmodule.py][LSTMOp:train] total_batch:  50560, Train Loss:  0.033, Train Acc:  99.22%, Val Loss: 2.3e+03, Val Acc:  10.33%, Time: 10:46:14 
+[opmodule.py][LSTMOp:train] total_batch:  50688, Train Loss: 0.00022, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  11.62%, Time: 10:47:55 
+[opmodule.py][LSTMOp:train] total_batch:  50816, Train Loss: 8.3e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  10.41%, Time: 10:49:37 
+[opmodule.py][LSTMOp:train] total_batch:  50944, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.42%, Time: 10:51:17 
+[opmodule.py][LSTMOp:train] total_batch:  51072, Train Loss: 8.3e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.07%, Time: 10:52:59 
+[opmodule.py][LSTMOp:train] total_batch:  51200, Train Loss:  1e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.47%, Time: 10:54:41 
+[opmodule.py][LSTMOp:train] total_batch:  51328, Train Loss:  1e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.66%, Time: 10:56:22 
+[opmodule.py][LSTMOp:train] total_batch:  51456, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.83%, Time: 10:58:03 
+[opmodule.py][LSTMOp:train] total_batch:  51584, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.39%, Time: 10:59:42 
+[opmodule.py][LSTMOp:train] total_batch:  51712, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.37%, Time: 11:01:22 
+[opmodule.py][LSTMOp:train] total_batch:  51840, Train Loss: 0.00085, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.79%, Time: 11:03:02 
+[opmodule.py][LSTMOp:train] total_batch:  51968, Train Loss:  0.065, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   8.29%, Time: 11:04:40 
+[opmodule.py][LSTMOp:train] total_batch:  52096, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.41%, Time: 11:06:19 
+[opmodule.py][LSTMOp:train] total_batch:  52224, Train Loss: 1.6e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.03%, Time: 11:08:00 
+[opmodule.py][LSTMOp:train] total_batch:  52352, Train Loss: 0.00019, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   7.61%, Time: 11:09:40 
+[opmodule.py][LSTMOp:train] total_batch:  52480, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.78%, Time: 11:11:22 
+[opmodule.py][LSTMOp:train] total_batch:  52608, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.44%, Time: 11:13:03 
+[opmodule.py][LSTMOp:train] total_batch:  52736, Train Loss: 0.0001, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.61%, Time: 11:14:45 
+[opmodule.py][LSTMOp:train] total_batch:  52864, Train Loss: 1.6e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   8.47%, Time: 11:16:25 
+[opmodule.py][LSTMOp:train] total_batch:  52992, Train Loss: 4.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.30%, Time: 11:18:07 
+[opmodule.py][LSTMOp:train] total_batch:  53120, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.40%, Time: 11:19:49 
+[opmodule.py][LSTMOp:train] total_batch:  53248, Train Loss: 2.2e-08, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.38%, Time: 11:21:30 
+[opmodule.py][LSTMOp:train] total_batch:  53376, Train Loss:  0.017, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   9.44%, Time: 11:23:10 
+[opmodule.py][LSTMOp:train] total_batch:  53504, Train Loss: 0.0018, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.20%, Time: 11:24:50 
+[opmodule.py][LSTMOp:train] total_batch:  53632, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   9.00%, Time: 11:26:30 
+[opmodule.py][LSTMOp:train] total_batch:  53760, Train Loss: 7.2e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.17%, Time: 11:28:09 
+[opmodule.py][LSTMOp:train] total_batch:  53888, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.17%, Time: 11:29:50 
+[opmodule.py][LSTMOp:train] total_batch:  54016, Train Loss: 6.9e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.17%, Time: 11:31:30 
+[opmodule.py][LSTMOp:train] total_batch:  54144, Train Loss:  2e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  10.28%, Time: 11:33:08 
+[opmodule.py][LSTMOp:train] total_batch:  54272, Train Loss:  0.073, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   9.46%, Time: 11:34:50 
+[opmodule.py][LSTMOp:train] total_batch:  54400, Train Loss: 2.9e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.37%, Time: 11:36:30 
+[opmodule.py][LSTMOp:train] total_batch:  54528, Train Loss: 8.4e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.34%, Time: 11:38:08 
+[opmodule.py][LSTMOp:train] total_batch:  54656, Train Loss: 7.1e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.21%, Time: 11:39:48 
+[opmodule.py][LSTMOp:train] total_batch:  54784, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.71%, Time: 11:41:30 
+[opmodule.py][LSTMOp:train] total_batch:  54912, Train Loss:    0.1, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   8.99%, Time: 11:43:10 
+[opmodule.py][LSTMOp:train] total_batch:  55040, Train Loss:  0.001, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.07%, Time: 11:44:51 
+[opmodule.py][LSTMOp:train] total_batch:  55168, Train Loss:  0.004, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.07%, Time: 11:46:33 
+[opmodule.py][LSTMOp:train] total_batch:  55296, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.51%, Time: 11:48:14 
+[opmodule.py][LSTMOp:train] total_batch:  55424, Train Loss: 4.3e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.47%, Time: 11:49:54 
+[opmodule.py][LSTMOp:train] total_batch:  55552, Train Loss:  1e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.81%, Time: 11:51:35 
+[opmodule.py][LSTMOp:train] total_batch:  55680, Train Loss: 5.4e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.94%, Time: 11:53:15 
+[opmodule.py][LSTMOp:train] total_batch:  55808, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.40%, Time: 11:54:55 
+[opmodule.py][LSTMOp:train] total_batch:  55936, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.97%, Time: 11:56:38 
+[opmodule.py][LSTMOp:train] total_batch:  56064, Train Loss: 0.00017, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  10.71%, Time: 11:58:20 
+[opmodule.py][LSTMOp:train] total_batch:  56192, Train Loss: 0.0058, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  13.79%, Time: 12:00:02 
+[opmodule.py][LSTMOp:train] total_batch:  56320, Train Loss:  0.055, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   8.96%, Time: 12:01:41 
+[opmodule.py][LSTMOp:train] total_batch:  56448, Train Loss: 0.00034, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  16.43%, Time: 12:03:22 
+[opmodule.py][LSTMOp:train] total_batch:  56576, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  13.66%, Time: 12:05:02 
+[opmodule.py][LSTMOp:train] total_batch:  56704, Train Loss:  4e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  11.21%, Time: 12:06:44 
+[opmodule.py][LSTMOp:train] total_batch:  56832, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:  11.40%, Time: 12:08:21 
+[opmodule.py][LSTMOp:train] total_batch:  56960, Train Loss:  3e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  14.53%, Time: 12:10:02 
+[opmodule.py][LSTMOp:train] total_batch:  57088, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  12.38%, Time: 12:11:45 
+[opmodule.py][LSTMOp:train] total_batch:  57216, Train Loss: 3.5e-05, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.64%, Time: 12:13:27 
+[opmodule.py][LSTMOp:train] total_batch:  57344, Train Loss: 0.00046, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.58%, Time: 12:15:07 
+[opmodule.py][LSTMOp:train] total_batch:  57472, Train Loss: 8.3e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.21%, Time: 12:16:46 
+[opmodule.py][LSTMOp:train] total_batch:  57600, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.59%, Time: 12:18:17 
+[opmodule.py][LSTMOp:train] total_batch:  57728, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.36%, Time: 12:19:46 
+[opmodule.py][LSTMOp:train] total_batch:  57856, Train Loss: 4.3e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  11.38%, Time: 12:21:14 
+[opmodule.py][LSTMOp:train] total_batch:  57984, Train Loss: 6.8e-06, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:   9.07%, Time: 12:22:42 
+[opmodule.py][LSTMOp:train] total_batch:  58112, Train Loss: 4.1e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   9.68%, Time: 12:24:11 
+[opmodule.py][LSTMOp:train] total_batch:  58240, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.74%, Time: 12:25:41 
+[opmodule.py][LSTMOp:train] total_batch:  58368, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.78%, Time: 12:27:11 
+[opmodule.py][LSTMOp:train] total_batch:  58496, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.12%, Time: 12:28:39 
+[opmodule.py][LSTMOp:train] total_batch:  58624, Train Loss: 2.4e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.43%, Time: 12:30:09 
+[opmodule.py][LSTMOp:train] total_batch:  58752, Train Loss:  2e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.48%, Time: 12:31:39 
+[opmodule.py][LSTMOp:train] total_batch:  58880, Train Loss: 2.2e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.04%, Time: 12:33:10 
+[opmodule.py][LSTMOp:train] total_batch:  59008, Train Loss: 6.2e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.08%, Time: 12:34:50 
+[opmodule.py][LSTMOp:train] total_batch:  59136, Train Loss: 0.0042, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.02%, Time: 12:36:30 
+[opmodule.py][LSTMOp:train] total_batch:  59264, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.01%, Time: 12:38:11 
+[opmodule.py][LSTMOp:train] total_batch:  59392, Train Loss: 3.5e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.50%, Time: 12:39:52 
+[opmodule.py][LSTMOp:train] total_batch:  59520, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   8.77%, Time: 12:41:33 
+[opmodule.py][LSTMOp:train] total_batch:  59648, Train Loss:  0.056, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   9.09%, Time: 12:43:11 
+[opmodule.py][LSTMOp:train] total_batch:  59776, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.81%, Time: 12:44:52 
+[opmodule.py][LSTMOp:train] total_batch:  59904, Train Loss:  0.044, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   8.81%, Time: 12:46:31 
+[opmodule.py][LSTMOp:train] total_batch:  60032, Train Loss: 7.5e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.66%, Time: 12:48:12 
+[opmodule.py][LSTMOp:train] total_batch:  60160, Train Loss: 3.3e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.77%, Time: 12:49:50 
+[opmodule.py][LSTMOp:train] total_batch:  60288, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.23%, Time: 12:51:31 
+[opmodule.py][LSTMOp:train] total_batch:  60416, Train Loss: 7.1e-08, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   9.34%, Time: 12:53:10 
+[opmodule.py][LSTMOp:train] total_batch:  60544, Train Loss:  0.031, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.66%, Time: 12:54:50 
+[opmodule.py][LSTMOp:train] total_batch:  60672, Train Loss: 3.8e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.06%, Time: 12:56:32 
+[opmodule.py][LSTMOp:train] total_batch:  60800, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   8.42%, Time: 12:58:13 
+[opmodule.py][LSTMOp:train] total_batch:  60928, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.24%, Time: 12:59:53 
+[opmodule.py][LSTMOp:train] total_batch:  61056, Train Loss: 0.0086, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.22%, Time: 13:01:34 
+[opmodule.py][LSTMOp:train] total_batch:  61184, Train Loss: 8.8e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.39%, Time: 13:03:14 
+[opmodule.py][LSTMOp:train] total_batch:  61312, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.30%, Time: 13:04:55 
+[opmodule.py][LSTMOp:train] total_batch:  61440, Train Loss:  0.002, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.81%, Time: 13:06:34 
+[opmodule.py][LSTMOp:train] total_batch:  61568, Train Loss:  0.028, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.62%, Time: 13:08:14 
+[opmodule.py][LSTMOp:train] total_batch:  61696, Train Loss: 2.9e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.29%, Time: 13:09:55 
+[opmodule.py][LSTMOp:train] total_batch:  61824, Train Loss: 4.2e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.57%, Time: 13:11:37 
+[opmodule.py][LSTMOp:train] total_batch:  61952, Train Loss:  0.015, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.00%, Time: 13:13:18 
+[opmodule.py][LSTMOp:train] total_batch:  62080, Train Loss: 6.2e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   7.99%, Time: 13:15:00 
+[opmodule.py][LSTMOp:train] total_batch:  62208, Train Loss: 0.00035, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   7.41%, Time: 13:16:41 
+[opmodule.py][LSTMOp:train] total_batch:  62336, Train Loss: 4.6e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.06%, Time: 13:18:23 
+[opmodule.py][LSTMOp:train] total_batch:  62464, Train Loss: 3.4e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.55%, Time: 13:20:05 
+[opmodule.py][LSTMOp:train] total_batch:  62592, Train Loss:  0.076, Train Acc:  98.44%, Val Loss: 2.7e+03, Val Acc:   8.63%, Time: 13:21:47 
+[opmodule.py][LSTMOp:train] total_batch:  62720, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.87%, Time: 13:23:28 
+[opmodule.py][LSTMOp:train] total_batch:  62848, Train Loss: 0.0083, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.83%, Time: 13:25:09 
+[opmodule.py][LSTMOp:train] total_batch:  62976, Train Loss: 9.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.68%, Time: 13:26:49 
+[opmodule.py][LSTMOp:train] total_batch:  63104, Train Loss:  3e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.19%, Time: 13:28:31 
+[opmodule.py][LSTMOp:train] total_batch:  63232, Train Loss:  0.099, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.70%, Time: 13:30:12 
+[opmodule.py][LSTMOp:train] total_batch:  63360, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.94%, Time: 13:31:52 
+[opmodule.py][LSTMOp:train] total_batch:  63488, Train Loss:  0.003, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.77%, Time: 13:33:33 
+[opmodule.py][LSTMOp:train] total_batch:  63616, Train Loss:  0.037, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.68%, Time: 13:35:14 
+[opmodule.py][LSTMOp:train] total_batch:  63744, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.57%, Time: 13:36:54 
+[opmodule.py][LSTMOp:train] total_batch:  63872, Train Loss:   0.03, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.76%, Time: 13:38:34 
+[opmodule.py][LSTMOp:train] total_batch:  64000, Train Loss: 0.0031, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.74%, Time: 13:40:16 
+[opmodule.py][LSTMOp:train] total_batch:  64128, Train Loss: 2.8e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.59%, Time: 13:41:56 
+[opmodule.py][LSTMOp:train] total_batch:  64256, Train Loss:  0.004, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.47%, Time: 13:43:37 
+[opmodule.py][LSTMOp:train] total_batch:  64384, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:   9.03%, Time: 13:45:18 
+[opmodule.py][LSTMOp:train] total_batch:  64512, Train Loss: 5.9e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  16.95%, Time: 13:46:58 
+[opmodule.py][LSTMOp:train] total_batch:  64640, Train Loss: 0.00031, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  11.14%, Time: 13:48:39 
+[opmodule.py][LSTMOp:train] total_batch:  64768, Train Loss: 1.9e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  11.72%, Time: 13:50:18 
+[opmodule.py][LSTMOp:train] total_batch:  64896, Train Loss: 5.3e-08, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  13.84%, Time: 13:51:58 
+[opmodule.py][LSTMOp:train] total_batch:  65024, Train Loss: 1.1e-07, Train Acc: 100.00%, Val Loss: 2.3e+03, Val Acc:  12.52%, Time: 13:53:38 
+[opmodule.py][LSTMOp:train] total_batch:  65152, Train Loss: 6.4e-06, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  10.81%, Time: 13:55:19 
+[opmodule.py][LSTMOp:train] total_batch:  65280, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  11.64%, Time: 13:57:00 
+[opmodule.py][LSTMOp:train] total_batch:  65408, Train Loss: 2.2e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  20.69%, Time: 13:58:42 
+[opmodule.py][LSTMOp:train] total_batch:  65536, Train Loss: 7.2e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  19.87%, Time: 14:00:22 
+[opmodule.py][LSTMOp:train] total_batch:  65664, Train Loss:  2e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  14.53%, Time: 14:02:03 
+[opmodule.py][LSTMOp:train] total_batch:  65792, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  13.14%, Time: 14:03:44 
+[opmodule.py][LSTMOp:train] total_batch:  65920, Train Loss: 4.4e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.09%, Time: 14:05:25 
+[opmodule.py][LSTMOp:train] total_batch:  66048, Train Loss: 3.7e-08, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  10.29%, Time: 14:07:06 
+[opmodule.py][LSTMOp:train] total_batch:  66176, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   9.22%, Time: 14:08:48 
+[opmodule.py][LSTMOp:train] total_batch:  66304, Train Loss: 9.8e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  15.90%, Time: 14:10:28 
+[opmodule.py][LSTMOp:train] total_batch:  66432, Train Loss: 0.0005, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  13.18%, Time: 14:12:08 
+[opmodule.py][LSTMOp:train] total_batch:  66560, Train Loss: 1.2e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  10.10%, Time: 14:13:50 
+[opmodule.py][LSTMOp:train] total_batch:  66688, Train Loss: 8.7e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  10.13%, Time: 14:15:30 
+[opmodule.py][LSTMOp:train] total_batch:  66816, Train Loss: 0.00041, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  11.58%, Time: 14:17:12 
+[opmodule.py][LSTMOp:train] total_batch:  66944, Train Loss: 0.00086, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  10.25%, Time: 14:18:53 
+[opmodule.py][LSTMOp:train] total_batch:  67072, Train Loss:  0.031, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:  11.42%, Time: 14:20:34 
+[opmodule.py][LSTMOp:train] total_batch:  67200, Train Loss: 0.0049, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.76%, Time: 14:22:14 
+[opmodule.py][LSTMOp:train] total_batch:  67328, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   8.27%, Time: 14:23:55 
+[opmodule.py][LSTMOp:train] total_batch:  67456, Train Loss: 0.0021, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.90%, Time: 14:25:35 
+[opmodule.py][LSTMOp:train] total_batch:  67584, Train Loss: 0.0058, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.28%, Time: 14:27:15 
+[opmodule.py][LSTMOp:train] total_batch:  67712, Train Loss: 0.00042, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.92%, Time: 14:28:56 
+[opmodule.py][LSTMOp:train] total_batch:  67840, Train Loss:  0.073, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   8.60%, Time: 14:30:37 
+[opmodule.py][LSTMOp:train] total_batch:  67968, Train Loss:  0.039, Train Acc:  98.44%, Val Loss: 2.6e+03, Val Acc:   8.11%, Time: 14:32:17 
+[opmodule.py][LSTMOp:train] total_batch:  68096, Train Loss:  0.017, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   7.71%, Time: 14:33:56 
+[opmodule.py][LSTMOp:train] total_batch:  68224, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   8.94%, Time: 14:35:37 
+[opmodule.py][LSTMOp:train] total_batch:  68352, Train Loss: 8.5e-08, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.83%, Time: 14:37:17 
+[opmodule.py][LSTMOp:train] total_batch:  68480, Train Loss:  7e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.26%, Time: 14:38:59 
+[opmodule.py][LSTMOp:train] total_batch:  68608, Train Loss: 7.6e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.89%, Time: 14:40:39 
+[opmodule.py][LSTMOp:train] total_batch:  68736, Train Loss:  0.026, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   8.72%, Time: 14:42:21 
+[opmodule.py][LSTMOp:train] total_batch:  68864, Train Loss: 3.3e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  17.00%, Time: 14:44:02 
+[opmodule.py][LSTMOp:train] total_batch:  68992, Train Loss: 3.7e-07, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  15.10%, Time: 14:45:43 
+[opmodule.py][LSTMOp:train] total_batch:  69120, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss: 2.4e+03, Val Acc:  13.26%, Time: 14:47:22 
+[opmodule.py][LSTMOp:train] total_batch:  69248, Train Loss: 0.00028, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  13.05%, Time: 14:49:03 
+[opmodule.py][LSTMOp:train] total_batch:  69376, Train Loss:  3e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   9.91%, Time: 14:50:42 
+[opmodule.py][LSTMOp:train] total_batch:  69504, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:  10.53%, Time: 14:52:22 
+[opmodule.py][LSTMOp:train] total_batch:  69632, Train Loss: 1.9e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.43%, Time: 14:54:04 
+[opmodule.py][LSTMOp:train] total_batch:  69760, Train Loss: 1.3e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  11.48%, Time: 14:55:46 
+[opmodule.py][LSTMOp:train] total_batch:  69888, Train Loss: 0.0067, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:  11.35%, Time: 14:57:27 
+[opmodule.py][LSTMOp:train] total_batch:  70016, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.75%, Time: 14:59:08 
+[opmodule.py][LSTMOp:train] total_batch:  70144, Train Loss: 7.2e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.63%, Time: 15:00:50 
+[opmodule.py][LSTMOp:train] total_batch:  70272, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.80%, Time: 15:02:29 
+[opmodule.py][LSTMOp:train] total_batch:  70400, Train Loss:  5e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.84%, Time: 15:04:07 
+[opmodule.py][LSTMOp:train] total_batch:  70528, Train Loss: 0.00015, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   9.20%, Time: 15:05:47 
+[opmodule.py][LSTMOp:train] total_batch:  70656, Train Loss: 3.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.76%, Time: 15:07:27 
+[opmodule.py][LSTMOp:train] total_batch:  70784, Train Loss: 1.6e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:  12.09%, Time: 15:09:06 
+[opmodule.py][LSTMOp:train] total_batch:  70912, Train Loss: 0.00062, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  19.71%, Time: 15:10:46 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.07794728130102158,平均准确率:0.5985596776008606,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:  71040, Train Loss:  1e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  25.34%, Time: 15:12:38 *
+[opmodule.py][LSTMOp:train] total_batch:  71168, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  16.87%, Time: 15:14:14 
+[opmodule.py][LSTMOp:train] total_batch:  71296, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   8.53%, Time: 15:15:53 
+[opmodule.py][LSTMOp:train] total_batch:  71424, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.04%, Time: 15:17:35 
+[opmodule.py][LSTMOp:train] total_batch:  71552, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  10.52%, Time: 15:19:15 
+[opmodule.py][LSTMOp:train] total_batch:  71680, Train Loss: 0.0058, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:  13.99%, Time: 15:20:55 
+[opmodule.py][LSTMOp:train] total_batch:  71808, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  15.92%, Time: 15:22:35 
+[opmodule.py][LSTMOp:train] total_batch:  71936, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:  24.01%, Time: 15:24:15 
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.07024034112691879,平均准确率:0.6036509871482849,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:  72064, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:  25.87%, Time: 15:26:06 *
+[opmodule.py][LSTMOp:train] total_batch:  72192, Train Loss: 8.6e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  20.76%, Time: 15:27:40 
+[opmodule.py][LSTMOp:train] total_batch:  72320, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  20.85%, Time: 15:29:10 
+[opmodule.py][LSTMOp:train] total_batch:  72448, Train Loss: 8.3e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  23.28%, Time: 15:30:39 
+[opmodule.py][LSTMOp:train] total_batch:  72576, Train Loss: 0.00027, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  20.63%, Time: 15:32:07 
+[opmodule.py][LSTMOp:train] total_batch:  72704, Train Loss:  7e-06, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:  22.15%, Time: 15:33:37 
+[opmodule.py][LSTMOp:train] total_batch:  72832, Train Loss: 0.00019, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:  16.58%, Time: 15:35:07 
+[opmodule.py][LSTMOp:train] total_batch:  72960, Train Loss: 2.5e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  13.82%, Time: 15:36:39 
+[opmodule.py][LSTMOp:train] total_batch:  73088, Train Loss: 6.1e-08, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:  11.02%, Time: 15:38:08 
+[opmodule.py][LSTMOp:train] total_batch:  73216, Train Loss: 0.00052, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  10.29%, Time: 15:39:39 
+[opmodule.py][LSTMOp:train] total_batch:  73344, Train Loss:  0.003, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:  10.32%, Time: 15:41:17 
+[opmodule.py][LSTMOp:train] total_batch:  73472, Train Loss: 0.0021, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.29%, Time: 15:42:57 
+[opmodule.py][LSTMOp:train] total_batch:  73600, Train Loss:  0.037, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   8.89%, Time: 15:44:38 
+[opmodule.py][LSTMOp:train] total_batch:  73728, Train Loss: 0.00015, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.73%, Time: 15:46:18 
+[opmodule.py][LSTMOp:train] total_batch:  73856, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.21%, Time: 15:47:59 
+[opmodule.py][LSTMOp:train] total_batch:  73984, Train Loss:  0.053, Train Acc:  98.44%, Val Loss: 2.9e+03, Val Acc:   8.61%, Time: 15:49:38 
+[opmodule.py][LSTMOp:train] total_batch:  74112, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.70%, Time: 15:51:18 
+[opmodule.py][LSTMOp:train] total_batch:  74240, Train Loss: 8.2e-08, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.85%, Time: 15:52:59 
+[opmodule.py][LSTMOp:train] total_batch:  74368, Train Loss: 4.7e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.29%, Time: 15:54:38 
+[opmodule.py][LSTMOp:train] total_batch:  74496, Train Loss:  0.002, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.73%, Time: 15:56:16 
+[opmodule.py][LSTMOp:train] total_batch:  74624, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.75%, Time: 15:57:58 
+[opmodule.py][LSTMOp:train] total_batch:  74752, Train Loss: 5.9e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.12%, Time: 15:59:38 
+[opmodule.py][LSTMOp:train] total_batch:  74880, Train Loss:  8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   9.14%, Time: 16:01:21 
+[opmodule.py][LSTMOp:train] total_batch:  75008, Train Loss:  0.066, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   8.18%, Time: 16:03:03 
+[opmodule.py][LSTMOp:train] total_batch:  75136, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.85%, Time: 16:04:41 
+[opmodule.py][LSTMOp:train] total_batch:  75264, Train Loss: 2.4e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.00%, Time: 16:06:21 
+[opmodule.py][LSTMOp:train] total_batch:  75392, Train Loss: 0.0043, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   9.07%, Time: 16:08:01 
+[opmodule.py][LSTMOp:train] total_batch:  75520, Train Loss:  0.016, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   8.31%, Time: 16:09:41 
+[opmodule.py][LSTMOp:train] total_batch:  75648, Train Loss: 5.4e-08, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.87%, Time: 16:11:19 
+[opmodule.py][LSTMOp:train] total_batch:  75776, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.97%, Time: 16:12:57 
+[opmodule.py][LSTMOp:train] total_batch:  75904, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   8.82%, Time: 16:14:36 
+[opmodule.py][LSTMOp:train] total_batch:  76032, Train Loss: 0.0032, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   9.07%, Time: 16:16:16 
+[opmodule.py][LSTMOp:train] total_batch:  76160, Train Loss: 8.1e-05, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   9.33%, Time: 16:17:56 
+[opmodule.py][LSTMOp:train] total_batch:  76288, Train Loss: 0.0074, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   9.12%, Time: 16:19:37 
+[opmodule.py][LSTMOp:train] total_batch:  76416, Train Loss:   0.14, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   8.85%, Time: 16:21:18 
+[opmodule.py][LSTMOp:train] total_batch:  76544, Train Loss: 6.6e-06, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   8.78%, Time: 16:22:57 
+[opmodule.py][LSTMOp:train] total_batch:  76672, Train Loss:  4e-06, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   8.77%, Time: 16:24:38 
+[opmodule.py][LSTMOp:train] total_batch:  76800, Train Loss:  0.087, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:  10.57%, Time: 16:26:19 
+[opmodule.py][LSTMOp:train] total_batch:  76928, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:  10.07%, Time: 16:28:00 
+[opmodule.py][LSTMOp:train] total_batch:  77056, Train Loss: 8.2e-06, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   8.89%, Time: 16:29:39 
+[opmodule.py][LSTMOp:train] total_batch:  77184, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   9.07%, Time: 16:31:20 
+[opmodule.py][LSTMOp:train] total_batch:  77312, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   8.34%, Time: 16:32:59 
+[opmodule.py][LSTMOp:train] total_batch:  77440, Train Loss: 1.9e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.14%, Time: 16:34:41 
+[opmodule.py][LSTMOp:train] total_batch:  77568, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   8.58%, Time: 16:36:21 
+[opmodule.py][LSTMOp:train] total_batch:  77696, Train Loss:  0.098, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   8.57%, Time: 16:38:00 
+[opmodule.py][LSTMOp:train] total_batch:  77824, Train Loss: 2.7e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:  15.02%, Time: 16:39:40 
+[opmodule.py][LSTMOp:train] total_batch:  77952, Train Loss: 6.3e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:  11.20%, Time: 16:41:21 
+[opmodule.py][LSTMOp:train] total_batch:  78080, Train Loss: 6.6e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:  10.64%, Time: 16:43:02 
+[opmodule.py][LSTMOp:train] total_batch:  78208, Train Loss:  0.057, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:  11.55%, Time: 16:44:43 
+[opmodule.py][LSTMOp:train] total_batch:  78336, Train Loss:  0.075, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   9.82%, Time: 16:46:22 
+[opmodule.py][LSTMOp:train] total_batch:  78464, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   9.29%, Time: 16:48:02 
+[opmodule.py][LSTMOp:train] total_batch:  78592, Train Loss:  0.038, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   9.75%, Time: 16:49:41 
+[opmodule.py][LSTMOp:train] total_batch:  78720, Train Loss: 7.9e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.53%, Time: 16:51:22 
+[opmodule.py][LSTMOp:train] total_batch:  78848, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:  10.70%, Time: 16:53:03 
+[opmodule.py][LSTMOp:train] total_batch:  78976, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   9.62%, Time: 16:54:43 
+[opmodule.py][LSTMOp:train] total_batch:  79104, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.34%, Time: 16:56:25 
+[opmodule.py][LSTMOp:train] total_batch:  79232, Train Loss:  3e-07, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.67%, Time: 16:58:06 
+[data.py][data:get_batch_data] Epoch:2
+[opmodule.py][LSTMOp:train] total_batch:  79360, Train Loss: 3.3e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.38%, Time: 16:59:47 
+[opmodule.py][LSTMOp:train] total_batch:  79488, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.85%, Time: 17:01:28 
+[opmodule.py][LSTMOp:train] total_batch:  79616, Train Loss: 0.00017, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   8.12%, Time: 17:03:09 
+[opmodule.py][LSTMOp:train] total_batch:  79744, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.59%, Time: 17:04:50 
+[opmodule.py][LSTMOp:train] total_batch:  79872, Train Loss: 9.8e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.63%, Time: 17:06:30 
+[opmodule.py][LSTMOp:train] total_batch:  80000, Train Loss: 8.6e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  11.07%, Time: 17:08:11 
+[opmodule.py][LSTMOp:train] total_batch:  80128, Train Loss: 3.6e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.89%, Time: 17:09:53 
+[opmodule.py][LSTMOp:train] total_batch:  80256, Train Loss: 0.0058, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.92%, Time: 17:11:32 
+[opmodule.py][LSTMOp:train] total_batch:  80384, Train Loss: 9.3e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.13%, Time: 17:13:12 
+[opmodule.py][LSTMOp:train] total_batch:  80512, Train Loss: 0.00073, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.19%, Time: 17:14:51 
+[opmodule.py][LSTMOp:train] total_batch:  80640, Train Loss:  0.025, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   7.82%, Time: 17:16:31 
+[opmodule.py][LSTMOp:train] total_batch:  80768, Train Loss: 2.2e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.84%, Time: 17:18:10 
+[opmodule.py][LSTMOp:train] total_batch:  80896, Train Loss: 4.4e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.88%, Time: 17:19:50 
+[opmodule.py][LSTMOp:train] total_batch:  81024, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.78%, Time: 17:21:32 
+[opmodule.py][LSTMOp:train] total_batch:  81152, Train Loss: 0.00028, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.66%, Time: 17:23:12 
+[opmodule.py][LSTMOp:train] total_batch:  81280, Train Loss: 2.8e-09, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.56%, Time: 17:24:52 
+[opmodule.py][LSTMOp:train] total_batch:  81408, Train Loss: 8.4e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  13.66%, Time: 17:26:34 
+[opmodule.py][LSTMOp:train] total_batch:  81536, Train Loss: 0.0076, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.59%, Time: 17:28:15 
+[opmodule.py][LSTMOp:train] total_batch:  81664, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.07%, Time: 17:29:55 
+[opmodule.py][LSTMOp:train] total_batch:  81792, Train Loss:  0.013, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.12%, Time: 17:31:35 
+[opmodule.py][LSTMOp:train] total_batch:  81920, Train Loss: 7.7e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.59%, Time: 17:33:16 
+[opmodule.py][LSTMOp:train] total_batch:  82048, Train Loss: 1.8e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.85%, Time: 17:34:57 
+[opmodule.py][LSTMOp:train] total_batch:  82176, Train Loss: 6.4e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.43%, Time: 17:36:38 
+[opmodule.py][LSTMOp:train] total_batch:  82304, Train Loss:  0.011, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   7.58%, Time: 17:38:18 
+[opmodule.py][LSTMOp:train] total_batch:  82432, Train Loss: 3.3e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.05%, Time: 17:40:00 
+[opmodule.py][LSTMOp:train] total_batch:  82560, Train Loss: 3.2e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.76%, Time: 17:41:40 
+[opmodule.py][LSTMOp:train] total_batch:  82688, Train Loss: 0.0062, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:  10.60%, Time: 17:43:23 
+[opmodule.py][LSTMOp:train] total_batch:  82816, Train Loss: 0.00018, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.68%, Time: 17:45:03 
+[opmodule.py][LSTMOp:train] total_batch:  82944, Train Loss: 0.00083, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.35%, Time: 17:46:43 
+[opmodule.py][LSTMOp:train] total_batch:  83072, Train Loss:  0.059, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   7.54%, Time: 17:48:25 
+[opmodule.py][LSTMOp:train] total_batch:  83200, Train Loss:  0.042, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   6.72%, Time: 17:50:07 
+[opmodule.py][LSTMOp:train] total_batch:  83328, Train Loss: 2.1e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.00%, Time: 17:51:47 
+[opmodule.py][LSTMOp:train] total_batch:  83456, Train Loss: 0.00037, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.19%, Time: 17:53:28 
+[opmodule.py][LSTMOp:train] total_batch:  83584, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.55%, Time: 17:55:09 
+[opmodule.py][LSTMOp:train] total_batch:  83712, Train Loss:  0.041, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   6.79%, Time: 17:56:51 
+[opmodule.py][LSTMOp:train] total_batch:  83840, Train Loss: 5.7e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.27%, Time: 17:58:32 
+[opmodule.py][LSTMOp:train] total_batch:  83968, Train Loss: 0.00032, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.26%, Time: 18:00:12 
+[opmodule.py][LSTMOp:train] total_batch:  84096, Train Loss: 2.4e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.98%, Time: 18:01:53 
+[opmodule.py][LSTMOp:train] total_batch:  84224, Train Loss: 1.1e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.71%, Time: 18:03:32 
+[opmodule.py][LSTMOp:train] total_batch:  84352, Train Loss: 2.5e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.69%, Time: 18:05:13 
+[opmodule.py][LSTMOp:train] total_batch:  84480, Train Loss: 4.3e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.74%, Time: 18:06:54 
+[opmodule.py][LSTMOp:train] total_batch:  84608, Train Loss: 7.3e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   8.07%, Time: 18:08:35 
+[opmodule.py][LSTMOp:train] total_batch:  84736, Train Loss: 2.4e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:  11.03%, Time: 18:10:16 
+[opmodule.py][LSTMOp:train] total_batch:  84864, Train Loss: 0.0054, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  10.08%, Time: 18:11:56 
+[opmodule.py][LSTMOp:train] total_batch:  84992, Train Loss: 0.0028, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:  10.79%, Time: 18:13:38 
+[opmodule.py][LSTMOp:train] total_batch:  85120, Train Loss: 0.00074, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   8.42%, Time: 18:15:19 
+[opmodule.py][LSTMOp:train] total_batch:  85248, Train Loss: 0.0091, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:  13.19%, Time: 18:16:58 
+[opmodule.py][LSTMOp:train] total_batch:  85376, Train Loss: 4.5e-07, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:  11.45%, Time: 18:18:36 
+[opmodule.py][LSTMOp:train] total_batch:  85504, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   9.99%, Time: 18:20:17 
+[opmodule.py][LSTMOp:train] total_batch:  85632, Train Loss:  0.018, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:  14.77%, Time: 18:21:55 
+[opmodule.py][LSTMOp:train] total_batch:  85760, Train Loss: 7.4e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  15.43%, Time: 18:23:24 
+[opmodule.py][LSTMOp:train] total_batch:  85888, Train Loss: 2.8e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  11.56%, Time: 18:24:54 
+[opmodule.py][LSTMOp:train] total_batch:  86016, Train Loss:  0.076, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:  10.23%, Time: 18:26:22 
+[opmodule.py][LSTMOp:train] total_batch:  86144, Train Loss:   0.13, Train Acc:  97.66%, Val Loss:  3e+03, Val Acc:  11.55%, Time: 18:27:52 
+[opmodule.py][LSTMOp:train] total_batch:  86272, Train Loss: 7.5e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   9.48%, Time: 18:29:20 
+[opmodule.py][LSTMOp:train] total_batch:  86400, Train Loss: 5.4e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.09%, Time: 18:30:49 
+[opmodule.py][LSTMOp:train] total_batch:  86528, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.97%, Time: 18:32:20 
+[opmodule.py][LSTMOp:train] total_batch:  86656, Train Loss: 2.5e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.25%, Time: 18:33:49 
+[opmodule.py][LSTMOp:train] total_batch:  86784, Train Loss: 3.3e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.75%, Time: 18:35:19 
+[opmodule.py][LSTMOp:train] total_batch:  86912, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.73%, Time: 18:36:50 
+[opmodule.py][LSTMOp:train] total_batch:  87040, Train Loss: 0.0081, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.09%, Time: 18:38:19 
+[opmodule.py][LSTMOp:train] total_batch:  87168, Train Loss:  0.028, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   6.31%, Time: 18:39:46 
+[opmodule.py][LSTMOp:train] total_batch:  87296, Train Loss: 8.9e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.41%, Time: 18:41:15 
+[opmodule.py][LSTMOp:train] total_batch:  87424, Train Loss: 7.9e-08, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   8.37%, Time: 18:42:44 
+[opmodule.py][LSTMOp:train] total_batch:  87552, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  12.37%, Time: 18:44:16 
+[opmodule.py][LSTMOp:train] total_batch:  87680, Train Loss:    0.1, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   9.08%, Time: 18:45:46 
+[opmodule.py][LSTMOp:train] total_batch:  87808, Train Loss: 0.0035, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.69%, Time: 18:47:16 
+[opmodule.py][LSTMOp:train] total_batch:  87936, Train Loss: 3.5e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.35%, Time: 18:48:47 
+[opmodule.py][LSTMOp:train] total_batch:  88064, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.24%, Time: 18:50:15 
+[opmodule.py][LSTMOp:train] total_batch:  88192, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   7.54%, Time: 18:51:44 
+[opmodule.py][LSTMOp:train] total_batch:  88320, Train Loss: 0.0023, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:  12.38%, Time: 18:53:13 
+[opmodule.py][LSTMOp:train] total_batch:  88448, Train Loss: 0.0043, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.83%, Time: 18:54:45 
+[opmodule.py][LSTMOp:train] total_batch:  88576, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   8.19%, Time: 18:56:14 
+[opmodule.py][LSTMOp:train] total_batch:  88704, Train Loss: 0.00043, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.45%, Time: 18:57:44 
+[opmodule.py][LSTMOp:train] total_batch:  88832, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   7.61%, Time: 18:59:14 
+[opmodule.py][LSTMOp:train] total_batch:  88960, Train Loss:  0.086, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   7.57%, Time: 19:00:46 
+[opmodule.py][LSTMOp:train] total_batch:  89088, Train Loss: 2.4e-07, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.96%, Time: 19:02:17 
+[opmodule.py][LSTMOp:train] total_batch:  89216, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   8.42%, Time: 19:03:48 
+[opmodule.py][LSTMOp:train] total_batch:  89344, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   8.08%, Time: 19:05:18 
+[opmodule.py][LSTMOp:train] total_batch:  89472, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.83%, Time: 19:06:48 
+[opmodule.py][LSTMOp:train] total_batch:  89600, Train Loss:  0.026, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   6.54%, Time: 19:08:15 
+[opmodule.py][LSTMOp:train] total_batch:  89728, Train Loss:  2e-07, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.24%, Time: 19:09:46 
+[opmodule.py][LSTMOp:train] total_batch:  89856, Train Loss:   0.09, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   6.04%, Time: 19:11:16 
+[opmodule.py][LSTMOp:train] total_batch:  89984, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.00%, Time: 19:12:42 
+[opmodule.py][LSTMOp:train] total_batch:  90112, Train Loss: 4.2e-06, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.78%, Time: 19:14:13 
+[opmodule.py][LSTMOp:train] total_batch:  90240, Train Loss: 6.4e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.93%, Time: 19:15:51 
+[opmodule.py][LSTMOp:train] total_batch:  90368, Train Loss: 8.1e-06, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   5.86%, Time: 19:17:32 
+[opmodule.py][LSTMOp:train] total_batch:  90496, Train Loss:  0.076, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   5.65%, Time: 19:19:11 
+[opmodule.py][LSTMOp:train] total_batch:  90624, Train Loss:  0.058, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   6.04%, Time: 19:20:50 
+[opmodule.py][LSTMOp:train] total_batch:  90752, Train Loss: 3.5e-07, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.86%, Time: 19:22:31 
+[opmodule.py][LSTMOp:train] total_batch:  90880, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.16%, Time: 19:24:09 
+[opmodule.py][LSTMOp:train] total_batch:  91008, Train Loss:  0.018, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   5.94%, Time: 19:25:50 
+[opmodule.py][LSTMOp:train] total_batch:  91136, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   6.00%, Time: 19:27:29 
+[opmodule.py][LSTMOp:train] total_batch:  91264, Train Loss: 3.6e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   6.38%, Time: 19:29:10 
+[opmodule.py][LSTMOp:train] total_batch:  91392, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   6.40%, Time: 19:30:49 
+[opmodule.py][LSTMOp:train] total_batch:  91520, Train Loss: 0.00046, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.04%, Time: 19:32:30 
+[opmodule.py][LSTMOp:train] total_batch:  91648, Train Loss: 0.00017, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.56%, Time: 19:34:11 
+[opmodule.py][LSTMOp:train] total_batch:  91776, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   6.14%, Time: 19:35:51 
+[opmodule.py][LSTMOp:train] total_batch:  91904, Train Loss:  0.026, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   7.00%, Time: 19:37:31 
+[opmodule.py][LSTMOp:train] total_batch:  92032, Train Loss: 6.4e-06, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.49%, Time: 19:39:11 
+[opmodule.py][LSTMOp:train] total_batch:  92160, Train Loss:  2e-06, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   7.21%, Time: 19:40:50 
+[opmodule.py][LSTMOp:train] total_batch:  92288, Train Loss: 8.4e-07, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.51%, Time: 19:42:31 
+[opmodule.py][LSTMOp:train] total_batch:  92416, Train Loss:  0.051, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   7.13%, Time: 19:44:11 
+[opmodule.py][LSTMOp:train] total_batch:  92544, Train Loss: 6.3e-07, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.13%, Time: 19:45:51 
+[opmodule.py][LSTMOp:train] total_batch:  92672, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.94%, Time: 19:47:32 
+[opmodule.py][LSTMOp:train] total_batch:  92800, Train Loss: 4.3e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   7.48%, Time: 19:49:14 
+[opmodule.py][LSTMOp:train] total_batch:  92928, Train Loss: 0.0041, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   7.35%, Time: 19:50:55 
+[opmodule.py][LSTMOp:train] total_batch:  93056, Train Loss:  0.046, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:   7.00%, Time: 19:52:36 
+[opmodule.py][LSTMOp:train] total_batch:  93184, Train Loss:  0.052, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   6.94%, Time: 19:54:15 
+[opmodule.py][LSTMOp:train] total_batch:  93312, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   7.33%, Time: 19:55:54 
+[opmodule.py][LSTMOp:train] total_batch:  93440, Train Loss:  0.065, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   7.31%, Time: 19:57:35 
+[opmodule.py][LSTMOp:train] total_batch:  93568, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.11%, Time: 19:59:14 
+[opmodule.py][LSTMOp:train] total_batch:  93696, Train Loss:  0.075, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   7.29%, Time: 20:00:55 
+[opmodule.py][LSTMOp:train] total_batch:  93824, Train Loss:  0.085, Train Acc:  98.44%, Val Loss: 3.2e+03, Val Acc:   6.98%, Time: 20:02:37 
+[opmodule.py][LSTMOp:train] total_batch:  93952, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.81%, Time: 20:04:15 
+[opmodule.py][LSTMOp:train] total_batch:  94080, Train Loss:  2e-07, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.13%, Time: 20:05:56 
+[opmodule.py][LSTMOp:train] total_batch:  94208, Train Loss:  0.052, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   7.77%, Time: 20:07:37 
+[opmodule.py][LSTMOp:train] total_batch:  94336, Train Loss: 9.1e-07, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.43%, Time: 20:09:18 
+[opmodule.py][LSTMOp:train] total_batch:  94464, Train Loss: 6.1e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.24%, Time: 20:11:01 
+[opmodule.py][LSTMOp:train] total_batch:  94592, Train Loss: 0.0017, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.06%, Time: 20:12:41 
+[opmodule.py][LSTMOp:train] total_batch:  94720, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.00%, Time: 20:14:21 
+[opmodule.py][LSTMOp:train] total_batch:  94848, Train Loss: 6.2e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.40%, Time: 20:16:00 
+[opmodule.py][LSTMOp:train] total_batch:  94976, Train Loss: 3.8e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.46%, Time: 20:17:40 
+[opmodule.py][LSTMOp:train] total_batch:  95104, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.40%, Time: 20:19:19 
+[opmodule.py][LSTMOp:train] total_batch:  95232, Train Loss:  0.032, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   6.34%, Time: 20:21:00 
+[opmodule.py][LSTMOp:train] total_batch:  95360, Train Loss:  0.068, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   6.23%, Time: 20:22:41 
+[opmodule.py][LSTMOp:train] total_batch:  95488, Train Loss: 0.0062, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   6.33%, Time: 20:24:22 
+[opmodule.py][LSTMOp:train] total_batch:  95616, Train Loss: 0.0075, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   6.59%, Time: 20:26:02 
+[opmodule.py][LSTMOp:train] total_batch:  95744, Train Loss:  0.017, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   6.91%, Time: 20:27:44 
+[opmodule.py][LSTMOp:train] total_batch:  95872, Train Loss: 4.2e-07, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   6.66%, Time: 20:29:24 
+[opmodule.py][LSTMOp:train] total_batch:  96000, Train Loss:  0.035, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:   6.28%, Time: 20:31:03 
+[opmodule.py][LSTMOp:train] total_batch:  96128, Train Loss: 6.3e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.44%, Time: 20:32:42 
+[opmodule.py][LSTMOp:train] total_batch:  96256, Train Loss:  0.014, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.20%, Time: 20:34:22 
+[opmodule.py][LSTMOp:train] total_batch:  96384, Train Loss:  0.023, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   6.79%, Time: 20:36:02 
+[opmodule.py][LSTMOp:train] total_batch:  96512, Train Loss: 6.8e-08, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   6.51%, Time: 20:37:41 
+[opmodule.py][LSTMOp:train] total_batch:  96640, Train Loss: 0.0023, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   5.89%, Time: 20:39:20 
+[opmodule.py][LSTMOp:train] total_batch:  96768, Train Loss: 0.00051, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   6.25%, Time: 20:41:01 
+[opmodule.py][LSTMOp:train] total_batch:  96896, Train Loss: 3.3e-05, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   5.93%, Time: 20:42:42 
+[opmodule.py][LSTMOp:train] total_batch:  97024, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   5.63%, Time: 20:44:23 
+[opmodule.py][LSTMOp:train] total_batch:  97152, Train Loss: 0.00027, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.74%, Time: 20:46:04 
+[opmodule.py][LSTMOp:train] total_batch:  97280, Train Loss:  0.015, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   5.80%, Time: 20:47:44 
+[opmodule.py][LSTMOp:train] total_batch:  97408, Train Loss:  0.002, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   6.09%, Time: 20:49:26 
+[opmodule.py][LSTMOp:train] total_batch:  97536, Train Loss:   0.07, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   6.32%, Time: 20:51:08 
+[opmodule.py][LSTMOp:train] total_batch:  97664, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.54%, Time: 20:52:48 
+[opmodule.py][LSTMOp:train] total_batch:  97792, Train Loss: 5.4e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.67%, Time: 20:54:30 
+[opmodule.py][LSTMOp:train] total_batch:  97920, Train Loss: 0.00053, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.98%, Time: 20:56:10 
+[opmodule.py][LSTMOp:train] total_batch:  98048, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.73%, Time: 20:57:49 
+[opmodule.py][LSTMOp:train] total_batch:  98176, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   6.41%, Time: 20:59:30 
+[opmodule.py][LSTMOp:train] total_batch:  98304, Train Loss:   0.05, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   6.43%, Time: 21:01:11 
+[opmodule.py][LSTMOp:train] total_batch:  98432, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   5.85%, Time: 21:02:52 
+[opmodule.py][LSTMOp:train] total_batch:  98560, Train Loss:   0.09, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   6.15%, Time: 21:04:32 
+[opmodule.py][LSTMOp:train] total_batch:  98688, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   5.97%, Time: 21:06:12 
+[opmodule.py][LSTMOp:train] total_batch:  98816, Train Loss:  0.037, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   6.06%, Time: 21:07:53 
+[opmodule.py][LSTMOp:train] total_batch:  98944, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   6.35%, Time: 21:09:33 
+[opmodule.py][LSTMOp:train] total_batch:  99072, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   6.31%, Time: 21:11:15 
+[opmodule.py][LSTMOp:train] total_batch:  99200, Train Loss:  0.094, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   5.78%, Time: 21:12:55 
+[opmodule.py][LSTMOp:train] total_batch:  99328, Train Loss:  0.071, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   5.30%, Time: 21:14:36 
+[opmodule.py][LSTMOp:train] total_batch:  99456, Train Loss: 0.0084, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   5.32%, Time: 21:16:15 
+[opmodule.py][LSTMOp:train] total_batch:  99584, Train Loss: 6.1e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.27%, Time: 21:17:56 
+[opmodule.py][LSTMOp:train] total_batch:  99712, Train Loss:  0.003, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.86%, Time: 21:19:35 
+[opmodule.py][LSTMOp:train] total_batch:  99840, Train Loss: 1.1e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.94%, Time: 21:21:17 
+[opmodule.py][LSTMOp:train] total_batch:  99968, Train Loss: 6.2e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.93%, Time: 21:22:59 
+[opmodule.py][LSTMOp:train] total_batch: 100096, Train Loss:    0.1, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   6.96%, Time: 21:24:40 
+[opmodule.py][LSTMOp:train] total_batch: 100224, Train Loss:  0.035, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   6.88%, Time: 21:26:21 
+[opmodule.py][LSTMOp:train] total_batch: 100352, Train Loss: 1.2e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.01%, Time: 21:28:00 
+[opmodule.py][LSTMOp:train] total_batch: 100480, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.57%, Time: 21:29:39 
+[opmodule.py][LSTMOp:train] total_batch: 100608, Train Loss: 9.5e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   8.38%, Time: 21:31:18 
+[opmodule.py][LSTMOp:train] total_batch: 100736, Train Loss:  0.017, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   7.00%, Time: 21:32:58 
+[opmodule.py][LSTMOp:train] total_batch: 100864, Train Loss: 4.4e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.12%, Time: 21:34:39 
+[opmodule.py][LSTMOp:train] total_batch: 100992, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.72%, Time: 21:36:21 
+[opmodule.py][LSTMOp:train] total_batch: 101120, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   6.30%, Time: 21:38:01 
+[opmodule.py][LSTMOp:train] total_batch: 101248, Train Loss: 5.8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.60%, Time: 21:39:41 
+[opmodule.py][LSTMOp:train] total_batch: 101376, Train Loss: 0.00039, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.91%, Time: 21:41:21 
+[opmodule.py][LSTMOp:train] total_batch: 101504, Train Loss: 1.6e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.18%, Time: 21:43:02 
+[opmodule.py][LSTMOp:train] total_batch: 101632, Train Loss: 0.00026, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.45%, Time: 21:44:40 
+[opmodule.py][LSTMOp:train] total_batch: 101760, Train Loss:  0.002, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.50%, Time: 21:46:21 
+[opmodule.py][LSTMOp:train] total_batch: 101888, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.42%, Time: 21:48:00 
+[opmodule.py][LSTMOp:train] total_batch: 102016, Train Loss: 4.2e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.51%, Time: 21:49:41 
+[opmodule.py][LSTMOp:train] total_batch: 102144, Train Loss: 3.4e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.78%, Time: 21:51:21 
+[opmodule.py][LSTMOp:train] total_batch: 102272, Train Loss:  0.077, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.24%, Time: 21:53:00 
+[opmodule.py][LSTMOp:train] total_batch: 102400, Train Loss: 0.00054, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.27%, Time: 21:54:41 
+[opmodule.py][LSTMOp:train] total_batch: 102528, Train Loss: 8.6e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.96%, Time: 21:56:22 
+[opmodule.py][LSTMOp:train] total_batch: 102656, Train Loss: 2.8e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.82%, Time: 21:58:02 
+[opmodule.py][LSTMOp:train] total_batch: 102784, Train Loss:  0.018, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   6.89%, Time: 21:59:43 
+[opmodule.py][LSTMOp:train] total_batch: 102912, Train Loss:  0.074, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   6.87%, Time: 22:01:22 
+[opmodule.py][LSTMOp:train] total_batch: 103040, Train Loss:   0.11, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   7.17%, Time: 22:03:03 
+[opmodule.py][LSTMOp:train] total_batch: 103168, Train Loss:   0.04, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   7.75%, Time: 22:04:44 
+[opmodule.py][LSTMOp:train] total_batch: 103296, Train Loss: 1.5e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   7.17%, Time: 22:06:24 
+[opmodule.py][LSTMOp:train] total_batch: 103424, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   7.14%, Time: 22:08:03 
+[opmodule.py][LSTMOp:train] total_batch: 103552, Train Loss: 1.6e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   7.27%, Time: 22:09:34 
+[opmodule.py][LSTMOp:train] total_batch: 103680, Train Loss:  0.046, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   7.05%, Time: 22:11:03 
+[opmodule.py][LSTMOp:train] total_batch: 103808, Train Loss: 2.2e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.04%, Time: 22:12:32 
+[opmodule.py][LSTMOp:train] total_batch: 103936, Train Loss: 4.1e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.29%, Time: 22:14:00 
+[opmodule.py][LSTMOp:train] total_batch: 104064, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   7.14%, Time: 22:15:31 
+[opmodule.py][LSTMOp:train] total_batch: 104192, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.06%, Time: 22:17:02 
+[opmodule.py][LSTMOp:train] total_batch: 104320, Train Loss:  0.023, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.52%, Time: 22:18:41 
+[opmodule.py][LSTMOp:train] total_batch: 104448, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.23%, Time: 22:20:22 
+[opmodule.py][LSTMOp:train] total_batch: 104576, Train Loss:  1e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   7.19%, Time: 22:22:02 
+[opmodule.py][LSTMOp:train] total_batch: 104704, Train Loss: 0.0086, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.21%, Time: 22:23:41 
+[opmodule.py][LSTMOp:train] total_batch: 104832, Train Loss:  0.042, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   7.19%, Time: 22:25:19 
+[opmodule.py][LSTMOp:train] total_batch: 104960, Train Loss: 8.4e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.22%, Time: 22:27:00 
+[opmodule.py][LSTMOp:train] total_batch: 105088, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.56%, Time: 22:28:40 
+[opmodule.py][LSTMOp:train] total_batch: 105216, Train Loss:  4e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.93%, Time: 22:30:21 
+[opmodule.py][LSTMOp:train] total_batch: 105344, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.96%, Time: 22:32:00 
+[opmodule.py][LSTMOp:train] total_batch: 105472, Train Loss: 0.00022, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.64%, Time: 22:33:40 
+[opmodule.py][LSTMOp:train] total_batch: 105600, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   6.45%, Time: 22:35:21 
+[opmodule.py][LSTMOp:train] total_batch: 105728, Train Loss: 8.2e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   6.77%, Time: 22:37:03 
+[opmodule.py][LSTMOp:train] total_batch: 105856, Train Loss: 3.2e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.92%, Time: 22:38:44 
+[opmodule.py][LSTMOp:train] total_batch: 105984, Train Loss: 5.6e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.21%, Time: 22:40:27 
+[opmodule.py][LSTMOp:train] total_batch: 106112, Train Loss:   0.05, Train Acc:  98.44%, Val Loss: 2.7e+03, Val Acc:   7.00%, Time: 22:42:07 
+[opmodule.py][LSTMOp:train] total_batch: 106240, Train Loss: 3.6e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.15%, Time: 22:43:46 
+[opmodule.py][LSTMOp:train] total_batch: 106368, Train Loss: 0.00056, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   7.42%, Time: 22:45:26 
+[opmodule.py][LSTMOp:train] total_batch: 106496, Train Loss:   0.12, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   7.38%, Time: 22:47:05 
+[opmodule.py][LSTMOp:train] total_batch: 106624, Train Loss: 2.4e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.13%, Time: 22:48:46 
+[opmodule.py][LSTMOp:train] total_batch: 106752, Train Loss: 2.9e-08, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.92%, Time: 22:50:25 
+[opmodule.py][LSTMOp:train] total_batch: 106880, Train Loss: 0.0075, Train Acc:  99.22%, Val Loss: 2.4e+03, Val Acc:   6.68%, Time: 22:52:06 
+[opmodule.py][LSTMOp:train] total_batch: 107008, Train Loss:  0.075, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   6.53%, Time: 22:53:46 
+[opmodule.py][LSTMOp:train] total_batch: 107136, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.11%, Time: 22:55:26 
+[opmodule.py][LSTMOp:train] total_batch: 107264, Train Loss: 7.4e-07, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.14%, Time: 22:57:07 
+[opmodule.py][LSTMOp:train] total_batch: 107392, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 2.5e+03, Val Acc:   6.28%, Time: 22:58:48 
+[opmodule.py][LSTMOp:train] total_batch: 107520, Train Loss:  0.032, Train Acc:  98.44%, Val Loss: 2.6e+03, Val Acc:   6.59%, Time: 23:00:29 
+[opmodule.py][LSTMOp:train] total_batch: 107648, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 2.6e+03, Val Acc:   6.66%, Time: 23:02:11 
+[opmodule.py][LSTMOp:train] total_batch: 107776, Train Loss: 0.0018, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.61%, Time: 23:03:51 
+[opmodule.py][LSTMOp:train] total_batch: 107904, Train Loss: 0.00082, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.97%, Time: 23:05:32 
+[opmodule.py][LSTMOp:train] total_batch: 108032, Train Loss:  0.048, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   7.19%, Time: 23:07:10 
+[opmodule.py][LSTMOp:train] total_batch: 108160, Train Loss: 5.6e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   7.37%, Time: 23:08:51 
+[opmodule.py][LSTMOp:train] total_batch: 108288, Train Loss: 0.0035, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   7.47%, Time: 23:10:32 
+[opmodule.py][LSTMOp:train] total_batch: 108416, Train Loss: 2.2e-06, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.57%, Time: 23:12:13 
+[opmodule.py][LSTMOp:train] total_batch: 108544, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 2.5e+03, Val Acc:   6.96%, Time: 23:13:53 
+[opmodule.py][LSTMOp:train] total_batch: 108672, Train Loss: 4.5e-07, Train Acc: 100.00%, Val Loss: 2.6e+03, Val Acc:   6.99%, Time: 23:15:33 
+[opmodule.py][LSTMOp:train] total_batch: 108800, Train Loss:  0.026, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   5.62%, Time: 23:17:12 
+[opmodule.py][LSTMOp:train] total_batch: 108928, Train Loss: 6.9e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.69%, Time: 23:18:53 
+[opmodule.py][LSTMOp:train] total_batch: 109056, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.51%, Time: 23:20:34 
+[opmodule.py][LSTMOp:train] total_batch: 109184, Train Loss: 7.9e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.61%, Time: 23:22:14 
+[opmodule.py][LSTMOp:train] total_batch: 109312, Train Loss: 0.0062, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   5.94%, Time: 23:23:54 
+[opmodule.py][LSTMOp:train] total_batch: 109440, Train Loss:  0.047, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   6.03%, Time: 23:25:35 
+[opmodule.py][LSTMOp:train] total_batch: 109568, Train Loss: 0.0095, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.29%, Time: 23:27:13 
+[opmodule.py][LSTMOp:train] total_batch: 109696, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.43%, Time: 23:28:54 
+[opmodule.py][LSTMOp:train] total_batch: 109824, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   6.07%, Time: 23:30:34 
+[opmodule.py][LSTMOp:train] total_batch: 109952, Train Loss: 2.7e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.29%, Time: 23:32:14 
+[opmodule.py][LSTMOp:train] total_batch: 110080, Train Loss: 4.9e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.56%, Time: 23:33:53 
+[opmodule.py][LSTMOp:train] total_batch: 110208, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.55%, Time: 23:35:33 
+[opmodule.py][LSTMOp:train] total_batch: 110336, Train Loss: 0.00086, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.84%, Time: 23:37:12 
+[opmodule.py][LSTMOp:train] total_batch: 110464, Train Loss: 2.6e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.97%, Time: 23:38:52 
+[opmodule.py][LSTMOp:train] total_batch: 110592, Train Loss: 0.0049, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.70%, Time: 23:40:34 
+[opmodule.py][LSTMOp:train] total_batch: 110720, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.83%, Time: 23:42:14 
+[opmodule.py][LSTMOp:train] total_batch: 110848, Train Loss: 0.0093, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.93%, Time: 23:43:53 
+[opmodule.py][LSTMOp:train] total_batch: 110976, Train Loss: 4.9e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.66%, Time: 23:45:34 
+[opmodule.py][LSTMOp:train] total_batch: 111104, Train Loss: 0.0026, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   6.90%, Time: 23:47:15 
+[opmodule.py][LSTMOp:train] total_batch: 111232, Train Loss:  0.044, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   6.72%, Time: 23:48:54 
+[opmodule.py][LSTMOp:train] total_batch: 111360, Train Loss: 0.00066, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   6.00%, Time: 23:50:34 
+[opmodule.py][LSTMOp:train] total_batch: 111488, Train Loss:  0.046, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   6.12%, Time: 23:52:12 
+[opmodule.py][LSTMOp:train] total_batch: 111616, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   6.11%, Time: 23:53:52 
+[opmodule.py][LSTMOp:train] total_batch: 111744, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.95%, Time: 23:55:32 
+[opmodule.py][LSTMOp:train] total_batch: 111872, Train Loss:  0.052, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   6.32%, Time: 23:57:11 
+[opmodule.py][LSTMOp:train] total_batch: 112000, Train Loss: 0.0017, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.06%, Time: 23:58:50 
+[opmodule.py][LSTMOp:train] total_batch: 112128, Train Loss:  0.059, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   6.01%, Time: 1 day, 0:00:32 
+[opmodule.py][LSTMOp:train] total_batch: 112256, Train Loss: 4.6e-06, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.73%, Time: 1 day, 0:02:13 
+[opmodule.py][LSTMOp:train] total_batch: 112384, Train Loss:  7e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.49%, Time: 1 day, 0:03:54 
+[opmodule.py][LSTMOp:train] total_batch: 112512, Train Loss: 3.1e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.38%, Time: 1 day, 0:05:33 
+[opmodule.py][LSTMOp:train] total_batch: 112640, Train Loss: 3.3e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.35%, Time: 1 day, 0:07:11 
+[opmodule.py][LSTMOp:train] total_batch: 112768, Train Loss:  0.013, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   6.39%, Time: 1 day, 0:08:51 
+[opmodule.py][LSTMOp:train] total_batch: 112896, Train Loss:   0.02, Train Acc:  98.44%, Val Loss: 2.9e+03, Val Acc:   5.90%, Time: 1 day, 0:10:31 
+[opmodule.py][LSTMOp:train] total_batch: 113024, Train Loss:  0.039, Train Acc:  98.44%, Val Loss: 2.8e+03, Val Acc:   5.75%, Time: 1 day, 0:12:13 
+[opmodule.py][LSTMOp:train] total_batch: 113152, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.92%, Time: 1 day, 0:13:53 
+[opmodule.py][LSTMOp:train] total_batch: 113280, Train Loss:   0.03, Train Acc:  99.22%, Val Loss: 2.6e+03, Val Acc:   6.21%, Time: 1 day, 0:15:31 
+[opmodule.py][LSTMOp:train] total_batch: 113408, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   6.34%, Time: 1 day, 0:17:13 
+[opmodule.py][LSTMOp:train] total_batch: 113536, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.92%, Time: 1 day, 0:18:53 
+[opmodule.py][LSTMOp:train] total_batch: 113664, Train Loss: 7.3e-07, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.54%, Time: 1 day, 0:20:32 
+[opmodule.py][LSTMOp:train] total_batch: 113792, Train Loss: 4.8e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.15%, Time: 1 day, 0:22:12 
+[opmodule.py][LSTMOp:train] total_batch: 113920, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 2.7e+03, Val Acc:   5.05%, Time: 1 day, 0:23:50 
+[opmodule.py][LSTMOp:train] total_batch: 114048, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.19%, Time: 1 day, 0:25:30 
+[opmodule.py][LSTMOp:train] total_batch: 114176, Train Loss: 7.3e-05, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   5.06%, Time: 1 day, 0:27:09 
+[opmodule.py][LSTMOp:train] total_batch: 114304, Train Loss: 0.00051, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   5.09%, Time: 1 day, 0:28:47 
+[opmodule.py][LSTMOp:train] total_batch: 114432, Train Loss: 4.4e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.34%, Time: 1 day, 0:30:27 
+[opmodule.py][LSTMOp:train] total_batch: 114560, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   5.27%, Time: 1 day, 0:32:05 
+[opmodule.py][LSTMOp:train] total_batch: 114688, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.06%, Time: 1 day, 0:33:43 
+[opmodule.py][LSTMOp:train] total_batch: 114816, Train Loss:  0.064, Train Acc:  98.44%, Val Loss: 3.1e+03, Val Acc:   5.08%, Time: 1 day, 0:35:21 
+[opmodule.py][LSTMOp:train] total_batch: 114944, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.86%, Time: 1 day, 0:37:01 
+[opmodule.py][LSTMOp:train] total_batch: 115072, Train Loss: 0.0006, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.03%, Time: 1 day, 0:38:40 
+[opmodule.py][LSTMOp:train] total_batch: 115200, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   5.37%, Time: 1 day, 0:40:19 
+[opmodule.py][LSTMOp:train] total_batch: 115328, Train Loss: 1.7e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.52%, Time: 1 day, 0:41:57 
+[opmodule.py][LSTMOp:train] total_batch: 115456, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   5.28%, Time: 1 day, 0:43:38 
+[opmodule.py][LSTMOp:train] total_batch: 115584, Train Loss:  0.005, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.40%, Time: 1 day, 0:45:16 
+[opmodule.py][LSTMOp:train] total_batch: 115712, Train Loss: 5.3e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.37%, Time: 1 day, 0:46:56 
+[opmodule.py][LSTMOp:train] total_batch: 115840, Train Loss: 2.7e-07, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.43%, Time: 1 day, 0:48:35 
+[opmodule.py][LSTMOp:train] total_batch: 115968, Train Loss: 1.1e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.06%, Time: 1 day, 0:50:14 
+[opmodule.py][LSTMOp:train] total_batch: 116096, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.41%, Time: 1 day, 0:51:52 
+[opmodule.py][LSTMOp:train] total_batch: 116224, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.36%, Time: 1 day, 0:53:30 
+[opmodule.py][LSTMOp:train] total_batch: 116352, Train Loss:  2e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.26%, Time: 1 day, 0:55:08 
+[opmodule.py][LSTMOp:train] total_batch: 116480, Train Loss: 3.8e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.87%, Time: 1 day, 0:56:47 
+[opmodule.py][LSTMOp:train] total_batch: 116608, Train Loss: 6.4e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.68%, Time: 1 day, 0:58:25 
+[opmodule.py][LSTMOp:train] total_batch: 116736, Train Loss:  0.066, Train Acc:  98.44%, Val Loss: 3.2e+03, Val Acc:   4.31%, Time: 1 day, 1:00:03 
+[opmodule.py][LSTMOp:train] total_batch: 116864, Train Loss: 0.0074, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   4.58%, Time: 1 day, 1:01:43 
+[opmodule.py][LSTMOp:train] total_batch: 116992, Train Loss: 5.5e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.26%, Time: 1 day, 1:03:23 
+[opmodule.py][LSTMOp:train] total_batch: 117120, Train Loss: 1.8e-06, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   3.89%, Time: 1 day, 1:05:02 
+[opmodule.py][LSTMOp:train] total_batch: 117248, Train Loss: 0.0046, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.03%, Time: 1 day, 1:06:39 
+[opmodule.py][LSTMOp:train] total_batch: 117376, Train Loss: 0.0045, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.24%, Time: 1 day, 1:08:17 
+[opmodule.py][LSTMOp:train] total_batch: 117504, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.99%, Time: 1 day, 1:09:54 
+[opmodule.py][LSTMOp:train] total_batch: 117632, Train Loss: 0.00099, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.68%, Time: 1 day, 1:11:33 
+[opmodule.py][LSTMOp:train] total_batch: 117760, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   5.14%, Time: 1 day, 1:13:11 
+[opmodule.py][LSTMOp:train] total_batch: 117888, Train Loss: 0.0073, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   5.09%, Time: 1 day, 1:14:50 
+[opmodule.py][LSTMOp:train] total_batch: 118016, Train Loss: 0.0096, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   5.32%, Time: 1 day, 1:16:29 
+[opmodule.py][LSTMOp:train] total_batch: 118144, Train Loss: 0.0031, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.06%, Time: 1 day, 1:18:06 
+[opmodule.py][LSTMOp:train] total_batch: 118272, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 3.1e+03, Val Acc:   5.15%, Time: 1 day, 1:19:46 
+[opmodule.py][LSTMOp:train] total_batch: 118400, Train Loss: 6.3e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.83%, Time: 1 day, 1:21:26 
+[opmodule.py][LSTMOp:train] total_batch: 118528, Train Loss:  0.093, Train Acc:  98.44%, Val Loss: 3.1e+03, Val Acc:   5.99%, Time: 1 day, 1:23:04 
+[opmodule.py][LSTMOp:train] total_batch: 118656, Train Loss: 0.00068, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.83%, Time: 1 day, 1:24:42 
+[opmodule.py][LSTMOp:train] total_batch: 118784, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.50%, Time: 1 day, 1:26:20 
+[opmodule.py][LSTMOp:train] total_batch: 118912, Train Loss: 3.4e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.04%, Time: 1 day, 1:27:58 
+[opmodule.py][LSTMOp:train] total_batch: 119040, Train Loss: 1.3e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.20%, Time: 1 day, 1:29:34 
+[opmodule.py][LSTMOp:train] total_batch: 119168, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.21%, Time: 1 day, 1:31:13 
+[opmodule.py][LSTMOp:train] total_batch: 119296, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   5.34%, Time: 1 day, 1:32:54 
+[opmodule.py][LSTMOp:train] total_batch: 119424, Train Loss: 2.8e-06, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   5.02%, Time: 1 day, 1:34:31 
+[opmodule.py][LSTMOp:train] total_batch: 119552, Train Loss:  0.078, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   5.14%, Time: 1 day, 1:36:11 
+[opmodule.py][LSTMOp:train] total_batch: 119680, Train Loss:  3e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.85%, Time: 1 day, 1:37:51 
+[opmodule.py][LSTMOp:train] total_batch: 119808, Train Loss: 0.00015, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.88%, Time: 1 day, 1:39:31 
+[opmodule.py][LSTMOp:train] total_batch: 119936, Train Loss: 3.9e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.63%, Time: 1 day, 1:41:09 
+[opmodule.py][LSTMOp:train] total_batch: 120064, Train Loss:  0.041, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   4.77%, Time: 1 day, 1:42:47 
+[opmodule.py][LSTMOp:train] total_batch: 120192, Train Loss: 0.00046, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.64%, Time: 1 day, 1:44:26 
+[opmodule.py][LSTMOp:train] total_batch: 120320, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.95%, Time: 1 day, 1:46:04 
+[opmodule.py][LSTMOp:train] total_batch: 120448, Train Loss:  0.033, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   5.22%, Time: 1 day, 1:47:42 
+[opmodule.py][LSTMOp:train] total_batch: 120576, Train Loss: 7.6e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.99%, Time: 1 day, 1:49:21 
+[opmodule.py][LSTMOp:train] total_batch: 120704, Train Loss:   0.07, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   5.04%, Time: 1 day, 1:51:00 
+[opmodule.py][LSTMOp:train] total_batch: 120832, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   5.19%, Time: 1 day, 1:52:38 
+[opmodule.py][LSTMOp:train] total_batch: 120960, Train Loss:  0.055, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   5.11%, Time: 1 day, 1:54:18 
+[opmodule.py][LSTMOp:train] total_batch: 121088, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.65%, Time: 1 day, 1:55:57 
+[opmodule.py][LSTMOp:train] total_batch: 121216, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.71%, Time: 1 day, 1:57:37 
+[opmodule.py][LSTMOp:train] total_batch: 121344, Train Loss: 5.8e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.52%, Time: 1 day, 1:59:16 
+[opmodule.py][LSTMOp:train] total_batch: 121472, Train Loss: 0.0082, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.17%, Time: 1 day, 2:00:54 
+[opmodule.py][LSTMOp:train] total_batch: 121600, Train Loss:  0.096, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   5.15%, Time: 1 day, 2:02:32 
+[opmodule.py][LSTMOp:train] total_batch: 121728, Train Loss: 0.0033, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.05%, Time: 1 day, 2:04:09 
+[opmodule.py][LSTMOp:train] total_batch: 121856, Train Loss: 0.0016, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.39%, Time: 1 day, 2:05:48 
+[opmodule.py][LSTMOp:train] total_batch: 121984, Train Loss: 0.00016, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.99%, Time: 1 day, 2:07:27 
+[opmodule.py][LSTMOp:train] total_batch: 122112, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.84%, Time: 1 day, 2:09:05 
+[opmodule.py][LSTMOp:train] total_batch: 122240, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   4.72%, Time: 1 day, 2:10:42 
+[opmodule.py][LSTMOp:train] total_batch: 122368, Train Loss: 0.00031, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.90%, Time: 1 day, 2:12:20 
+[opmodule.py][LSTMOp:train] total_batch: 122496, Train Loss:   0.12, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   5.13%, Time: 1 day, 2:13:59 
+[opmodule.py][LSTMOp:train] total_batch: 122624, Train Loss: 1.2e-06, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.01%, Time: 1 day, 2:15:38 
+[opmodule.py][LSTMOp:train] total_batch: 122752, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   4.96%, Time: 1 day, 2:17:16 
+[opmodule.py][LSTMOp:train] total_batch: 122880, Train Loss: 0.0018, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   5.10%, Time: 1 day, 2:18:54 
+[opmodule.py][LSTMOp:train] total_batch: 123008, Train Loss: 4.7e-07, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.31%, Time: 1 day, 2:20:33 
+[opmodule.py][LSTMOp:train] total_batch: 123136, Train Loss: 0.0079, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   5.52%, Time: 1 day, 2:22:12 
+[opmodule.py][LSTMOp:train] total_batch: 123264, Train Loss: 2.4e-06, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   5.35%, Time: 1 day, 2:23:50 
+[opmodule.py][LSTMOp:train] total_batch: 123392, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   5.25%, Time: 1 day, 2:25:29 
+[opmodule.py][LSTMOp:train] total_batch: 123520, Train Loss:  0.047, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.99%, Time: 1 day, 2:27:08 
+[opmodule.py][LSTMOp:train] total_batch: 123648, Train Loss:  0.085, Train Acc:  98.44%, Val Loss: 3.2e+03, Val Acc:   4.67%, Time: 1 day, 2:28:47 
+[opmodule.py][LSTMOp:train] total_batch: 123776, Train Loss:  0.084, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   4.85%, Time: 1 day, 2:30:25 
+[opmodule.py][LSTMOp:train] total_batch: 123904, Train Loss:  0.038, Train Acc:  98.44%, Val Loss: 3.2e+03, Val Acc:   5.09%, Time: 1 day, 2:32:04 
+[opmodule.py][LSTMOp:train] total_batch: 124032, Train Loss:  7e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   4.99%, Time: 1 day, 2:33:43 
+[opmodule.py][LSTMOp:train] total_batch: 124160, Train Loss: 0.0048, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   4.87%, Time: 1 day, 2:35:20 
+[opmodule.py][LSTMOp:train] total_batch: 124288, Train Loss:  0.062, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   5.03%, Time: 1 day, 2:36:59 
+[opmodule.py][LSTMOp:train] total_batch: 124416, Train Loss:  0.075, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   4.86%, Time: 1 day, 2:38:37 
+[opmodule.py][LSTMOp:train] total_batch: 124544, Train Loss:  0.004, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.60%, Time: 1 day, 2:40:17 
+[opmodule.py][LSTMOp:train] total_batch: 124672, Train Loss:    0.1, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   4.47%, Time: 1 day, 2:41:54 
+[opmodule.py][LSTMOp:train] total_batch: 124800, Train Loss: 0.00022, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.47%, Time: 1 day, 2:43:32 
+[opmodule.py][LSTMOp:train] total_batch: 124928, Train Loss: 3.8e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.10%, Time: 1 day, 2:45:12 
+[opmodule.py][LSTMOp:train] total_batch: 125056, Train Loss: 2.3e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.03%, Time: 1 day, 2:46:50 
+[opmodule.py][LSTMOp:train] total_batch: 125184, Train Loss: 0.0071, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.81%, Time: 1 day, 2:48:29 
+[opmodule.py][LSTMOp:train] total_batch: 125312, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   3.57%, Time: 1 day, 2:50:07 
+[opmodule.py][LSTMOp:train] total_batch: 125440, Train Loss:  0.052, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   3.48%, Time: 1 day, 2:51:48 
+[opmodule.py][LSTMOp:train] total_batch: 125568, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   4.06%, Time: 1 day, 2:53:26 
+[opmodule.py][LSTMOp:train] total_batch: 125696, Train Loss: 0.0065, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.72%, Time: 1 day, 2:55:06 
+[opmodule.py][LSTMOp:train] total_batch: 125824, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:   3.95%, Time: 1 day, 2:56:46 
+[opmodule.py][LSTMOp:train] total_batch: 125952, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.65%, Time: 1 day, 2:58:24 
+[opmodule.py][LSTMOp:train] total_batch: 126080, Train Loss:  8e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.98%, Time: 1 day, 3:00:03 
+[opmodule.py][LSTMOp:train] total_batch: 126208, Train Loss:  0.046, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.95%, Time: 1 day, 3:01:42 
+[opmodule.py][LSTMOp:train] total_batch: 126336, Train Loss: 0.0002, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.07%, Time: 1 day, 3:03:20 
+[opmodule.py][LSTMOp:train] total_batch: 126464, Train Loss: 0.00015, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.65%, Time: 1 day, 3:04:59 
+[opmodule.py][LSTMOp:train] total_batch: 126592, Train Loss:   0.09, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   3.78%, Time: 1 day, 3:06:37 
+[opmodule.py][LSTMOp:train] total_batch: 126720, Train Loss: 0.0031, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.23%, Time: 1 day, 3:08:17 
+[opmodule.py][LSTMOp:train] total_batch: 126848, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   2.98%, Time: 1 day, 3:09:56 
+[opmodule.py][LSTMOp:train] total_batch: 126976, Train Loss: 0.00045, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.03%, Time: 1 day, 3:11:35 
+[opmodule.py][LSTMOp:train] total_batch: 127104, Train Loss:   0.18, Train Acc:  97.66%, Val Loss: 3.4e+03, Val Acc:   3.06%, Time: 1 day, 3:13:12 
+[opmodule.py][LSTMOp:train] total_batch: 127232, Train Loss: 6.5e-06, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.45%, Time: 1 day, 3:14:51 
+[opmodule.py][LSTMOp:train] total_batch: 127360, Train Loss:  0.047, Train Acc:  99.22%, Val Loss: 3.3e+03, Val Acc:   3.54%, Time: 1 day, 3:16:30 
+[opmodule.py][LSTMOp:train] total_batch: 127488, Train Loss: 0.0058, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   3.35%, Time: 1 day, 3:18:08 
+[opmodule.py][LSTMOp:train] total_batch: 127616, Train Loss: 0.0001, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.28%, Time: 1 day, 3:19:48 
+[opmodule.py][LSTMOp:train] total_batch: 127744, Train Loss:  0.029, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   3.33%, Time: 1 day, 3:21:27 
+[opmodule.py][LSTMOp:train] total_batch: 127872, Train Loss: 0.00026, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.04%, Time: 1 day, 3:23:07 
+[opmodule.py][LSTMOp:train] total_batch: 128000, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.05%, Time: 1 day, 3:24:46 
+[opmodule.py][LSTMOp:train] total_batch: 128128, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   3.02%, Time: 1 day, 3:26:24 
+[opmodule.py][LSTMOp:train] total_batch: 128256, Train Loss:  0.015, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.93%, Time: 1 day, 3:28:03 
+[opmodule.py][LSTMOp:train] total_batch: 128384, Train Loss: 3.2e-06, Train Acc: 100.00%, Val Loss: 3.7e+03, Val Acc:   3.70%, Time: 1 day, 3:29:42 
+[opmodule.py][LSTMOp:train] total_batch: 128512, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.17%, Time: 1 day, 3:31:22 
+[opmodule.py][LSTMOp:train] total_batch: 128640, Train Loss:  0.023, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   2.69%, Time: 1 day, 3:33:02 
+[opmodule.py][LSTMOp:train] total_batch: 128768, Train Loss:   0.01, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.79%, Time: 1 day, 3:34:42 
+[opmodule.py][LSTMOp:train] total_batch: 128896, Train Loss: 0.0097, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   2.82%, Time: 1 day, 3:36:19 
+[opmodule.py][LSTMOp:train] total_batch: 129024, Train Loss:  0.015, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   2.94%, Time: 1 day, 3:37:59 
+[opmodule.py][LSTMOp:train] total_batch: 129152, Train Loss: 0.00018, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.67%, Time: 1 day, 3:39:38 
+[opmodule.py][LSTMOp:train] total_batch: 129280, Train Loss:  0.089, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:   3.01%, Time: 1 day, 3:41:17 
+[opmodule.py][LSTMOp:train] total_batch: 129408, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   3.28%, Time: 1 day, 3:42:56 
+[opmodule.py][LSTMOp:train] total_batch: 129536, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.45%, Time: 1 day, 3:44:35 
+[opmodule.py][LSTMOp:train] total_batch: 129664, Train Loss: 0.0042, Train Acc: 100.00%, Val Loss: 3.7e+03, Val Acc:   2.93%, Time: 1 day, 3:46:14 
+[opmodule.py][LSTMOp:train] total_batch: 129792, Train Loss:  0.071, Train Acc:  98.44%, Val Loss: 3.4e+03, Val Acc:   3.22%, Time: 1 day, 3:47:53 
+[opmodule.py][LSTMOp:train] total_batch: 129920, Train Loss: 0.0021, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.38%, Time: 1 day, 3:49:32 
+[opmodule.py][LSTMOp:train] total_batch: 130048, Train Loss:  0.057, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   3.45%, Time: 1 day, 3:51:09 
+[opmodule.py][LSTMOp:train] total_batch: 130176, Train Loss:  0.099, Train Acc:  97.66%, Val Loss: 3.5e+03, Val Acc:   3.27%, Time: 1 day, 3:52:46 
+[opmodule.py][LSTMOp:train] total_batch: 130304, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.44%, Time: 1 day, 3:54:26 
+[opmodule.py][LSTMOp:train] total_batch: 130432, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.97%, Time: 1 day, 3:56:06 
+[opmodule.py][LSTMOp:train] total_batch: 130560, Train Loss: 6.3e-05, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   3.89%, Time: 1 day, 3:57:46 
+[opmodule.py][LSTMOp:train] total_batch: 130688, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   3.39%, Time: 1 day, 3:59:25 
+[opmodule.py][LSTMOp:train] total_batch: 130816, Train Loss:  2e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   3.66%, Time: 1 day, 4:01:02 
+[opmodule.py][LSTMOp:train] total_batch: 130944, Train Loss:  0.037, Train Acc:  98.44%, Val Loss: 3.1e+03, Val Acc:   3.60%, Time: 1 day, 4:02:40 
+[opmodule.py][LSTMOp:train] total_batch: 131072, Train Loss: 8.5e-05, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   3.83%, Time: 1 day, 4:04:19 
+[opmodule.py][LSTMOp:train] total_batch: 131200, Train Loss: 0.00057, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   3.32%, Time: 1 day, 4:05:55 
+[opmodule.py][LSTMOp:train] total_batch: 131328, Train Loss:  0.047, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.31%, Time: 1 day, 4:07:34 
+[opmodule.py][LSTMOp:train] total_batch: 131456, Train Loss: 0.0052, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   2.93%, Time: 1 day, 4:09:12 
+[opmodule.py][LSTMOp:train] total_batch: 131584, Train Loss: 0.00021, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   2.72%, Time: 1 day, 4:10:51 
+[opmodule.py][LSTMOp:train] total_batch: 131712, Train Loss:   0.11, Train Acc:  97.66%, Val Loss:  3e+03, Val Acc:   3.38%, Time: 1 day, 4:12:29 
+[opmodule.py][LSTMOp:train] total_batch: 131840, Train Loss: 5.3e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   3.55%, Time: 1 day, 4:14:07 
+[opmodule.py][LSTMOp:train] total_batch: 131968, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   3.45%, Time: 1 day, 4:15:45 
+[opmodule.py][LSTMOp:train] total_batch: 132096, Train Loss: 0.00014, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   3.73%, Time: 1 day, 4:17:24 
+[opmodule.py][LSTMOp:train] total_batch: 132224, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.18%, Time: 1 day, 4:19:03 
+[opmodule.py][LSTMOp:train] total_batch: 132352, Train Loss: 0.00018, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   3.37%, Time: 1 day, 4:20:43 
+[opmodule.py][LSTMOp:train] total_batch: 132480, Train Loss: 0.00028, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   3.59%, Time: 1 day, 4:22:19 
+[opmodule.py][LSTMOp:train] total_batch: 132608, Train Loss:   0.15, Train Acc:  98.44%, Val Loss: 2.7e+03, Val Acc:   4.00%, Time: 1 day, 4:23:59 
+[opmodule.py][LSTMOp:train] total_batch: 132736, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.71%, Time: 1 day, 4:25:36 
+[opmodule.py][LSTMOp:train] total_batch: 132864, Train Loss:  0.076, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.44%, Time: 1 day, 4:27:14 
+[opmodule.py][LSTMOp:train] total_batch: 132992, Train Loss:    0.1, Train Acc:  97.66%, Val Loss: 2.8e+03, Val Acc:   3.80%, Time: 1 day, 4:28:51 
+[opmodule.py][LSTMOp:train] total_batch: 133120, Train Loss: 0.00082, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   4.11%, Time: 1 day, 4:30:31 
+[opmodule.py][LSTMOp:train] total_batch: 133248, Train Loss:  0.086, Train Acc:  97.66%, Val Loss: 2.9e+03, Val Acc:   3.71%, Time: 1 day, 4:32:09 
+[opmodule.py][LSTMOp:train] total_batch: 133376, Train Loss: 0.0035, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   3.51%, Time: 1 day, 4:33:48 
+[opmodule.py][LSTMOp:train] total_batch: 133504, Train Loss: 0.0091, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   3.31%, Time: 1 day, 4:35:30 
+[opmodule.py][LSTMOp:train] total_batch: 133632, Train Loss:  0.033, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   3.27%, Time: 1 day, 4:37:10 
+[opmodule.py][LSTMOp:train] total_batch: 133760, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 2.9e+03, Val Acc:   3.13%, Time: 1 day, 4:38:49 
+[opmodule.py][LSTMOp:train] total_batch: 133888, Train Loss: 2.1e-05, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   3.26%, Time: 1 day, 4:40:28 
+[opmodule.py][LSTMOp:train] total_batch: 134016, Train Loss:  0.064, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.07%, Time: 1 day, 4:42:06 
+[opmodule.py][LSTMOp:train] total_batch: 134144, Train Loss:  0.088, Train Acc:  97.66%, Val Loss: 2.7e+03, Val Acc:   3.67%, Time: 1 day, 4:43:46 
+[opmodule.py][LSTMOp:train] total_batch: 134272, Train Loss: 0.0019, Train Acc: 100.00%, Val Loss: 2.7e+03, Val Acc:   3.68%, Time: 1 day, 4:45:25 
+[opmodule.py][LSTMOp:train] total_batch: 134400, Train Loss:  0.009, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.67%, Time: 1 day, 4:47:05 
+[opmodule.py][LSTMOp:train] total_batch: 134528, Train Loss: 9.7e-06, Train Acc: 100.00%, Val Loss: 2.8e+03, Val Acc:   3.90%, Time: 1 day, 4:48:41 
+[opmodule.py][LSTMOp:train] total_batch: 134656, Train Loss:  0.049, Train Acc:  99.22%, Val Loss: 2.8e+03, Val Acc:   3.77%, Time: 1 day, 4:50:21 
+[opmodule.py][LSTMOp:train] total_batch: 134784, Train Loss:  0.042, Train Acc:  98.44%, Val Loss: 2.9e+03, Val Acc:   3.95%, Time: 1 day, 4:52:00 
+[opmodule.py][LSTMOp:train] total_batch: 134912, Train Loss:   0.17, Train Acc:  97.66%, Val Loss: 2.9e+03, Val Acc:   3.56%, Time: 1 day, 4:53:39 
+[opmodule.py][LSTMOp:train] total_batch: 135040, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   3.40%, Time: 1 day, 4:55:17 
+[opmodule.py][LSTMOp:train] total_batch: 135168, Train Loss:  0.086, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.42%, Time: 1 day, 4:56:56 
+[opmodule.py][LSTMOp:train] total_batch: 135296, Train Loss:  0.014, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   3.74%, Time: 1 day, 4:58:36 
+[opmodule.py][LSTMOp:train] total_batch: 135424, Train Loss:  0.037, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.47%, Time: 1 day, 5:00:14 
+[opmodule.py][LSTMOp:train] total_batch: 135552, Train Loss:  1e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   3.41%, Time: 1 day, 5:01:53 
+[opmodule.py][LSTMOp:train] total_batch: 135680, Train Loss:  0.021, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.61%, Time: 1 day, 5:03:32 
+[opmodule.py][LSTMOp:train] total_batch: 135808, Train Loss:   0.02, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.80%, Time: 1 day, 5:05:10 
+[opmodule.py][LSTMOp:train] total_batch: 135936, Train Loss:  0.093, Train Acc:  98.44%, Val Loss:  3e+03, Val Acc:   3.90%, Time: 1 day, 5:06:49 
+[opmodule.py][LSTMOp:train] total_batch: 136064, Train Loss:  0.048, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   4.24%, Time: 1 day, 5:08:27 
+[opmodule.py][LSTMOp:train] total_batch: 136192, Train Loss: 2.9e-05, Train Acc: 100.00%, Val Loss: 3.1e+03, Val Acc:   3.61%, Time: 1 day, 5:10:06 
+[opmodule.py][LSTMOp:train] total_batch: 136320, Train Loss:  0.025, Train Acc:  99.22%, Val Loss:  3e+03, Val Acc:   3.93%, Time: 1 day, 5:11:45 
+[opmodule.py][LSTMOp:train] total_batch: 136448, Train Loss:  0.049, Train Acc:  99.22%, Val Loss: 2.9e+03, Val Acc:   4.78%, Time: 1 day, 5:13:25 
+[opmodule.py][LSTMOp:train] total_batch: 136576, Train Loss:  0.064, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.56%, Time: 1 day, 5:15:04 
+[opmodule.py][LSTMOp:train] total_batch: 136704, Train Loss: 0.00066, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.29%, Time: 1 day, 5:16:43 
+[opmodule.py][LSTMOp:train] total_batch: 136832, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.56%, Time: 1 day, 5:18:23 
+[opmodule.py][LSTMOp:train] total_batch: 136960, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   4.26%, Time: 1 day, 5:20:01 
+[opmodule.py][LSTMOp:train] total_batch: 137088, Train Loss:  0.045, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.28%, Time: 1 day, 5:21:41 
+[opmodule.py][LSTMOp:train] total_batch: 137216, Train Loss: 0.0089, Train Acc: 100.00%, Val Loss: 3.2e+03, Val Acc:   4.32%, Time: 1 day, 5:23:21 
+[opmodule.py][LSTMOp:train] total_batch: 137344, Train Loss: 7.7e-05, Train Acc: 100.00%, Val Loss:  3e+03, Val Acc:   4.16%, Time: 1 day, 5:24:59 
+[opmodule.py][LSTMOp:train] total_batch: 137472, Train Loss:  0.099, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.06%, Time: 1 day, 5:26:38 
+[opmodule.py][LSTMOp:train] total_batch: 137600, Train Loss:  0.038, Train Acc:  99.22%, Val Loss: 3.1e+03, Val Acc:   4.01%, Time: 1 day, 5:28:16 
+[opmodule.py][LSTMOp:train] total_batch: 137728, Train Loss:   0.04, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   4.22%, Time: 1 day, 5:29:53 
+[opmodule.py][LSTMOp:train] total_batch: 137856, Train Loss:  0.041, Train Acc:  99.22%, Val Loss: 3.2e+03, Val Acc:   4.18%, Time: 1 day, 5:31:31 
+[opmodule.py][LSTMOp:train] total_batch: 137984, Train Loss:   0.14, Train Acc:  97.66%, Val Loss: 3.3e+03, Val Acc:   4.10%, Time: 1 day, 5:33:10 
+[opmodule.py][LSTMOp:train] total_batch: 138112, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   4.04%, Time: 1 day, 5:34:50 
+[opmodule.py][LSTMOp:train] total_batch: 138240, Train Loss:  0.028, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   4.01%, Time: 1 day, 5:36:27 
+[opmodule.py][LSTMOp:train] total_batch: 138368, Train Loss: 0.0059, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.86%, Time: 1 day, 5:38:07 
+[opmodule.py][LSTMOp:train] total_batch: 138496, Train Loss: 0.0099, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.47%, Time: 1 day, 5:39:45 
+[opmodule.py][LSTMOp:train] total_batch: 138624, Train Loss:  0.065, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.32%, Time: 1 day, 5:41:24 
+[opmodule.py][LSTMOp:train] total_batch: 138752, Train Loss: 0.00057, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.53%, Time: 1 day, 5:43:02 
+[opmodule.py][LSTMOp:train] total_batch: 138880, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.61%, Time: 1 day, 5:44:40 
+[opmodule.py][LSTMOp:train] total_batch: 139008, Train Loss: 0.00018, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.90%, Time: 1 day, 5:46:20 
+[opmodule.py][LSTMOp:train] total_batch: 139136, Train Loss: 8.4e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.44%, Time: 1 day, 5:48:00 
+[opmodule.py][LSTMOp:train] total_batch: 139264, Train Loss: 0.00047, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   4.43%, Time: 1 day, 5:49:38 
+[opmodule.py][LSTMOp:train] total_batch: 139392, Train Loss: 0.0052, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   4.44%, Time: 1 day, 5:51:18 
+[opmodule.py][LSTMOp:train] total_batch: 139520, Train Loss:  0.005, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   4.69%, Time: 1 day, 5:52:58 
+[opmodule.py][LSTMOp:train] total_batch: 139648, Train Loss:  0.036, Train Acc:  97.66%, Val Loss: 3.5e+03, Val Acc:   4.55%, Time: 1 day, 5:54:37 
+[opmodule.py][LSTMOp:train] total_batch: 139776, Train Loss: 0.00092, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   4.47%, Time: 1 day, 5:56:17 
+[opmodule.py][LSTMOp:train] total_batch: 139904, Train Loss:  0.061, Train Acc:  98.44%, Val Loss: 3.6e+03, Val Acc:   4.05%, Time: 1 day, 5:57:56 
+[opmodule.py][LSTMOp:train] total_batch: 140032, Train Loss:  0.041, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   4.11%, Time: 1 day, 5:59:34 
+[opmodule.py][LSTMOp:train] total_batch: 140160, Train Loss:  0.088, Train Acc:  98.44%, Val Loss: 3.7e+03, Val Acc:   4.34%, Time: 1 day, 6:01:14 
+[opmodule.py][LSTMOp:train] total_batch: 140288, Train Loss:  0.051, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   4.47%, Time: 1 day, 6:02:53 
+[opmodule.py][LSTMOp:train] total_batch: 140416, Train Loss: 0.0057, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   4.51%, Time: 1 day, 6:04:33 
+[opmodule.py][LSTMOp:train] total_batch: 140544, Train Loss: 0.0019, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   4.46%, Time: 1 day, 6:06:10 
+[opmodule.py][LSTMOp:train] total_batch: 140672, Train Loss: 0.0087, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   4.52%, Time: 1 day, 6:07:48 
+[opmodule.py][LSTMOp:train] total_batch: 140800, Train Loss:   0.11, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   4.20%, Time: 1 day, 6:09:27 
+[opmodule.py][LSTMOp:train] total_batch: 140928, Train Loss:  0.068, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   3.94%, Time: 1 day, 6:11:05 
+[opmodule.py][LSTMOp:train] total_batch: 141056, Train Loss:  0.038, Train Acc:  98.44%, Val Loss: 3.8e+03, Val Acc:   3.54%, Time: 1 day, 6:12:45 
+[opmodule.py][LSTMOp:train] total_batch: 141184, Train Loss:   0.12, Train Acc:  98.44%, Val Loss: 3.8e+03, Val Acc:   3.73%, Time: 1 day, 6:14:24 
+[opmodule.py][LSTMOp:train] total_batch: 141312, Train Loss:  0.028, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   3.83%, Time: 1 day, 6:16:02 
+[opmodule.py][LSTMOp:train] total_batch: 141440, Train Loss:  0.082, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   4.07%, Time: 1 day, 6:17:40 
+[opmodule.py][LSTMOp:train] total_batch: 141568, Train Loss:  0.034, Train Acc:  98.44%, Val Loss: 3.6e+03, Val Acc:   4.11%, Time: 1 day, 6:19:19 
+[opmodule.py][LSTMOp:train] total_batch: 141696, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   4.23%, Time: 1 day, 6:20:58 
+[opmodule.py][LSTMOp:train] total_batch: 141824, Train Loss:  0.049, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   4.10%, Time: 1 day, 6:22:36 
+[opmodule.py][LSTMOp:train] total_batch: 141952, Train Loss:  0.084, Train Acc:  97.66%, Val Loss: 3.6e+03, Val Acc:   4.25%, Time: 1 day, 6:24:14 
+[opmodule.py][LSTMOp:train] total_batch: 142080, Train Loss:   0.06, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   4.11%, Time: 1 day, 6:25:52 
+[opmodule.py][LSTMOp:train] total_batch: 142208, Train Loss:  0.058, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   4.18%, Time: 1 day, 6:27:31 
+[opmodule.py][LSTMOp:train] total_batch: 142336, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   4.15%, Time: 1 day, 6:29:11 
+[opmodule.py][LSTMOp:train] total_batch: 142464, Train Loss: 0.0066, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   3.99%, Time: 1 day, 6:30:51 
+[opmodule.py][LSTMOp:train] total_batch: 142592, Train Loss:  6e-06, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   3.94%, Time: 1 day, 6:32:29 
+[opmodule.py][LSTMOp:train] total_batch: 142720, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 3.8e+03, Val Acc:   4.06%, Time: 1 day, 6:34:08 
+[opmodule.py][LSTMOp:train] total_batch: 142848, Train Loss: 0.00081, Train Acc: 100.00%, Val Loss: 3.7e+03, Val Acc:   3.97%, Time: 1 day, 6:35:46 
+[opmodule.py][LSTMOp:train] total_batch: 142976, Train Loss:  1e-05, Train Acc: 100.00%, Val Loss: 3.8e+03, Val Acc:   4.03%, Time: 1 day, 6:37:24 
+[opmodule.py][LSTMOp:train] total_batch: 143104, Train Loss:  0.056, Train Acc:  98.44%, Val Loss: 3.7e+03, Val Acc:   3.92%, Time: 1 day, 6:39:02 
+[opmodule.py][LSTMOp:train] total_batch: 143232, Train Loss: 0.0052, Train Acc: 100.00%, Val Loss: 3.8e+03, Val Acc:   4.05%, Time: 1 day, 6:40:40 
+[opmodule.py][LSTMOp:train] total_batch: 143360, Train Loss:  0.051, Train Acc:  98.44%, Val Loss: 3.6e+03, Val Acc:   3.86%, Time: 1 day, 6:42:18 
+[opmodule.py][LSTMOp:train] total_batch: 143488, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 3.8e+03, Val Acc:   3.52%, Time: 1 day, 6:43:55 
+[opmodule.py][LSTMOp:train] total_batch: 143616, Train Loss:   0.11, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   3.20%, Time: 1 day, 6:45:32 
+[opmodule.py][LSTMOp:train] total_batch: 143744, Train Loss:  0.031, Train Acc:  98.44%, Val Loss: 3.6e+03, Val Acc:   3.23%, Time: 1 day, 6:47:12 
+[opmodule.py][LSTMOp:train] total_batch: 143872, Train Loss:  0.089, Train Acc:  97.66%, Val Loss: 3.7e+03, Val Acc:   3.59%, Time: 1 day, 6:48:50 
+[opmodule.py][LSTMOp:train] total_batch: 144000, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.70%, Time: 1 day, 6:50:30 
+[opmodule.py][LSTMOp:train] total_batch: 144128, Train Loss:  0.022, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   3.99%, Time: 1 day, 6:52:09 
+[opmodule.py][LSTMOp:train] total_batch: 144256, Train Loss:   0.09, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   3.69%, Time: 1 day, 6:53:48 
+[opmodule.py][LSTMOp:train] total_batch: 144384, Train Loss:  0.024, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.58%, Time: 1 day, 6:55:28 
+[opmodule.py][LSTMOp:train] total_batch: 144512, Train Loss:   0.14, Train Acc:  98.44%, Val Loss: 3.3e+03, Val Acc:   3.64%, Time: 1 day, 6:57:08 
+[opmodule.py][LSTMOp:train] total_batch: 144640, Train Loss:  0.011, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.41%, Time: 1 day, 6:58:47 
+[opmodule.py][LSTMOp:train] total_batch: 144768, Train Loss:  0.081, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.18%, Time: 1 day, 7:00:26 
+[opmodule.py][LSTMOp:train] total_batch: 144896, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.44%, Time: 1 day, 7:02:05 
+[opmodule.py][LSTMOp:train] total_batch: 145024, Train Loss: 7.7e-06, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.10%, Time: 1 day, 7:03:43 
+[opmodule.py][LSTMOp:train] total_batch: 145152, Train Loss:  4e-05, Train Acc: 100.00%, Val Loss: 3.3e+03, Val Acc:   3.06%, Time: 1 day, 7:05:21 
+[opmodule.py][LSTMOp:train] total_batch: 145280, Train Loss:  0.026, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.99%, Time: 1 day, 7:07:01 
+[opmodule.py][LSTMOp:train] total_batch: 145408, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.94%, Time: 1 day, 7:08:39 
+[opmodule.py][LSTMOp:train] total_batch: 145536, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   2.59%, Time: 1 day, 7:10:18 
+[opmodule.py][LSTMOp:train] total_batch: 145664, Train Loss:  0.032, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.46%, Time: 1 day, 7:11:57 
+[opmodule.py][LSTMOp:train] total_batch: 145792, Train Loss: 0.00016, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   2.39%, Time: 1 day, 7:13:36 
+[opmodule.py][LSTMOp:train] total_batch: 145920, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   2.23%, Time: 1 day, 7:15:16 
+[opmodule.py][LSTMOp:train] total_batch: 146048, Train Loss:  0.018, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   1.81%, Time: 1 day, 7:16:56 
+[opmodule.py][LSTMOp:train] total_batch: 146176, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   1.95%, Time: 1 day, 7:18:36 
+[opmodule.py][LSTMOp:train] total_batch: 146304, Train Loss: 1.8e-05, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.13%, Time: 1 day, 7:20:15 
+[opmodule.py][LSTMOp:train] total_batch: 146432, Train Loss:   0.12, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   2.36%, Time: 1 day, 7:21:52 
+[opmodule.py][LSTMOp:train] total_batch: 146560, Train Loss:  0.076, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   2.79%, Time: 1 day, 7:23:29 
+[opmodule.py][LSTMOp:train] total_batch: 146688, Train Loss:  0.048, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   2.60%, Time: 1 day, 7:25:07 
+[opmodule.py][LSTMOp:train] total_batch: 146816, Train Loss:  0.033, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   2.73%, Time: 1 day, 7:26:47 
+[opmodule.py][LSTMOp:train] total_batch: 146944, Train Loss:  0.007, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.63%, Time: 1 day, 7:28:25 
+[opmodule.py][LSTMOp:train] total_batch: 147072, Train Loss:  0.031, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.74%, Time: 1 day, 7:30:06 
+[opmodule.py][LSTMOp:train] total_batch: 147200, Train Loss:  0.021, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.04%, Time: 1 day, 7:31:45 
+[opmodule.py][LSTMOp:train] total_batch: 147328, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.70%, Time: 1 day, 7:33:24 
+[opmodule.py][LSTMOp:train] total_batch: 147456, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.28%, Time: 1 day, 7:35:03 
+[opmodule.py][LSTMOp:train] total_batch: 147584, Train Loss:  0.041, Train Acc:  97.66%, Val Loss: 3.5e+03, Val Acc:   3.09%, Time: 1 day, 7:36:41 
+[opmodule.py][LSTMOp:train] total_batch: 147712, Train Loss:  0.011, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   3.24%, Time: 1 day, 7:38:18 
+[opmodule.py][LSTMOp:train] total_batch: 147840, Train Loss:   0.15, Train Acc:  97.66%, Val Loss: 3.5e+03, Val Acc:   3.00%, Time: 1 day, 7:39:57 
+[opmodule.py][LSTMOp:train] total_batch: 147968, Train Loss: 0.0069, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.91%, Time: 1 day, 7:41:35 
+[opmodule.py][LSTMOp:train] total_batch: 148096, Train Loss:  0.067, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   2.94%, Time: 1 day, 7:43:13 
+[opmodule.py][LSTMOp:train] total_batch: 148224, Train Loss: 0.00035, Train Acc: 100.00%, Val Loss: 3.4e+03, Val Acc:   3.24%, Time: 1 day, 7:44:53 
+[opmodule.py][LSTMOp:train] total_batch: 148352, Train Loss:    0.1, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   2.94%, Time: 1 day, 7:46:32 
+[opmodule.py][LSTMOp:train] total_batch: 148480, Train Loss:  0.069, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   3.10%, Time: 1 day, 7:48:10 
+[opmodule.py][LSTMOp:train] total_batch: 148608, Train Loss: 0.0083, Train Acc: 100.00%, Val Loss: 3.5e+03, Val Acc:   2.98%, Time: 1 day, 7:49:50 
+[opmodule.py][LSTMOp:train] total_batch: 148736, Train Loss:  0.042, Train Acc:  99.22%, Val Loss: 3.4e+03, Val Acc:   3.08%, Time: 1 day, 7:51:29 
+[opmodule.py][LSTMOp:train] total_batch: 148864, Train Loss:  0.098, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   2.85%, Time: 1 day, 7:53:08 
+[opmodule.py][LSTMOp:train] total_batch: 148992, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   2.76%, Time: 1 day, 7:54:49 
+[opmodule.py][LSTMOp:train] total_batch: 149120, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   2.64%, Time: 1 day, 7:56:28 
+[opmodule.py][LSTMOp:train] total_batch: 149248, Train Loss:   0.16, Train Acc:  96.88%, Val Loss: 3.6e+03, Val Acc:   2.68%, Time: 1 day, 7:58:07 
+[opmodule.py][LSTMOp:train] total_batch: 149376, Train Loss: 0.0088, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.42%, Time: 1 day, 7:59:47 
+[opmodule.py][LSTMOp:train] total_batch: 149504, Train Loss:  0.066, Train Acc:  99.22%, Val Loss: 3.5e+03, Val Acc:   2.48%, Time: 1 day, 8:01:27 
+[opmodule.py][LSTMOp:train] total_batch: 149632, Train Loss:  0.016, Train Acc:  98.44%, Val Loss: 3.5e+03, Val Acc:   2.19%, Time: 1 day, 8:03:05 
+[opmodule.py][LSTMOp:train] total_batch: 149760, Train Loss: 0.0078, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.27%, Time: 1 day, 8:04:43 
+[opmodule.py][LSTMOp:train] total_batch: 149888, Train Loss:   0.06, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   2.46%, Time: 1 day, 8:06:22 
+[opmodule.py][LSTMOp:train] total_batch: 150016, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.47%, Time: 1 day, 8:08:00 
+[opmodule.py][LSTMOp:train] total_batch: 150144, Train Loss: 0.0041, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.02%, Time: 1 day, 8:09:40 
+[opmodule.py][LSTMOp:train] total_batch: 150272, Train Loss:  0.059, Train Acc:  98.44%, Val Loss: 3.6e+03, Val Acc:   2.03%, Time: 1 day, 8:11:19 
+[opmodule.py][LSTMOp:train] total_batch: 150400, Train Loss:  0.055, Train Acc:  99.22%, Val Loss: 3.6e+03, Val Acc:   2.13%, Time: 1 day, 8:12:58 
+[opmodule.py][LSTMOp:train] total_batch: 150528, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 3.6e+03, Val Acc:   2.35%, Time: 1 day, 8:14:36 
+[opmodule.py][LSTMOp:train] total_batch: 150656, Train Loss:  0.083, Train Acc:  98.44%, Val Loss: 3.7e+03, Val Acc:   2.24%, Time: 1 day, 8:16:13 
+[opmodule.py][LSTMOp:train] total_batch: 150784, Train Loss:  0.037, Train Acc:  98.44%, Val Loss: 3.7e+03, Val Acc:   2.40%, Time: 1 day, 8:17:52 
+[opmodule.py][LSTMOp:train] total_batch: 150912, Train Loss:  0.043, Train Acc:  99.22%, Val Loss: 3.8e+03, Val Acc:   2.21%, Time: 1 day, 8:19:30 
+[opmodule.py][LSTMOp:train] total_batch: 151040, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 3.8e+03, Val Acc:   2.31%, Time: 1 day, 8:21:08 
+[opmodule.py][LSTMOp:train] total_batch: 151168, Train Loss:  0.012, Train Acc:  99.22%, Val Loss: 3.7e+03, Val Acc:   2.23%, Time: 1 day, 8:22:48 
+[opmodule.py][LSTMOp:train] total_batch: 151296, Train Loss:  0.031, Train Acc:  98.44%, Val Loss: 3.7e+03, Val Acc:   2.02%, Time: 1 day, 8:24:26 
+[opmodule.py][LSTMOp:train] 最佳准确率:0.25866794186514735
+[module.py][Lstm:construct] embedding:(?, 122, 256)
+[module.py][Lstm:construct] outputs:(?, 122, 256),(?, 122, 256)
+[module.py][Lstm:construct] scores&predictions:(?, 561),Tensor("output/predictions:0", shape=(?,), dtype=int64)
+[opmodule.py][LSTMOp:get_sets_accracy] 最终的准确率为:0.18538324420677363,0.5733300769324704,0.5484571428571429
+[opmodule.py][LSTMOp:get_accuracy_rate] 最终的准确率阈值为:0.07024034112691879,训练数据最低准确率要求:0.07024034112691879,过滤掉90%的闲聊数据的准确率要求:0.7684677243232727

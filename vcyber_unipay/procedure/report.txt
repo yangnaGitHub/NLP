@@ -1,0 +1,11 @@
++----+------------+--------------+--------------+----------------+----------------+---------------------+-----------------+------------------+
+| no | model_name | result_vaild | c_model_name | c_result_vaild | use_same_words | use_same_file_class | get_data_method | get_batch_method |
++----+------------+--------------+--------------+----------------+----------------+---------------------+-----------------+------------------+
+| 1  | TextCNNOp  |  TextCNNOp   |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 2  | TextCNNOp  |  TextCNNOp   |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 3  |   LSTMOp   |    LSTMOp    |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 4  |   LSTMOp   |    LSTMOp    |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 5  |   LSTMOp   |    LSTMOp    |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 6  | TextCNNOp  |  TextCNNOp   |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
+| 7  |   LSTMOp   |    LSTMOp    |   TrieTree   |    TrieTree    |       1        |          0          |        2        |        2         |
++----+------------+--------------+--------------+----------------+----------------+---------------------+-----------------+------------------+
