@@ -1,10 +1,5 @@
 # NLP Learning processing
 
-
-#batch
-
-word2vec:用于实现word2vec的算法
-
-seq2seq:用于实现seq2seq的算法
-
-lm:实现LSTM,GRU等语言模型
+目录结构:
+ learning:学习过程中的代码
+ vcyber_unipay:在vcyber结构中的银联小U的项目

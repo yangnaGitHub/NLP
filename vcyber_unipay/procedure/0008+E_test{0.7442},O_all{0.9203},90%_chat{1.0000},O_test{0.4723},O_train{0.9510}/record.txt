@@ -1,0 +1,5 @@
+使用模型:
+TextCNN ==> TextCNN\model_record\TextCNN_01
+
+使用模型配置文件:
+TextCNN ==> TextCNN\model_record\TextCNN_01\conf\module_004.cfg

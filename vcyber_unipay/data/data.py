@@ -97,11 +97,14 @@ class data():
             savelist = [self.pickle_variable]
             for variable in variable_sort:
                 if variable in self.pickle_variable.keys():
-                    opitons = self.pickle_variable[variable]
+                    options = self.pickle_variable[variable]
                     if variable in ['data']:
-                        savelist.expend([eval('self.' + opitons) for option in opitons])
+                        savelist.extend([getattr(self, option) for option in options if hasattr(self, option)])
+                        #savelist.extend([eval('self.' + option) for option in options])
                     else:
-                        savelist.expend([eval('self.' + variable + '.' + opitons) for option in opitons])
+                        rootobject = getattr(self, variable) if hasattr(self, variable) else None
+                        savelist.extend([getattr(rootobject, option) for option in options if hasattr(rootobject, option)])
+                        #savelist.extend([eval('self.' + variable + '.' + option) for option in options])
             savetuple = tuple(savelist)
             with open(self.pickle_file, 'wb') as fd:
                 pickle.dump(savetuple, fd, protocol=2)
@@ -111,6 +114,11 @@ class data():
             self.pickle_path = self.args.get_option(pickle_module, 'pickle_path', 'str')
         else:
             self.pickle_path = './model/pickle/data'
+        
+        self.pickle_path += '/'
+        if not os.path.exists(self.pickle_path):
+            os.makedirs(self.pickle_path)
+        
         if self.args.isoptionexist(pickle_module, 'pickle_file'):
             self.pickle_file = self.pickle_path + self.args.get_option(pickle_module, 'pickle_file', 'str')
         else:
@@ -164,15 +172,18 @@ class data():
                 if index > print_count:
                     break
     
+    def extend_by_sameword_no(self,quest):
+        return [quest]
+    
     def add_outdata(self):
-        if False == self.args.add_outside_sets:
+        if 0 == self.args.add_outside_sets:
             return
         
         label_id = 0
         for outdata in self.outdatas:
             outdata = outdata.split('\t')
             for index, content in enumerate(outdata):
-                for exp_content in self.extend_by_sameword(content):
+                for exp_content in self.extend_by_sameword_no(content):
                     self.args.max_document_lenth = max(len(exp_content), self.args.max_document_lenth)
                     if ((index == len(outdata) - 1) and (self.args.get_data_method in [2])):
                         self.testquests.add(exp_content)
@@ -348,7 +359,7 @@ class data():
         self.label_to_id = dict(zip(self.label_quest.keys(), range(len(self.label_quest))))#给label分配递增ID
         self.id_to_label = {str(v):k for k,v in self.label_to_id.items()}#为何要转换成str的ID??
         self.args.num_class = len(self.label_quest)#有多少类
-        self.print_log('num_class:{}, id_to_label:{}'.format(self.args.num_class, self.id_to_label))
+        #self.print_log('num_class:{}, id_to_label:{}'.format(self.args.num_class, self.id_to_label))
     
     def extend_by_sameword(self,quest):
         if 0 == self.args.use_same_words:#init的时候的同义词扩展
@@ -397,6 +408,27 @@ class data():
             else:
                 self.get_next_word(index+1, quest+word, quests, local_sentences)#其他不适近义词的
     
+#    def get_all_quests_and_label(self, num_epochs, batch_size):
+#        if 2 == self.args.get_batch_method:
+#            quests, labels = (list(self.quest_label.keys()) + list(self.testquest_label.keys())), (list(self.quest_label.values()) + list(self.testquest_label.values()))
+#        else:
+#            quests, labels = list(self.quest_label.keys()), list(self.quest_label.values())
+#        num_batches_per_epoch = int((len(quests)-1)/batch_size) + 1
+#        for epoch in range(num_epochs):
+#            for batch_num in range(num_batches_per_epoch):
+#                start_index = batch_num * batch_size
+#                end_index = min((batch_num + 1) * batch_size, len(quests))#最后一组
+#                batch_x = quests[start_index:end_index]
+#                batch_y = labels[start_index:end_index]
+#                batch_x,batch_y = self.build_vector(batch_x,batch_y)
+#                yield batch_x, batch_y
+    
+    def range_index(self, idx, size, window_size=5):
+        target_window = np.random.randint(1, window_size+1)
+        start_point = idx - target_window if (idx - target_window) > 0 else 0#上限溢界处理
+        end_point = idx + target_window if (idx - target_window) < size else size
+        return start_point, end_point
+    
     #embedding按照字+要添加(词)    
     def get_embed_batch_data(self, test_ratio, batch_size, num_epochs, startpos=5000, window_size=3):
         quests = np.array(list(self.quest_label.keys()))
@@ -421,9 +453,10 @@ class data():
                 batch_x, batch_y = [], []
                 quest = self.build_one_vector(quest)
                 for index, x in enumerate(quest):
-                    temp_y = self.get_targets(x, index, window_size)
-                    batch_x = batch_x.extend([x] * len(temp_y))
+                    start_point, end_point = self.range_index(index, len(quest), window_size)
+                    temp_y = list(set(list(quest[start_point: index]) + list(quest[index+1: end_point+1])))
                     batch_y.extend(temp_y)
+                    batch_x.extend([x]*len(temp_y))
                 yield batch_x, batch_y
     
     def get_batch_data(self, test_ratio, batch_size, num_epochs, startpos=5000):

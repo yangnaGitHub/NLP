@@ -11,7 +11,7 @@ from data.data import data as data
 from TextCNN.opmodule import TextCNNOp
 from LSTM.opmodule import LSTMOp
 from TFIDF.opmodule import TFIDFOp
-from Result.opmodule import ResultOp
+from Normal_DL.opmodule import DLOp
 from log import *
 from threading import Thread
 import os
@@ -37,6 +37,7 @@ class module():
         section = 'use_model'
         model_name_str = 'model_name'
         result_vaild_str = 'result_vaild'
+        multi_module_str = 'use_multi_module'
         self.DML_methods_str = []
         self.DML_methods_Vaild = []
         if self.args.isoptionexist(section, model_name_str):
@@ -49,11 +50,11 @@ class module():
             result_vaild = self.args.get_option(section, result_vaild_str, 'str')
             for name in result_vaild.split(','):
                 self.DML_methods_Vaild.append(name.strip())
-    
-    def Deal_Result(self):
-        pass
-        #return self.DML_methods_result['TextCNNOp' + '_predict'], self.DML_methods_result['TextCNNOp' + '_predict']
-    
+        if self.args.isoptionexist(section, multi_module_str):
+            self.multi_module = self.args.get_option(section, multi_module_str, 'int')
+            if len(self.DML_methods_str) < 2:
+                self.multi_module = 0
+            
     def restore_object(self, pickle_module='data_pickle'):
         if self.args.isoptionexist(pickle_module, 'pickle_path'):
             self.pickle_path = self.args.get_option(pickle_module, 'pickle_path', 'str')
@@ -77,7 +78,8 @@ class module():
             if variable in data[0].keys():
                 opitons = data[0][variable]
                 for option in opitons:
-                    eval('self.' + variable + '.' + option) = data[index]
+                    setattr(eval('self.' + variable), option, data[index])
+                    #eval('self.' + variable + '.' + option) = data[index]
                     index += 1
     
     def predict(self, **kwargs):
@@ -90,25 +92,37 @@ class module():
                 self.print_log('local test and question can`t find')
         
         params = {}
-        self.DML_methods_result = {}
-        for method in self.DML_methods_str:
-#            if self.DML_methods[method].get_model() is None:
-#                params['answer']='深度学习没有导入数据，无法提供对话功能'
-#                params['success']="false"
-#                return params
+        
+        if self.data is None:
+            self.print_log('data are not avliable')
+            self.restore_object()
+        
+        if not self.DML_methods:
+            self.print_log('this model not avliable, it will load exist model')
+            for method in self.DML_methods_str:
+                if 0 == self.multi_module:
+                    if method in self.DML_methods_Vaild:
+                        single_module = method
+                        break
+                else:
+                    self.DML_methods[method] = eval(method + '(self.args, self.data, self.log)')
+                    self.DML_methods[method].load_model()
             
-            #Notice:不用再次训练,用已经序列话好的参数和模型直接预测,这边还原参数要不要放到各个模型(可能每个模型保存的参数不一致)
-            if (not self.DML_methods) or (self.DML_methods[method].get_model() is None):
-                self.print_log('this model not avliable, it will load exist model')
-                if self.data is None:
-                    self.print_log('data are not avliable')
-                    self.restore_object()
-                self.DML_methods[method] = eval(method + '(self.args, self.data, self.log)')
-                self.DML_methods[method].load_model(savedata)
-
+            if 0 == self.multi_module:
+                if '' == single_module:
+                    single_module = self.DML_methods_str[0]
+                self.DML_methods[single_module] = eval(single_module + '(self.args, self.data, self.log)')
+                self.DML_methods[single_module].load_model()
             try:
-                self.DML_methods_result[method + '_predict'], self.DML_methods_result[method + '_probs'] = self.DML_methods[method].predict(quest)
-                predict, probs = self.DML_methods_result[method + '_predict'], self.DML_methods_result[method + '_probs']#self.Deal_Result()
+                if self.multi_module:
+                    if not hasattr(self.data, 'result'):
+                        result_dict = self.make_result_dict()
+                        self.result = DLOp(self.args, self.data, self.log, **result_dict)
+                        self.result.load_model()
+                    predict, probs = self.result.predict(quest)
+                else:
+                    predict, probs = self.DML_methods[single_module].predict(quest)
+                
                 if 0 == self.args.local_method:
                     if kwargs['params']['rate'] !=0:
                         if probs[0][predict] >= kwargs['params']['rate']:
@@ -154,24 +168,63 @@ class module():
         return params
     
     def retrain(self):
-        self.print_log('retrain start')
         try:
             if self.DML_methods:
                 self.DML_methods.clear()
             self.print_log('DML_methods_str{}'.format(self.DML_methods_str))
+            
+            single_module = ''
+            thread_list = []
             for method in self.DML_methods_str:
-                self.DML_methods[method] = eval(method + '(self.args, self.data, self.log)')
-                self.DML_methods[method].train()
-                self.DML_methods[method].load_model()
-                self.DML_methods[method].get_sets_accracy()
-                self.DML_methods[method].get_accuracy_rate()
-
-            self.args.rate=1.0
-            self.args.time=0
+                if 0 == self.multi_module:
+                    if method in self.DML_methods_Vaild:
+                        single_module = method
+                        break
+                else:
+                    self.DML_methods[method] = eval(method + '(self.args, self.data, self.log)')
+                    thread_list.append(Thread(target=self.run_module, args=self.DML_methods[method]))
+            
+            if 0 == self.multi_module:
+                if '' == single_module:
+                    single_module = self.DML_methods_str[0]
+                self.DML_methods[single_module] = eval(single_module + '(self.args, self.data, self.log)')
+                self.run_module(self.DML_methods[single_module])
+                return
+            
+            for thread_item in thread_list:
+                thread_item.start()
+                
+            for thread_item in thread_list:
+                thread_item.join()
+            
+            self.tunning_result()
+            
+            self.args.rate = 1.0
+            self.args.time = 0
         except Exception as e:
-            self.args.rate=1.0
-            self.args.time=0
+            self.args.rate = 1.0
+            self.args.time = 0
             self.print_log(e)
+    
+    def run_module(self, module):
+        module.train()
+        module.load_model()
+        module.get_sets_accracy()
+        module.get_accuracy_rate()
+    
+    def make_result_dict(self):
+        return dict({
+                'input_size':len(self.DML_methods)*self.args.num_class,
+                'result_module':self.DML_methods
+                })
+    
+    def tunning_result(self):
+        result_dict = self.make_result_dict()
+        self.result = DLOp(self.args, self.data, self.log, **result_dict)
+        self.result.train()
+        module.load_model()
+        module.get_sets_accracy()
+        module.get_accuracy_rate()
 
     def lookup(self, **kwargs):
         params = {} 

@@ -8,11 +8,11 @@ Created on Wed Jun 27 16:13:59 2018
 """
 
 import configparser
-import os
 
 class myargs:
     def __init__(self, filepath='./Allmodule.cfg'):
-        os.chdir('E:\\AboutStudy\\code\\python\\natasha_suda')
+#        import os
+#        os.chdir('E:\\AboutStudy\\code\\python\\natasha_suda')
         self.version = '3.0.0'
         self.params = configparser.ConfigParser()
         self.params.read(filepath, encoding='utf-8')
@@ -70,7 +70,7 @@ class myargs:
 #            pass
 
 args = myargs()
-print(args.getAlloption('data_pickle'))
+#print(args.getAlloption('data_pickle'))
 
 #signal module test  
 #if __name__ == '__main__':

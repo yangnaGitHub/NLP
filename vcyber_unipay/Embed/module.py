@@ -27,6 +27,7 @@ class Embed(object):
         else:
             module_conf = 'module.cfg'
         self.params.read('./' + self.module_name + '/' + module_conf)
+        self.construct()
         #self.params.read('./' + 'module.cfg')
 #        if 'use_old_model' in autodict:
 #            self.old_path = autodict['use_old_model']
@@ -43,7 +44,7 @@ class Embed(object):
         elif 'float' == wclass:
             return self.params.getfloat(section, option)
     
-    def get_params(self, section='summary', name='skip_window', wclass='str'):
+    def get_params(self, section='summary', name='window_size', wclass='str'):
         if name in self.autodict:
             return self.autodict[name]
         else:
@@ -57,13 +58,15 @@ class Embed(object):
                 self.log.print_to_file(message)
     
     def construct(self):
-        self.input_x = tf.placeholder(tf.int32, [None], name="input_x")#batch
-        self.input_y = tf.placeholder(tf.int32, [None, self.get_params(name='window_size', wclass='int')], name="input_x")#batch*skip_windows
+        self.input_x = tf.placeholder(tf.int32, [None], name='input_x')#batch
+        #self.o_input_x = tf.placeholder(tf.int32, [None, self.args.max_document_lenth], name='o_input_x')#batch
+        self.input_y = tf.placeholder(tf.int32, [None, None], name='input_y')#batch*skip_windows #self.get_params(name='window_size', wclass='int')
         self.print_log('self.input_y:{}'.format(self.input_y.shape))
         
         with tf.name_scope('embedding'):
             self.W = tf.Variable(tf.random_uniform([self.args.vocab_size, self.get_params(section='embedding', name='embedding_size', wclass='int')], -1, 1), name='W')
             self.embedding = tf.nn.embedding_lookup(self.W, self.input_x)
+            #self.o_embedding = tf.nn.embedding_lookup(self.W, self.o_input_x)
             self.print_log('self.embedding:{}'.format(self.embedding.shape))
         
         with tf.name_scope('loss'):

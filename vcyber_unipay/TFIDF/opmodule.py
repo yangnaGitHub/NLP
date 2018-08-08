@@ -13,7 +13,7 @@ import os
 import traceback
 import time
 import configparser
-import pickle
+#import pickle
 import numpy as np
 from sklearn.externals import joblib
 
@@ -32,7 +32,7 @@ class TFIDFOp():
             module_conf = 'module.cfg'
         self.params.read('./' + self.module_name + '/' + module_conf)
         self.module_path = self.get_option('summary', 'module_path', 'str')
-        self.pickle_file = self.module_path + '/' + self.get_option('summary', 'pickle_file', 'str')
+#        self.pickle_file = self.module_path + '/' + self.get_option('summary', 'pickle_file', 'str')
     
     def print_log(self, message):
         if self.args.local_debug:
@@ -57,17 +57,44 @@ class TFIDFOp():
         time_dif = end_time - start_time
         return timedelta(seconds=int(round(time_dif)))
     
+    def reconstruct_input(self, source, combine=False):
+        if combine:     
+            reconstruct_list = []
+            for quests in list(source.values()):
+                string = ''
+                for quest in quests:
+                    string += quest
+                    string += ' '
+                string.strip()
+                reconstruct_list.append(string)
+            return np.array(reconstruct_list), np.array(list(source.keys()))
+        else:
+            return np.array(list(source.keys())), np.array(list(source.values()))
+    
     def train(self):
-        self.module_path_root = self.module_path[:self.module_path.rfind('/')]
         self.tfidf = TFIDF(self.args, self.params, self.log)
         
         start_time = time.time()
-        self.tfidf.process(np.array(list(self.data.quest_label.keys())), np.array(list(self.data.quest_label.values())))
-        predict = self.tfidf.predict(np.array(list(self.data.testquest_label.keys())))
+        
+        combine = self.get_option('summary', 'combine_quest', 'bool')
+        if combine:
+            train_source = self.data.label_quest
+            #test_source = self.data.label_testquest
+        else:
+            train_source = self.data.quest_label
+        
+        
+        batch_x, batch_y = self.reconstruct_input(train_source, combine=combine)
+        self.tfidf.process(batch_x, batch_y)
+        
+        test_source = self.data.testquest_label
+        test_x, test_y = self.reconstruct_input(test_source)
+        predict = self.tfidf.predict(test_x)
         try:
-            accuracy, recall, f1_score = self.tfidf.metrics_result(np.array(list(self.data.testquest_label.values())), predict)
+            accuracy, recall, f1_score = self.tfidf.metrics_result(test_y, predict)
         except Exception as e:
             self.print_log(e)
+        self.conuter = self.tfidf.vectorizer
         self.feature = self.tfidf.feature
         self.model = self.tfidf.model
         time_dif = self.get_time_dif(start_time)
@@ -75,39 +102,63 @@ class TFIDFOp():
         
         if not os.path.exists(self.module_path):
             os.makedirs(self.module_path)
-        joblib.dump(self.model, self.module_path_root+'/'+self.get_option('summary', 'module_filename'))
-        joblib.dump(self.feature, self.module_path_root+'/'+self.get_option('summary', 'module_feature'))
+        joblib.dump(self.conuter, self.module_path+'/'+self.get_option('summary', 'module_conuter'))
+        joblib.dump(self.feature, self.module_path+'/'+self.get_option('summary', 'module_feature'))
+        joblib.dump(self.model, self.module_path+'/'+self.get_option('summary', 'module_filename'))
+        #self.top_n_important('什么是App Store')
         
-        self.pickleop(mode='save')
+#        self.pickleop(mode='save')
     
-    def pickleop(self, mode='load'):
-        if 'load' == mode:
-            with open(self.pickle_file, 'rb') as fd:
-                data = pickle.load(fd)
-                return data
-        elif 'save' == mode:
-            #self.data.id_to_label
-            #self.data.word_to_id
-            #self.data.min_accuracy
-            #self.args.max_document_lenth = 122
-            #self.args.num_class = 561
-            #self.args.vocab_size = 4012
-            savetuple = (self.data.id_to_label)
-            with open(self.pickle_file, 'wb') as fd:
-                pickle.dump(savetuple, fd, protocol=2)
+#    def pickleop(self, mode='load'):
+#        if 'load' == mode:
+#            with open(self.pickle_file, 'rb') as fd:
+#                data = pickle.load(fd)
+#                return data
+#        elif 'save' == mode:
+#            #self.data.id_to_label
+#            #self.data.word_to_id
+#            #self.data.min_accuracy
+#            #self.args.max_document_lenth = 122
+#            #self.args.num_class = 561
+#            #self.args.vocab_size = 4012
+#            savetuple = (self.data.id_to_label)
+#            with open(self.pickle_file, 'wb') as fd:
+#                pickle.dump(savetuple, fd, protocol=2)
     
-    def restore(self, savedata):
-        self.id_to_label = savedata[0]
+#    def restore(self, savedata):
+#        self.id_to_label = savedata[0]
+    
+    def top_n_important(self, quest, top_n=1):
+        result_dict = {}
+        features = self.tfidf.feature.transform(self.conuter.transform(self.pre_text(quest)))
+        word = self.conuter.get_feature_names()#获取词袋模型中的所有词语
+        weights = features.toarray()#将tf-idf矩阵抽取出来，元素a[i][j]表示j词在i类文本中的tf-idf权重
+        import heapq
+        max_ns = heapq.nlargest(top_n, weights)
+        for index, weight in enumerate(weights):
+            if weight in max_ns:
+                result_dict[word[index]] = weight
+        return result_dict
+    
+    def pre_text(self, quests):
+        if not isinstance(quests, list):
+            quests = [quests]
+        return_list = []
+        for quest in quests:        
+            string = ''
+            for word in self.data.word_parser.cut(quest):
+                string += (word + ' ')
+            return_list.append(string.strip())
+        return np.array(return_list)
     
     def predict(self, quest):
-        features = self.feature.transform(quest)
+        features = self.feature.transform(self.conuter.transform(self.pre_text(quest)))
         return self.model.predict(features)
     
     def load_model(self):
-        if not hasattr(self, 'module_path_root'):
-            self.module_path_root = self.module_path[:self.module_path.rfind('/')]
-        self.model = joblib.load(self.module_path_root+'/'+self.get_option('summary', 'module_filename'))
-        self.feature = joblib.load(self.module_path_root+'/'+self.get_option('summary', 'module_feature'))
+        self.conuter = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_conuter'))
+        self.feature = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_feature'))
+        self.model = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_filename'))
     
     def get_sets_accracy(self, testfile='NONAME'):
         train_total_quest = 0
@@ -128,48 +179,39 @@ class TFIDFOp():
                 
                     for quest in line[2].split('#&#&#'):
                         train_total_quest += 1
-                        predict = self.predict(self.data.word_parser.cut(quest))
-                        
-                        if self.data is None:
-                            if label_id == predict:
-                                train_correct_count += 1
-                        else:
-                            if label_id == predict:
-                                train_correct_count += 1
+                        predict = self.predict(quest)
+                        if label_id == predict:
+                            train_correct_count += 1
                     
                     for quest in line[3].split('#&#&#'):
                         test_total_quest += 1
-                        predict = self.predict(self.data.word_parser.cut(quest))
-                        if self.data is None:
-                            if label_id == predict:
-                                test_correct_count += 1
-                        else:
-                            if label_id == predict:
-                                test_correct_count += 1
+                        predict = self.predict(quest)
+                        if label_id == predict:
+                            test_correct_count += 1
         
         self.accuracy = (train_correct_count + test_correct_count) / (train_total_quest + test_total_quest)
         self.print_log('最终的准确率为:{},{},{}'.format(test_correct_count / test_total_quest, train_correct_count / train_total_quest, self.accuracy))
     
     def get_accuracy_rate(self):
-        return
-        result = []
-        with open(self.data.file_path['final_test_file'], 'r', encoding='utf-8') as f:
-            for line in f.readlines():
-                line = line.strip().split('\t')
-                predict = self.predict(line[0])
-                result.append(predict[0][predict])#predict是预测的概率最大分类的下标,所以此处是probs[0][predict]最大的概率
-        #允许90%的闲聊数据通过
-        acc_1 = list(sorted(result)[int(len(result)*0.9)])[0]#result里是array格式,将概率设置按照从小到大排序,得到下标为90%的概率,这儿的list(x)[0]是干啥??
-        
-        if hasattr(self.data, 'min_accuracy'):
-            acc_2 = self.data.min_accuracy
-        elif hasattr(self, 'min_accuracy'):
-            acc_2 = self.min_accuracy
-        else:
-            acc_2 = 0.00001
-        
-        if acc_2 > acc_1:
-            self.accuracy = (acc_1 + acc_2)/2
-        else:
-            self.accuracy = acc_2
-        self.print_log('最终的准确率阈值为:{},训练数据最低准确率要求:{},过滤掉90%的闲聊数据的准确率要求:{}'.format(self.accuracy, acc_2, acc_1))
+        pass
+#        result = []
+#        with open(self.data.file_path['final_test_file'], 'r', encoding='utf-8') as f:
+#            for line in f.readlines():
+#                line = line.strip().split('\t')
+#                predict = self.predict(line[0])
+#                result.append(predict[0][predict])#predict是预测的概率最大分类的下标,所以此处是probs[0][predict]最大的概率
+#        #允许90%的闲聊数据通过
+#        acc_1 = list(sorted(result)[int(len(result)*0.9)])[0]#result里是array格式,将概率设置按照从小到大排序,得到下标为90%的概率,这儿的list(x)[0]是干啥??
+#        
+#        if hasattr(self.data, 'min_accuracy'):
+#            acc_2 = self.data.min_accuracy
+#        elif hasattr(self, 'min_accuracy'):
+#            acc_2 = self.min_accuracy
+#        else:
+#            acc_2 = 0.00001
+#        
+#        if acc_2 > acc_1:
+#            self.accuracy = (acc_1 + acc_2)/2
+#        else:
+#            self.accuracy = acc_2
+#        self.print_log('最终的准确率阈值为:{},训练数据最低准确率要求:{},过滤掉90%的闲聊数据的准确率要求:{}'.format(self.accuracy, acc_2, acc_1))

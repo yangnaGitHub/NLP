@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 27 17:34:46 2018
+Created on Tue Jul 31 18:28:43 2018
 
 @author: natasha_yang
 
@@ -8,23 +8,23 @@ Created on Wed Jun 27 17:34:46 2018
 """
 
 import tensorflow as tf
-from LSTM.module import Lstm as Lstm
+from Normal_DL.module import NormalDL as NormalDL
 from datetime import timedelta
 import os
 import traceback
 import time
-import configparser
 import numpy as np
-from Embed.module import Embed as Embed
+import configparser
 
-class LSTMOp():
-    def __init__(self, args, data, log=None):     
-        self.module_name = 'LSTM'
+class DLOp():
+    def __init__(self, args, data, log=None, **result_dict):
+        self.module_name = 'DL'
         self.model = None
         self.session = None
         self.args = args
         self.data = data
         self.log = log
+        self.autodict = result_dict
         self.params = configparser.ConfigParser()
         if self.args.isoptionexist('use_model', 'module_conf'):
             module_conf = self.args.get_option('use_model', 'module_conf', 'str')
@@ -33,8 +33,10 @@ class LSTMOp():
         self.params.read('./' + self.module_name + '/' + module_conf)
         #self.params.read('module.cfg')
         self.module_path = self.get_option('summary', 'module_path', 'str')
-        self.module_file = self.module_path + '/' + self.get_option('summary', 'module_file', 'str')
-        #self.pickle_file = self.module_path + '/' + self.get_params('summary', 'pickle_file')
+        self.need_check = ['input_size', 'result_module']
+        for need in self.need_check:
+            if need not in result_dict:
+                self.print_log('lack of {}'.format(need))            
     
     def print_log(self, message):
         if self.args.local_debug:
@@ -43,21 +45,14 @@ class LSTMOp():
             if self.log:
                 self.log.print_to_file(message)
     
-    def get_option(self, section, option, wclass='str'):
-        if 'str' == wclass:
-            return self.params.get(section, option)
-        elif 'bool' == wclass:
-            return self.params.getboolean(section, option)
-        elif 'int' == wclass:
-            return self.params.getint(section, option)
-        elif 'float' == wclass:
-            return self.params.getfloat(section, option)
-        
     def get_time_dif(self, start_time):
         """获取已使用时间"""
         end_time = time.time()
         time_dif = end_time - start_time
         return timedelta(seconds=int(round(time_dif)))
+    
+    def print_shape(self, var, feed_dict=None, prefix='shape'):
+        self.print_log('{}==>{}'.format(prefix, self.session.run(self.model.get_shape(var), feed_dict=feed_dict)))
     
     def feed_data(self, x_batch, y_batch, keep_prob):
         feed_dict = {
@@ -66,10 +61,9 @@ class LSTMOp():
                 self.model.keep_prob: keep_prob
                 }
         return feed_dict
-
+    
     def evaluate(self, sess, x_, y_, batch_size=128):
         """评估在某一数据上的准确率和损失"""
-        #一次性的话可能内存可能不够
         #feed_dict = self.feed_data(x_, y_, 1.0)
         #loss, acc, scores, correct_predictions = sess.run([self.model.loss, self.model.acc, self.model.scores, self.model.correct_predictions], feed_dict=feed_dict)
         #return loss, acc, scores, correct_predictions
@@ -90,67 +84,35 @@ class LSTMOp():
             scores.extend(tmpscores)
             correct_predictions.extend(tmpcorrect_predictions)
         return loss, np.mean(acc), np.array(scores), np.array(correct_predictions)
-    
-    def print_shape(self, var, feed_dict=None, prefix='shape'):
-        self.print_log('{}==>{}'.format(prefix, self.session.run(self.model.get_shape(var), feed_dict=feed_dict)))
         
-    def make_autodict(self):
-        return dict({
-                'window_size':self.get_option('embedding', 'window_size', 'int'),
-                'embedding_size':self.get_option('embedding', 'embedding_size', 'int'),
-                'learning_rate':self.get_option('embedding', 'learning_rate', 'float')
-                })
-            
-    def get_embedded_w(self):
-        if hasattr(self, 'embedded_w'):
-            return self.embedded_w
-        else:
-            return None
-    
+#        scores_list = []
+#        for module in self.DML_methods.values():
+#            scores_list.append(module.predict_all(self.args.get_option('use_model', 'result_vaild', 'int'), self.args.get_option('use_model', 'result_batch_size', 'int')))
+#        for scores in zip(*scores_list):
+#            _, labels = score[0]
+#            quests = []
+#            for score in scores:
+#                tmp, _ = score
+#                quests.extend(tmp) 
+#            yield quests, labels
+    def pre_predict(self, quest):
+        quest_module = []
+        try: 
+            for module in self.autodict['result_module']:
+                quest_module.extend(module.predict(quest))
+        except Exception as e:
+            self.print_log(e)
+        return quest_module
+        
     def train(self):
-        print_per_batch = self.get_option('summary', 'print_per_batch', 'int')
-        if not os.path.exists(self.module_path):
-            os.makedirs(self.module_path)
         with tf.Graph().as_default() as g:
-            if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
-                autodict = self.make_autodict()
-                self.embedded_module = Embed(self.args, self.params, self.log, **autodict)
-                self.embed_file = self.module_path + '/' + self.get_option('summary', 'embed_file', 'str')
-                with tf.Session(graph=g).as_default() as sess:
-                    sess.run(tf.global_variables_initializer())
-                    saver = tf.train.Saver()#保存模型
-                
-                    start_time = time.time()
-                    embed_total_batch = 0
-                    #embeding train
-                    if 0 == self.get_option('embedding', 'embedding_train', 'int'):
-                        saver.restore(sess=sess, save_path=self.embed_file)
-                    else:
-                        batches = self.data.get_embed_batch_data(self.get_option('embedding', 'embed_test_ratio', 'float'), self.get_option('embedding', 'embed_batch_size', 'int'), self.get_option('embedding', 'embed_num_epochs', 'int'), window_size=self.get_option('embedding', 'window_size', 'int'))
-                        for index, batch in enumerate(batches):
-                            x_batch, y_batch = batch
-                            y_batch = np.array(y_batch)[:, None]
-                            if (1 != len(x_batch.shape)) or (2 != len(y_batch.shape)):
-                                continue
-                            #self.print_log('batch:{},{}'.format(np.array(x_batch).shape, y_batch.shape))
-                            cost, _ = sess.run([self.embedded_module.cost, self.embedded_module.optimizer], feed_dict={self.embedded_module.input_x: x_batch, self.embedded_module.input_y: y_batch})
-                            if embed_total_batch % print_per_batch == 0:
-                                time_dif = self.get_time_dif(start_time)
-                                self.print_log('embedding_total_batch: {0:>6}, Train Loss: {1:>6.2}, Time: {2}'.format(embed_total_batch, cost, time_dif))
-                            embed_total_batch += 1
-                        saver.save(sess=sess, save_path=self.embed_file)
-                    self.print_log('embed_total_batch:{}'.format(embed_total_batch))
-                    self.embedded_w = sess.run(self.embedded_module.W)
-                    self.print_log('embedded_w:{}'.format(self.embedded_w.shape))
-    
-        with tf.Graph().as_default() as g:
-            self.model = Lstm(self.args, self.params, self.log, self)
-            #return
+            self.model = NormalDL(self.args, self.params, self.log, **self.autodict)
             self.session = tf.Session(graph=g)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())#初始化所有Variable定义的变量
                 saver = tf.train.Saver()#保存模型
-                
+                if not os.path.exists(self.module_path):
+                    os.makedirs(self.module_path)
                 start_time = time.time()
                 total_batch = 0              # 总批次
                 best_acc_val = 0.0           # 最佳验证集准确率
@@ -160,9 +122,12 @@ class LSTMOp():
                 self.print_log('require_improvement: {}'.format(require_improvement))
                 
                 batches = self.data.get_batch_data(self.get_option('summary', 'test_ratio', 'float'), self.get_option('summary', 'batch_size', 'int'), self.get_option('summary', 'num_epochs', 'int')) 
+                
+                print_per_batch = int(self.get_option('summary', 'print_per_batch', 'int'))
                 for index, batch in enumerate(batches):
-                    x_batch, y_batch, x_val, y_val = batch#x_batch, y_batch ==> train
-                    feed_dict = self.feed_data(x_batch, y_batch, self.get_option('summary', 'dropout_keep_prob', 'float'))#dropout_keep_prob正则系数
+                    x_batch, y_batch, x_val, y_val = batch#x_batch, y_batch ==> train                    
+                    x_batch = np.array([self.pre_predict(quest) for quest in x_batch])
+                    feed_dict = self.feed_data(x_batch, y_batch, self.get_option('summary', 'dropout_keep_prob', 'float'))#dropout_keep_prob正则系数                    
                     #test shape
 #                    self.print_shape(self.model.input_x, feed_dict)
 #                    self.print_shape(self.model.embedding, feed_dict)
@@ -182,7 +147,7 @@ class LSTMOp():
                                # 保存最好结果
                             best_acc_val = acc_val
                             last_improved = total_batch#提升的批次
-                            saver.save(sess=self.session, save_path=self.module_file)
+                            saver.save(sess=self.session, save_path=self.module_path)
                             self.data.get_accuracy_rate(correct_predictions, scores)#计算准确率阈值
         
                         time_dif = self.get_time_dif(start_time)
@@ -191,65 +156,27 @@ class LSTMOp():
                      
                     self.session.run(self.model.optim, feed_dict = feed_dict)#运行优化
                     total_batch += 1
-                    if total_batch == (int(len(self.data.quest_label.keys()) / self.get_option('summary', 'batch_size', 'int')) + 1):
+                    
+                    if total_batch == (int(len(self.data.quest_label.keys()) / int(self.get_params('summary', 'batch_size'))) + 1):
                         last_improved = total_batch
                     if total_batch - last_improved > require_improvement:
                         # 验证集正确率长期不提升，提前结束训练
                         break#跳出循环
                 self.print_log('最佳准确率:{}'.format(best_acc_val))
     
-    def get_model(self):
-        return self.model
-    
-    def load_embed_model(self):
-        with tf.Graph().as_default() as g:
-            autodict = self.make_autodict()
-            self.print_log('autodict:{}'.format(autodict))
-            self.embedded_module = Embed(self.args, self.params, self.log, **autodict)
-            with tf.Session(graph=g).as_default() as sess:
-                sess.run(tf.global_variables_initializer())
-                saver = tf.train.Saver()
-                saver.restore(sess=sess, save_path=self.embed_file)
-                self.embedded_w = sess.run(self.embedded_module.W)
-    
     def load_model(self):
-        if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
-            self.load_embed_model()
         with tf.Graph().as_default() as g:
-            self.model = Lstm(self.args, self.params, self.log, self)
+            self.model = NormalDL(self.args, self.params)
             self.session = tf.Session(graph=g)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())
                 saver = tf.train.Saver()
-                saver.restore(sess=self.session, save_path=self.module_file)
-
-    def restore_build_one_vector(self, raw_quest):
-        raw_quest = raw_quest.upper()
-        quest = [self.data.word_to_id.get(word, self.data.word_to_id['<UNK>']) for word in (self.data.word_parser.cut(raw_quest).split(' ') if 1 == self.args.use_cut_words else raw_quest) if word not in ['\n', '\t', '']]
-        if len(quest) >= self.args.max_document_lenth:
-            quest = quest[:self.args.max_document_lenth]#截取
-        else:
-            #pad_sequences补0是往前面补
-            quest = (self.args.max_document_lenth-len(quest))*[self.data.word_to_id['<UNK>']] + quest#前面是UNK
-        #self.print_log('问题:{}\n向量:{}'.format(raw_quest,quest))
-        return np.array(quest)
+                saver.restore(sess=self.session, save_path=self.module_path)
 
     def predict(self, quest):
-        if hasattr(self.data, 'build_one_vector'):
-            feed_dict = {self.model.input_x: [self.data.build_one_vector(quest)], self.model.keep_prob: 1.0}
-        else:
-            feed_dict = {self.model.input_x: [self.restore_build_one_vector(quest)], self.model.keep_prob: 1.0}
+        feed_dict = {self.model.input_x:self.pre_predict(quest), self.model.keep_prob: 1.0}
         return self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
     
-#    def predict_all(self, num_epochs=10, batch_size=32):
-#        allquests, alllabels = self.data.get_all_quests_and_label(num_epochs, batch_size)
-#        for index, batch in enumerate(allquests):
-#            quests, labels = batch
-#            allscores = []
-#            for quest in quests:
-#                allscores.append(self.session.run([self.model.scores], feed_dict={self.model.input_x:quest, self.model.keep_prob: 1.0}))
-#            yield allscores, labels
-
     def get_sets_accracy(self, testfile='NONAME'):
         train_total_quest = 0
         train_correct_count = 0
@@ -270,14 +197,14 @@ class LSTMOp():
                 
                     for quest in line[2].split('#&#&#'):
                         train_total_quest += 1
-                        predict, probs = self.predict(quest)
+                        predict, probs = self.predict(self.pre_predict(quest))
                         
                         if label_id == self.data.id_to_label[str(predict[0])]:
                             train_correct_count += 1
                     
                     for quest in line[3].split('#&#&#'):
                         test_total_quest += 1
-                        predict, probs = self.predict(quest)
+                        predict, probs = self.predict(self.pre_predict(quest))
                         
                         if label_id == self.data.id_to_label[str(predict[0])]:
                             test_correct_count += 1
@@ -291,9 +218,9 @@ class LSTMOp():
             for line in f.readlines():
                 line = line.strip().split('\t')
                 if self.data is None:
-                    feed_dict = {self.model.input_x: [self.restore_build_one_vector(line[0])], self.model.keep_prob: 1.0}
+                    feed_dict = {self.model.input_x: self.pre_predict(line[0]), self.model.keep_prob: 1.0}
                 else:
-                    feed_dict = {self.model.input_x: [self.data.build_one_vector(line[0])], self.model.keep_prob: 1.0}
+                    feed_dict = {self.model.input_x: self.pre_predict(line[0]), self.model.keep_prob: 1.0}
                 predict, probs = self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
                 result.append(probs[0][predict])#predict是预测的概率最大分类的下标,所以此处是probs[0][predict]最大的概率
         #允许90%的闲聊数据通过
@@ -311,18 +238,3 @@ class LSTMOp():
         else:
             self.accuracy = acc_2
         self.print_log('最终的准确率阈值为:{},训练数据最低准确率要求:{},过滤掉90%的闲聊数据的准确率要求:{}'.format(self.accuracy, acc_2, acc_1))
-        
-        
-#单个module测试
-#class test():
-#    def __init__(self):
-#        self.local_debug = 1
-#        self.print_to_log = 0
-#        self.max_document_lenth = 122
-#        self.num_class = 1000
-#        self.vocab_size = 1500
-#
-#if __name__ == '__main__':
-#    localtest = LSTMOp(test(), None)
-#    localtest.train()
-    #localtest.listAllsection()

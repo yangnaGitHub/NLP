@@ -13,11 +13,12 @@ import traceback
 import re
 
 class Lstm(object):
-    def __init__(self, args, params, log=None):
+    def __init__(self, args, params, log=None, opmodule=None):
         os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
         self.args = args
         self.params = params
         self.log = log
+        self.opmodule = opmodule
         self.construct()
     
     def get_option(self, section, option, wclass='str'):
@@ -51,7 +52,7 @@ class Lstm(object):
     
     def get_shape(self, var):
         return tf.shape(var)
-        
+
     def construct(self):
         tf.set_random_seed(66)
         
@@ -61,8 +62,15 @@ class Lstm(object):
         self.keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")#正则化
         
         with tf.device('/cpu:0'), tf.name_scope('embedding'):
-            self.W = tf.Variable(tf.truncated_normal([self.args.vocab_size, self.get_option('embedding', 'embedding_size', 'int')], stddev=0.1), name='W')
-            self.embedding = tf.nn.embedding_lookup(self.W, self.input_x)#(batch_size, max_document_lenth, embedding_size)
+            if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
+                if hasattr(self.opmodule, 'embedded_w'):
+                    self.embedded_w = tf.Variable(self.opmodule.get_embedded_w, name='W')
+                    self.embedding = tf.nn.embedding_lookup(self.embedded_w, self.input_x)#self.embedded_module.o_embedding
+                else:
+                    self.print_log('lack embedded_w')
+            else:
+                self.W = tf.Variable(tf.truncated_normal([self.args.vocab_size, self.get_option('embedding', 'embedding_size', 'int')], stddev=0.1), name='W')
+                self.embedding = tf.nn.embedding_lookup(self.W, self.input_x)#(batch_size, max_document_lenth, embedding_size)
         self.print_log('embedding:{}'.format(self.embedding.shape))
         #model
         with tf.variable_scope('layer'):

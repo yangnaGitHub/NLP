@@ -10,20 +10,14 @@ Created on Wed Jun 27 16:13:59 2018
 import tensorflow as tf
 import os
 import traceback
-from Embed.module import Embed as Embed
-       
+
 class TextCNN(object):
-    """
-    A CNN for text classification.
-    Uses an embedding layer, followed by a convolutional, max-pooling and softmax layer.
-    """
-    def __init__(self, args, params, log=None):
+    def __init__(self, args, params, log=None, opmodule=None):
         os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
         self.args = args
         self.params = params
         self.log = log
-        if 0 == int(self.get_params('embedding', 'use_embedding_tf')):
-            self.construct_embed()
+        self.opmodule = opmodule
         self.construct()
     
     def get_params(self, layer, var):
@@ -38,17 +32,6 @@ class TextCNN(object):
     
     def get_shape(self, var):
         return tf.shape(var)
-    
-    def make_autodict(self):
-        return dict({
-                'window_size':int(self.get_params('embedding', 'window_size')),
-                'embedding_size':int(self.get_params('embedding', 'embedding_size')),
-                'learning_rate':float(self.get_params('embedding', 'learning_rate'))
-                })
-
-    def construct_embed(self):
-        autodict = self.make_autodict()
-        self.embedded_module = Embed(self.args, self.params, self.log, **autodict)
 
     def construct(self):
         tf.set_random_seed(66)
@@ -63,7 +46,14 @@ class TextCNN(object):
         # Embedding layer
         with tf.device('/cpu:0'), tf.name_scope('embedding'):#词向量#tf.device('/cpu:0')
             if 0 == int(self.get_params('embedding', 'use_embedding_tf')):
-                self.embedded_chars = self.embedded_module.embedding
+                #self.embedded_module.o_input_x = self.input_x
+                #self.embedded_w = tf.placeholder(tf.float32, [self.args.vocab_size, int(self.get_params('embedding', 'embedding_size'))], name='embedded_w')
+                #self.embedded_chars = tf.nn.embedding_lookup(self.embedded_w, self.input_x)#self.embedded_module.o_embedding
+                if hasattr(self.opmodule, 'embedded_w'):
+                    self.embedded_w = tf.Variable(self.opmodule.get_embedded_w, name='W')
+                    self.embedded_chars = tf.nn.embedding_lookup(self.embedded_w, self.input_x)#self.embedded_module.o_embedding
+                else:
+                    self.print_log('lack embedded_w')
             else:
                 self.W = tf.Variable(
                         tf.random_uniform([self.args.vocab_size, int(self.get_params('embedding', 'embedding_size'))], -1.0, 1.0),#vocab_size(build_vocab_size 最大5000字) * embedding_size [-1, 1]

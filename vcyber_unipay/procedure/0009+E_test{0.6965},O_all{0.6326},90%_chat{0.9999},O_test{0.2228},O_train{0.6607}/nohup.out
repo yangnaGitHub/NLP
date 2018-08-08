@@ -1,0 +1,146 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.982 seconds.
+Prefix dict has been built succesfully.
+[data.py][data:__init__] data initial
+[data.py][data:get_data] expend count:8189, 737170, 561, 8936
+[data.py][data:add_outdata] add out count:767083, 20986
+[Allmodule.py][module:retrain] DML_methods_str['LSTMOp']
+[module.py][Lstm:construct] embedding:(?, 567, 128)
+[module.py][Lstm:construct] outputs:(?, 567, 256),(?, 567, 256)
+[module.py][Lstm:construct] scores&predictions:(?, 562),Tensor("output/predictions:0", shape=(?,), dtype=int64)
+[opmodule.py][LSTMOp:train] require_improvement: 5992
+[data.py][data:get_batch_data] train_x:(767083,),train_y:(767083,),test_x:(20986, 567),test_y:(20986, 562)
+[data.py][data:get_batch_data] num_batches_per_epoch:5993
+[data.py][data:get_batch_data] Epoch:1
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0018379263347014785,平均准确率:0.0018455979879945517,最高准确率:0.001854113070294261
+[opmodule.py][LSTMOp:train] total_batch:      0, Train Loss:    6.3, Train Acc:   0.00%, Val Loss:  1e+03, Val Acc:   0.10%, Time: 0:01:34
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.019283294677734375,平均准确率:0.7548235654830933,最高准确率:0.992098331451416
+[opmodule.py][LSTMOp:train] total_batch:    128, Train Loss:   0.42, Train Acc:  92.97%, Val Loss: 6.6e+02, Val Acc:  52.01%, Time: 0:06:25
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.02617214247584343,平均准确率:0.7903552055358887,最高准确率:0.9996380805969238
+[opmodule.py][LSTMOp:train] total_batch:    256, Train Loss:   0.65, Train Acc:  87.50%, Val Loss: 5.7e+02, Val Acc:  53.90%, Time: 0:11:09
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.023101801052689552,平均准确率:0.8866750001907349,最高准确率:0.9998114705085754
+[opmodule.py][LSTMOp:train] total_batch:    384, Train Loss:   0.25, Train Acc:  94.53%, Val Loss: 5.4e+02, Val Acc:  57.25%, Time: 0:15:50
+[opmodule.py][LSTMOp:train] total_batch:    512, Train Loss:   0.16, Train Acc:  96.09%, Val Loss:  5e+02, Val Acc:  56.77%, Time: 0:20:28
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.021379774436354637,平均准确率:0.8997210264205933,最高准确率:0.9999371767044067
+[opmodule.py][LSTMOp:train] total_batch:    640, Train Loss:   0.16, Train Acc:  97.66%, Val Loss: 5.5e+02, Val Acc:  57.93%, Time: 0:25:08
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03332480415701866,平均准确率:0.9363080859184265,最高准确率:0.999970555305481
+[opmodule.py][LSTMOp:train] total_batch:    768, Train Loss:   0.22, Train Acc:  95.31%, Val Loss: 4.9e+02, Val Acc:  58.39%, Time: 0:29:47
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03092660754919052,平均准确率:0.9392818212509155,最高准确率:0.9999743700027466
+[opmodule.py][LSTMOp:train] total_batch:    896, Train Loss:   0.15, Train Acc:  96.88%, Val Loss: 4.5e+02, Val Acc:  60.20%, Time: 0:34:34
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.037017423659563065,平均准确率:0.8801883459091187,最高准确率:0.9999730587005615
+[opmodule.py][LSTMOp:train] total_batch:   1024, Train Loss:   0.13, Train Acc:  97.66%, Val Loss: 4.9e+02, Val Acc:  62.43%, Time: 0:39:16
+[opmodule.py][LSTMOp:train] total_batch:   1152, Train Loss:   0.15, Train Acc:  96.88%, Val Loss: 4.7e+02, Val Acc:  60.18%, Time: 0:43:56
+[opmodule.py][LSTMOp:train] total_batch:   1280, Train Loss:   0.18, Train Acc:  96.88%, Val Loss: 4.6e+02, Val Acc:  61.67%, Time: 0:48:39
+[opmodule.py][LSTMOp:train] total_batch:   1408, Train Loss:   0.15, Train Acc:  96.09%, Val Loss: 4.8e+02, Val Acc:  60.47%, Time: 0:53:24
+[opmodule.py][LSTMOp:train] total_batch:   1536, Train Loss:   0.23, Train Acc:  95.31%, Val Loss: 4.2e+02, Val Acc:  60.67%, Time: 0:58:04
+[opmodule.py][LSTMOp:train] total_batch:   1664, Train Loss:   0.28, Train Acc:  94.53%, Val Loss: 4.9e+02, Val Acc:  62.24%, Time: 1:02:47
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03287524729967117,平均准确率:0.9176642894744873,最高准确率:0.9999934434890747
+[opmodule.py][LSTMOp:train] total_batch:   1792, Train Loss:   0.12, Train Acc:  96.88%, Val Loss: 4.8e+02, Val Acc:  63.10%, Time: 1:07:35
+[opmodule.py][LSTMOp:train] total_batch:   1920, Train Loss:   0.22, Train Acc:  95.31%, Val Loss: 4.6e+02, Val Acc:  60.43%, Time: 1:12:18
+[opmodule.py][LSTMOp:train] total_batch:   2048, Train Loss:  0.094, Train Acc:  98.44%, Val Loss: 4.1e+02, Val Acc:  61.64%, Time: 1:17:00
+[opmodule.py][LSTMOp:train] total_batch:   2176, Train Loss:   0.17, Train Acc:  97.66%, Val Loss: 4.6e+02, Val Acc:  61.01%, Time: 1:21:43
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.038622841238975525,平均准确率:0.9299606084823608,最高准确率:0.9999967813491821
+[opmodule.py][LSTMOp:train] total_batch:   2304, Train Loss:   0.15, Train Acc:  96.88%, Val Loss: 4.1e+02, Val Acc:  64.10%, Time: 1:26:36
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.021546661853790283,平均准确率:0.9363411664962769,最高准确率:0.9999978542327881
+[opmodule.py][LSTMOp:train] total_batch:   2432, Train Loss:   0.13, Train Acc:  98.44%, Val Loss: 4.4e+02, Val Acc:  65.18%, Time: 1:31:23
+[opmodule.py][LSTMOp:train] total_batch:   2560, Train Loss:   0.21, Train Acc:  96.88%, Val Loss: 4.8e+02, Val Acc:  63.51%, Time: 1:36:03
+[opmodule.py][LSTMOp:train] total_batch:   2688, Train Loss:   0.14, Train Acc:  97.66%, Val Loss: 4.4e+02, Val Acc:  63.04%, Time: 1:40:45
+[opmodule.py][LSTMOp:train] total_batch:   2816, Train Loss:  0.077, Train Acc:  99.22%, Val Loss: 4.6e+02, Val Acc:  64.41%, Time: 1:45:22
+[opmodule.py][LSTMOp:train] total_batch:   2944, Train Loss:   0.12, Train Acc:  98.44%, Val Loss: 4.6e+02, Val Acc:  64.88%, Time: 1:50:06
+[opmodule.py][LSTMOp:train] total_batch:   3072, Train Loss:   0.03, Train Acc: 100.00%, Val Loss: 4.5e+02, Val Acc:  62.64%, Time: 1:54:49
+[opmodule.py][LSTMOp:train] total_batch:   3200, Train Loss:  0.077, Train Acc:  98.44%, Val Loss: 4.2e+02, Val Acc:  64.49%, Time: 1:59:32
+[opmodule.py][LSTMOp:train] total_batch:   3328, Train Loss:   0.15, Train Acc:  96.88%, Val Loss: 4.3e+02, Val Acc:  64.97%, Time: 2:04:12
+[opmodule.py][LSTMOp:train] total_batch:   3456, Train Loss:   0.16, Train Acc:  95.31%, Val Loss: 4.2e+02, Val Acc:  64.69%, Time: 2:08:55
+[opmodule.py][LSTMOp:train] total_batch:   3584, Train Loss:  0.019, Train Acc: 100.00%, Val Loss: 4.2e+02, Val Acc:  64.57%, Time: 2:13:35
+[opmodule.py][LSTMOp:train] total_batch:   3712, Train Loss:   0.19, Train Acc:  96.88%, Val Loss:  4e+02, Val Acc:  63.66%, Time: 2:18:12
+[opmodule.py][LSTMOp:train] total_batch:   3840, Train Loss:  0.042, Train Acc:  98.44%, Val Loss: 4.1e+02, Val Acc:  63.19%, Time: 2:23:04
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03294400870800018,平均准确率:0.9372255206108093,最高准确率:0.9999997615814209
+[opmodule.py][LSTMOp:train] total_batch:   3968, Train Loss:    0.1, Train Acc:  96.88%, Val Loss: 3.9e+02, Val Acc:  66.49%, Time: 2:27:53
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.043602120131254196,平均准确率:0.9490912556648254,最高准确率:0.9999998807907104
+[opmodule.py][LSTMOp:train] total_batch:   4096, Train Loss:  0.057, Train Acc:  96.88%, Val Loss: 4.5e+02, Val Acc:  66.54%, Time: 2:32:42
+[opmodule.py][LSTMOp:train] total_batch:   4224, Train Loss:   0.13, Train Acc:  96.88%, Val Loss: 3.9e+02, Val Acc:  65.59%, Time: 2:37:31
+[opmodule.py][LSTMOp:train] total_batch:   4352, Train Loss:  0.077, Train Acc:  96.88%, Val Loss:  4e+02, Val Acc:  65.82%, Time: 2:42:14
+[opmodule.py][LSTMOp:train] total_batch:   4480, Train Loss:  0.041, Train Acc:  99.22%, Val Loss: 3.8e+02, Val Acc:  65.34%, Time: 2:46:57
+[opmodule.py][LSTMOp:train] total_batch:   4608, Train Loss:  0.038, Train Acc:  98.44%, Val Loss: 4.1e+02, Val Acc:  66.00%, Time: 2:51:46
+[opmodule.py][LSTMOp:train] total_batch:   4736, Train Loss:  0.091, Train Acc:  99.22%, Val Loss: 4.2e+02, Val Acc:  64.98%, Time: 2:56:36
+[opmodule.py][LSTMOp:train] total_batch:   4864, Train Loss:  0.062, Train Acc:  98.44%, Val Loss: 3.8e+02, Val Acc:  65.13%, Time: 3:01:23
+[opmodule.py][LSTMOp:train] total_batch:   4992, Train Loss:  0.044, Train Acc:  98.44%, Val Loss: 3.8e+02, Val Acc:  65.22%, Time: 3:06:18
+[opmodule.py][LSTMOp:train] total_batch:   5120, Train Loss:  0.028, Train Acc: 100.00%, Val Loss: 4.2e+02, Val Acc:  66.04%, Time: 3:11:10
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.02571997046470642,平均准确率:0.9461235404014587,最高准确率:0.9999998807907104
+[opmodule.py][LSTMOp:train] total_batch:   5248, Train Loss:  0.095, Train Acc:  99.22%, Val Loss: 4.4e+02, Val Acc:  66.54%, Time: 3:16:03
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06022471562027931,平均准确率:0.9479700326919556,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:   5376, Train Loss:  0.092, Train Acc:  97.66%, Val Loss: 4.1e+02, Val Acc:  66.58%, Time: 3:20:52
+[opmodule.py][LSTMOp:train] total_batch:   5504, Train Loss:   0.11, Train Acc:  96.88%, Val Loss: 4.4e+02, Val Acc:  66.22%, Time: 3:25:34
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.028498388826847076,平均准确率:0.9520490765571594,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:   5632, Train Loss:  0.075, Train Acc:  96.88%, Val Loss:  4e+02, Val Acc:  67.12%, Time: 3:30:31
+[opmodule.py][LSTMOp:train] total_batch:   5760, Train Loss:  0.023, Train Acc:  99.22%, Val Loss: 4.1e+02, Val Acc:  66.94%, Time: 3:35:15
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04945135489106178,平均准确率:0.9537160396575928,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:   5888, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss: 4.1e+02, Val Acc:  67.58%, Time: 3:40:05
+[data.py][data:get_batch_data] Epoch:2
+[opmodule.py][LSTMOp:train] total_batch:   6016, Train Loss:  0.018, Train Acc: 100.00%, Val Loss:  4e+02, Val Acc:  66.54%, Time: 3:44:55
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0606866218149662,平均准确率:0.9634352326393127,最高准确率:0.9999996423721313
+[opmodule.py][LSTMOp:train] total_batch:   6144, Train Loss: 0.00068, Train Acc: 100.00%, Val Loss: 3.8e+02, Val Acc:  68.01%, Time: 3:49:43
+[opmodule.py][LSTMOp:train] total_batch:   6272, Train Loss: 0.0021, Train Acc: 100.00%, Val Loss:  4e+02, Val Acc:  67.92%, Time: 3:54:34
+[opmodule.py][LSTMOp:train] total_batch:   6400, Train Loss:  0.095, Train Acc:  98.44%, Val Loss: 4.1e+02, Val Acc:  66.81%, Time: 3:59:24
+[opmodule.py][LSTMOp:train] total_batch:   6528, Train Loss:   0.07, Train Acc:  97.66%, Val Loss: 4.6e+02, Val Acc:  67.83%, Time: 4:04:10
+[opmodule.py][LSTMOp:train] total_batch:   6656, Train Loss:  0.075, Train Acc:  98.44%, Val Loss: 3.8e+02, Val Acc:  67.59%, Time: 4:08:58
+[opmodule.py][LSTMOp:train] total_batch:   6784, Train Loss: 0.00087, Train Acc: 100.00%, Val Loss: 4.3e+02, Val Acc:  66.37%, Time: 4:13:45
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03527064621448517,平均准确率:0.9589756727218628,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:   6912, Train Loss:  0.052, Train Acc:  98.44%, Val Loss: 3.7e+02, Val Acc:  68.41%, Time: 4:18:33
+[opmodule.py][LSTMOp:train] total_batch:   7040, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 3.8e+02, Val Acc:  67.23%, Time: 4:23:24
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04958072304725647,平均准确率:0.9477660059928894,最高准确率:1.0
+[opmodule.py][LSTMOp:train] total_batch:   7168, Train Loss:  0.017, Train Acc: 100.00%, Val Loss: 4.2e+02, Val Acc:  69.66%, Time: 4:28:17
+[opmodule.py][LSTMOp:train] total_batch:   7296, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 4.3e+02, Val Acc:  68.56%, Time: 4:33:10
+[opmodule.py][LSTMOp:train] total_batch:   7424, Train Loss: 0.0078, Train Acc: 100.00%, Val Loss: 4.5e+02, Val Acc:  69.46%, Time: 4:37:52
+[opmodule.py][LSTMOp:train] total_batch:   7552, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 4.5e+02, Val Acc:  68.55%, Time: 4:42:40
+[opmodule.py][LSTMOp:train] total_batch:   7680, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 4.6e+02, Val Acc:  68.30%, Time: 4:47:29
+[opmodule.py][LSTMOp:train] total_batch:   7808, Train Loss:  0.055, Train Acc:  98.44%, Val Loss: 4.5e+02, Val Acc:  67.88%, Time: 4:52:22
+[opmodule.py][LSTMOp:train] total_batch:   7936, Train Loss:   0.07, Train Acc:  98.44%, Val Loss: 3.8e+02, Val Acc:  69.43%, Time: 4:57:19
+[opmodule.py][LSTMOp:train] total_batch:   8064, Train Loss:  0.016, Train Acc:  99.22%, Val Loss: 3.9e+02, Val Acc:  67.91%, Time: 5:02:03
+[opmodule.py][LSTMOp:train] total_batch:   8192, Train Loss:  0.045, Train Acc:  98.44%, Val Loss: 4.3e+02, Val Acc:  68.12%, Time: 5:06:52
+[opmodule.py][LSTMOp:train] total_batch:   8320, Train Loss:  0.044, Train Acc:  98.44%, Val Loss: 4.2e+02, Val Acc:  67.03%, Time: 5:11:44
+[opmodule.py][LSTMOp:train] total_batch:   8448, Train Loss:  0.011, Train Acc:  99.22%, Val Loss: 4.4e+02, Val Acc:  68.19%, Time: 5:16:34
+[opmodule.py][LSTMOp:train] total_batch:   8576, Train Loss: 0.0016, Train Acc: 100.00%, Val Loss: 4.2e+02, Val Acc:  68.28%, Time: 5:21:20
+[opmodule.py][LSTMOp:train] total_batch:   8704, Train Loss:  0.013, Train Acc: 100.00%, Val Loss: 4.3e+02, Val Acc:  68.65%, Time: 5:26:06
+[opmodule.py][LSTMOp:train] total_batch:   8832, Train Loss:  0.069, Train Acc:  99.22%, Val Loss: 4.1e+02, Val Acc:  68.33%, Time: 5:30:53
+[opmodule.py][LSTMOp:train] total_batch:   8960, Train Loss:  0.026, Train Acc:  99.22%, Val Loss: 3.8e+02, Val Acc:  67.85%, Time: 5:35:39
+[opmodule.py][LSTMOp:train] total_batch:   9088, Train Loss:  0.032, Train Acc:  99.22%, Val Loss: 3.9e+02, Val Acc:  69.41%, Time: 5:40:23
+[opmodule.py][LSTMOp:train] total_batch:   9216, Train Loss:  0.004, Train Acc: 100.00%, Val Loss: 4.1e+02, Val Acc:  69.34%, Time: 5:45:07
+[opmodule.py][LSTMOp:train] total_batch:   9344, Train Loss:  0.071, Train Acc:  98.44%, Val Loss:  4e+02, Val Acc:  67.94%, Time: 5:49:52
+[opmodule.py][LSTMOp:train] total_batch:   9472, Train Loss:  0.041, Train Acc:  99.22%, Val Loss: 4.2e+02, Val Acc:  68.70%, Time: 5:54:39
+[opmodule.py][LSTMOp:train] total_batch:   9600, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 4.2e+02, Val Acc:  68.89%, Time: 5:59:26
+[opmodule.py][LSTMOp:train] total_batch:   9728, Train Loss: 0.0039, Train Acc: 100.00%, Val Loss: 3.9e+02, Val Acc:  69.31%, Time: 6:04:16
+[opmodule.py][LSTMOp:train] total_batch:   9856, Train Loss:   0.05, Train Acc:  99.22%, Val Loss: 3.5e+02, Val Acc:  68.04%, Time: 6:09:03
+[opmodule.py][LSTMOp:train] total_batch:   9984, Train Loss:  0.055, Train Acc:  99.22%, Val Loss: 3.9e+02, Val Acc:  69.49%, Time: 6:13:55
+[opmodule.py][LSTMOp:train] total_batch:  10112, Train Loss:  0.011, Train Acc: 100.00%, Val Loss: 3.9e+02, Val Acc:  68.25%, Time: 6:18:46
+[opmodule.py][LSTMOp:train] total_batch:  10240, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 3.8e+02, Val Acc:  67.26%, Time: 6:23:37
+[opmodule.py][LSTMOp:train] total_batch:  10368, Train Loss:  0.028, Train Acc:  98.44%, Val Loss: 3.6e+02, Val Acc:  68.72%, Time: 6:28:29
+[opmodule.py][LSTMOp:train] total_batch:  10496, Train Loss:  0.076, Train Acc:  97.66%, Val Loss: 3.9e+02, Val Acc:  68.27%, Time: 6:33:22
+[opmodule.py][LSTMOp:train] total_batch:  10624, Train Loss:  0.081, Train Acc:  97.66%, Val Loss: 4.1e+02, Val Acc:  67.74%, Time: 6:38:16
+[opmodule.py][LSTMOp:train] total_batch:  10752, Train Loss:  0.035, Train Acc:  99.22%, Val Loss: 4.1e+02, Val Acc:  68.07%, Time: 6:43:14
+[opmodule.py][LSTMOp:train] total_batch:  10880, Train Loss:   0.11, Train Acc:  97.66%, Val Loss: 4.3e+02, Val Acc:  67.70%, Time: 6:48:07
+[opmodule.py][LSTMOp:train] total_batch:  11008, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 3.7e+02, Val Acc:  69.56%, Time: 6:52:58
+[opmodule.py][LSTMOp:train] total_batch:  11136, Train Loss:   0.09, Train Acc:  98.44%, Val Loss: 3.9e+02, Val Acc:  68.46%, Time: 6:57:52
+[opmodule.py][LSTMOp:train] total_batch:  11264, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 3.6e+02, Val Acc:  68.60%, Time: 7:02:38
+[opmodule.py][LSTMOp:train] total_batch:  11392, Train Loss:  0.031, Train Acc:  99.22%, Val Loss: 3.4e+02, Val Acc:  68.22%, Time: 7:07:23
+[opmodule.py][LSTMOp:train] total_batch:  11520, Train Loss: 0.0035, Train Acc: 100.00%, Val Loss:  4e+02, Val Acc:  67.85%, Time: 7:12:12
+[opmodule.py][LSTMOp:train] total_batch:  11648, Train Loss:  0.061, Train Acc:  98.44%, Val Loss: 4.4e+02, Val Acc:  67.48%, Time: 7:17:06
+[opmodule.py][LSTMOp:train] total_batch:  11776, Train Loss:  0.021, Train Acc: 100.00%, Val Loss: 4.1e+02, Val Acc:  68.33%, Time: 7:21:54
+[opmodule.py][LSTMOp:train] total_batch:  11904, Train Loss: 0.0068, Train Acc: 100.00%, Val Loss: 3.7e+02, Val Acc:  68.65%, Time: 7:26:50
+[data.py][data:get_batch_data] Epoch:3
+[opmodule.py][LSTMOp:train] total_batch:  12032, Train Loss:  0.024, Train Acc:  99.22%, Val Loss: 3.2e+02, Val Acc:  68.74%, Time: 7:31:41
+[opmodule.py][LSTMOp:train] total_batch:  12160, Train Loss:  0.007, Train Acc:  99.22%, Val Loss: 3.3e+02, Val Acc:  68.59%, Time: 7:36:34
+[opmodule.py][LSTMOp:train] total_batch:  12288, Train Loss:  0.036, Train Acc:  99.22%, Val Loss: 3.5e+02, Val Acc:  68.25%, Time: 7:41:19
+[opmodule.py][LSTMOp:train] total_batch:  12416, Train Loss: 0.0031, Train Acc: 100.00%, Val Loss: 3.9e+02, Val Acc:  67.89%, Time: 7:46:05
+[opmodule.py][LSTMOp:train] total_batch:  12544, Train Loss: 0.00029, Train Acc: 100.00%, Val Loss: 3.9e+02, Val Acc:  68.56%, Time: 7:50:54
+[opmodule.py][LSTMOp:train] total_batch:  12672, Train Loss: 0.0039, Train Acc: 100.00%, Val Loss: 3.6e+02, Val Acc:  67.57%, Time: 7:55:40
+[opmodule.py][LSTMOp:train] total_batch:  12800, Train Loss: 0.0062, Train Acc:  99.22%, Val Loss: 3.9e+02, Val Acc:  68.43%, Time: 8:00:35
+[opmodule.py][LSTMOp:train] total_batch:  12928, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 4.2e+02, Val Acc:  68.56%, Time: 8:05:22
+[opmodule.py][LSTMOp:train] total_batch:  13056, Train Loss: 0.0032, Train Acc: 100.00%, Val Loss: 3.6e+02, Val Acc:  68.81%, Time: 8:10:17
+[opmodule.py][LSTMOp:train] 最佳准确率:0.6965549715408464
+[module.py][Lstm:construct] embedding:(?, 567, 128)
+[module.py][Lstm:construct] outputs:(?, 567, 256),(?, 567, 256)
+[module.py][Lstm:construct] scores&predictions:(?, 562),Tensor("output/predictions:0", shape=(?,), dtype=int64)
+[opmodule.py][LSTMOp:get_sets_accracy] 最终的准确率为:0.22281639928698752,0.6607644401025766,0.6326857142857143
+[opmodule.py][LSTMOp:get_accuracy_rate] 最终的准确率阈值为:0.04958072304725647,训练数据最低准确率要求:0.04958072304725647,过滤掉90%的闲聊数据的准确率要求:0.999997615814209

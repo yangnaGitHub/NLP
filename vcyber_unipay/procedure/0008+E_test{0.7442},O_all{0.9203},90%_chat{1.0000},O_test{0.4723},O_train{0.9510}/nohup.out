@@ -1,0 +1,291 @@
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.891 seconds.
+Prefix dict has been built succesfully.
+[data.py][data:__init__] data initial
+[data.py][data:get_data] expend count:8189, 739733, 561, 8578
+[data.py][data:add_outdata] add out count:769646, 20628
+[Allmodule.py][module:retrain] DML_methods_str['TextCNNOp']
+[module.py][TextCNN:construct] embedding:(?, 567, 128), (?, 567, 128, 1)
+[module.py][TextCNN:construct] h:conv-maxpool-0, (?, 567, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-0, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-1, (?, 566, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-1, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-2, (?, 565, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-2, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-3, (?, 564, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-3, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-4, (?, 563, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-4, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-5, (?, 562, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-5, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-6, (?, 561, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-6, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-7, (?, 560, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-7, (?, 1, 1, 128)
+[module.py][TextCNN:construct] combine:Tensor("concat:0", shape=(?, 1, 1, 1024), dtype=float32), (?, 1024)
+[module.py][TextCNN:construct] z_t:(?, 1)
+[data.py][data:get_batch_data] train_x:(769646,),train_y:(769646,),test_x:(20628, 567),test_y:(20628, 562)
+[data.py][data:get_batch_data] num_batches_per_epoch:6013
+[data.py][data:get_batch_data] Epoch:1
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.08572564274072647,平均准确率:0.26183995604515076,最高准确率:0.4553573727607727
+[opmodule.py][TextCNNOp:train] total_batch:      0, Train Loss:    9.8, Train Acc:   1.56%, Val Loss: 1.4e+03, Val Acc:   0.05%, Time: 0:01:19
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.09408601373434067,平均准确率:0.8522807359695435,最高准确率:0.9999792575836182
+[opmodule.py][TextCNNOp:train] total_batch:    128, Train Loss:   0.92, Train Acc:  87.50%, Val Loss: 1.1e+03, Val Acc:  50.99%, Time: 0:05:31
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.11338973790407181,平均准确率:0.8580637574195862,最高准确率:0.9999991655349731
+[opmodule.py][TextCNNOp:train] total_batch:    256, Train Loss:   0.14, Train Acc:  96.09%, Val Loss:  1e+03, Val Acc:  53.79%, Time: 0:09:45
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.10053026676177979,平均准确率:0.8981809020042419,最高准确率:0.9999998807907104
+[opmodule.py][TextCNNOp:train] total_batch:    384, Train Loss:   0.46, Train Acc:  94.53%, Val Loss: 9.3e+02, Val Acc:  59.73%, Time: 0:13:57
+[opmodule.py][TextCNNOp:train] total_batch:    512, Train Loss:   0.38, Train Acc:  96.09%, Val Loss: 9.7e+02, Val Acc:  59.72%, Time: 0:18:06
+[opmodule.py][TextCNNOp:train] total_batch:    640, Train Loss:  0.079, Train Acc:  98.44%, Val Loss: 8.8e+02, Val Acc:  59.27%, Time: 0:22:16
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.09848339110612869,平均准确率:0.9389110803604126,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:    768, Train Loss:   0.37, Train Acc:  94.53%, Val Loss: 7.9e+02, Val Acc:  61.06%, Time: 0:26:28
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0715135931968689,平均准确率:0.9248456358909607,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:    896, Train Loss:   0.24, Train Acc:  97.66%, Val Loss: 8.1e+02, Val Acc:  64.13%, Time: 0:30:40
+[opmodule.py][TextCNNOp:train] total_batch:   1024, Train Loss:   0.31, Train Acc:  93.75%, Val Loss: 7.8e+02, Val Acc:  64.05%, Time: 0:34:51
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0547911711037159,平均准确率:0.8685353398323059,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   1152, Train Loss: 0.0059, Train Acc: 100.00%, Val Loss: 7.8e+02, Val Acc:  64.17%, Time: 0:39:03
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06525135040283203,平均准确率:0.9166160821914673,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   1280, Train Loss:    0.1, Train Acc:  97.66%, Val Loss:  7e+02, Val Acc:  64.85%, Time: 0:43:29
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0319824181497097,平均准确率:0.9251921772956848,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   1408, Train Loss:   0.24, Train Acc:  96.09%, Val Loss: 6.9e+02, Val Acc:  65.70%, Time: 0:48:05
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.06208688020706177,平均准确率:0.936552107334137,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   1536, Train Loss:  0.037, Train Acc:  99.22%, Val Loss: 6.4e+02, Val Acc:  66.63%, Time: 0:52:42
+[opmodule.py][TextCNNOp:train] total_batch:   1664, Train Loss:    0.1, Train Acc:  97.66%, Val Loss: 6.5e+02, Val Acc:  66.54%, Time: 0:57:17
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03654075041413307,平均准确率:0.933232307434082,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   1792, Train Loss:  0.066, Train Acc:  98.44%, Val Loss: 6.8e+02, Val Acc:  67.61%, Time: 1:01:57
+[opmodule.py][TextCNNOp:train] total_batch:   1920, Train Loss:  0.051, Train Acc:  98.44%, Val Loss: 5.4e+02, Val Acc:  67.04%, Time: 1:06:36
+[opmodule.py][TextCNNOp:train] total_batch:   2048, Train Loss:  0.054, Train Acc:  96.88%, Val Loss:  6e+02, Val Acc:  67.38%, Time: 1:11:14
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.02610071562230587,平均准确率:0.9121968150138855,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   2176, Train Loss:  0.018, Train Acc:  98.44%, Val Loss:  6e+02, Val Acc:  67.92%, Time: 1:16:04
+[opmodule.py][TextCNNOp:train] total_batch:   2304, Train Loss:  0.066, Train Acc:  97.66%, Val Loss: 6.1e+02, Val Acc:  67.50%, Time: 1:21:04
+[opmodule.py][TextCNNOp:train] total_batch:   2432, Train Loss:  0.024, Train Acc:  98.44%, Val Loss: 6.1e+02, Val Acc:  67.70%, Time: 1:25:49
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.024318013340234756,平均准确率:0.9333364963531494,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   2560, Train Loss:  0.005, Train Acc: 100.00%, Val Loss: 5.8e+02, Val Acc:  68.80%, Time: 1:30:38
+[opmodule.py][TextCNNOp:train] total_batch:   2688, Train Loss:  0.035, Train Acc: 100.00%, Val Loss: 6.1e+02, Val Acc:  67.98%, Time: 1:35:24
+[opmodule.py][TextCNNOp:train] total_batch:   2816, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 5.9e+02, Val Acc:  67.66%, Time: 1:40:16
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04147457331418991,平均准确率:0.9439201951026917,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   2944, Train Loss:  0.038, Train Acc: 100.00%, Val Loss: 5.4e+02, Val Acc:  69.17%, Time: 1:45:11
+[opmodule.py][TextCNNOp:train] total_batch:   3072, Train Loss:  0.033, Train Acc:  99.22%, Val Loss: 5.9e+02, Val Acc:  68.89%, Time: 1:50:27
+[opmodule.py][TextCNNOp:train] total_batch:   3200, Train Loss:  0.039, Train Acc:  99.22%, Val Loss: 6.3e+02, Val Acc:  68.29%, Time: 1:55:15
+[opmodule.py][TextCNNOp:train] total_batch:   3328, Train Loss: 0.0037, Train Acc: 100.00%, Val Loss: 5.2e+02, Val Acc:  68.69%, Time: 1:59:23
+[opmodule.py][TextCNNOp:train] total_batch:   3456, Train Loss:  0.032, Train Acc:  99.22%, Val Loss: 5.3e+02, Val Acc:  68.09%, Time: 2:03:31
+[opmodule.py][TextCNNOp:train] total_batch:   3584, Train Loss:  0.086, Train Acc:  99.22%, Val Loss: 5.9e+02, Val Acc:  68.40%, Time: 2:07:38
+[opmodule.py][TextCNNOp:train] total_batch:   3712, Train Loss:  0.014, Train Acc:  99.22%, Val Loss: 5.3e+02, Val Acc:  69.13%, Time: 2:11:44
+[opmodule.py][TextCNNOp:train] total_batch:   3840, Train Loss: 0.0051, Train Acc: 100.00%, Val Loss: 5.2e+02, Val Acc:  68.96%, Time: 2:15:52
+[opmodule.py][TextCNNOp:train] total_batch:   3968, Train Loss:  0.048, Train Acc:  99.22%, Val Loss: 5.8e+02, Val Acc:  68.62%, Time: 2:19:57
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0647738054394722,平均准确率:0.9328033328056335,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   4096, Train Loss: 0.0067, Train Acc: 100.00%, Val Loss: 4.9e+02, Val Acc:  72.39%, Time: 2:24:07
+[opmodule.py][TextCNNOp:train] total_batch:   4224, Train Loss:  0.044, Train Acc: 100.00%, Val Loss: 5.5e+02, Val Acc:  69.02%, Time: 2:28:12
+[opmodule.py][TextCNNOp:train] total_batch:   4352, Train Loss: 0.0085, Train Acc: 100.00%, Val Loss: 5.1e+02, Val Acc:  69.24%, Time: 2:32:18
+[opmodule.py][TextCNNOp:train] total_batch:   4480, Train Loss:  0.017, Train Acc:  99.22%, Val Loss: 5.2e+02, Val Acc:  69.27%, Time: 2:36:23
+[opmodule.py][TextCNNOp:train] total_batch:   4608, Train Loss: 0.00069, Train Acc: 100.00%, Val Loss: 5.9e+02, Val Acc:  70.26%, Time: 2:40:28
+[opmodule.py][TextCNNOp:train] total_batch:   4736, Train Loss:  0.034, Train Acc:  99.22%, Val Loss: 5.9e+02, Val Acc:  69.39%, Time: 2:44:35
+[opmodule.py][TextCNNOp:train] total_batch:   4864, Train Loss:  0.023, Train Acc:  99.22%, Val Loss: 4.4e+02, Val Acc:  69.63%, Time: 2:48:40
+[opmodule.py][TextCNNOp:train] total_batch:   4992, Train Loss:  0.044, Train Acc:  99.22%, Val Loss:  5e+02, Val Acc:  69.27%, Time: 2:52:45
+[opmodule.py][TextCNNOp:train] total_batch:   5120, Train Loss:  0.002, Train Acc: 100.00%, Val Loss: 5.4e+02, Val Acc:  69.38%, Time: 2:56:53
+[opmodule.py][TextCNNOp:train] total_batch:   5248, Train Loss:  3e-06, Train Acc: 100.00%, Val Loss: 5.6e+02, Val Acc:  71.11%, Time: 3:01:01
+[opmodule.py][TextCNNOp:train] total_batch:   5376, Train Loss: 0.0041, Train Acc: 100.00%, Val Loss: 5.6e+02, Val Acc:  70.94%, Time: 3:05:08
+[opmodule.py][TextCNNOp:train] total_batch:   5504, Train Loss: 0.0082, Train Acc: 100.00%, Val Loss: 5.7e+02, Val Acc:  70.48%, Time: 3:09:17
+[opmodule.py][TextCNNOp:train] total_batch:   5632, Train Loss: 0.0062, Train Acc: 100.00%, Val Loss:  5e+02, Val Acc:  70.15%, Time: 3:13:24
+[opmodule.py][TextCNNOp:train] total_batch:   5760, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 5.6e+02, Val Acc:  70.66%, Time: 3:17:31
+[opmodule.py][TextCNNOp:train] total_batch:   5888, Train Loss:  0.067, Train Acc:  98.44%, Val Loss: 5.3e+02, Val Acc:  71.23%, Time: 3:21:38
+[data.py][data:get_batch_data] Epoch:2
+[opmodule.py][TextCNNOp:train] total_batch:   6016, Train Loss:  0.011, Train Acc: 100.00%, Val Loss: 5.9e+02, Val Acc:  70.62%, Time: 3:25:42
+[opmodule.py][TextCNNOp:train] total_batch:   6144, Train Loss: 0.0013, Train Acc: 100.00%, Val Loss: 6.3e+02, Val Acc:  70.41%, Time: 3:29:49
+[opmodule.py][TextCNNOp:train] total_batch:   6272, Train Loss:  0.045, Train Acc:  98.44%, Val Loss: 5.4e+02, Val Acc:  70.47%, Time: 3:33:57
+[opmodule.py][TextCNNOp:train] total_batch:   6400, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 6.2e+02, Val Acc:  70.77%, Time: 3:38:03
+[opmodule.py][TextCNNOp:train] total_batch:   6528, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 5.5e+02, Val Acc:  72.36%, Time: 3:42:10
+[opmodule.py][TextCNNOp:train] total_batch:   6656, Train Loss: 0.0051, Train Acc: 100.00%, Val Loss: 5.7e+02, Val Acc:  70.45%, Time: 3:46:16
+[opmodule.py][TextCNNOp:train] total_batch:   6784, Train Loss: 0.0032, Train Acc: 100.00%, Val Loss: 4.8e+02, Val Acc:  71.93%, Time: 3:50:24
+[opmodule.py][TextCNNOp:train] total_batch:   6912, Train Loss: 0.0045, Train Acc: 100.00%, Val Loss: 5.7e+02, Val Acc:  70.52%, Time: 3:54:30
+[opmodule.py][TextCNNOp:train] total_batch:   7040, Train Loss:  0.056, Train Acc:  98.44%, Val Loss:  6e+02, Val Acc:  70.75%, Time: 3:58:36
+[opmodule.py][TextCNNOp:train] total_batch:   7168, Train Loss:  0.019, Train Acc:  99.22%, Val Loss: 5.5e+02, Val Acc:  70.34%, Time: 4:02:41
+[opmodule.py][TextCNNOp:train] total_batch:   7296, Train Loss:  0.093, Train Acc:  98.44%, Val Loss: 5.9e+02, Val Acc:  70.43%, Time: 4:06:47
+[opmodule.py][TextCNNOp:train] total_batch:   7424, Train Loss:   0.02, Train Acc:  99.22%, Val Loss:  6e+02, Val Acc:  70.18%, Time: 4:10:54
+[opmodule.py][TextCNNOp:train] total_batch:   7552, Train Loss:  0.011, Train Acc:  99.22%, Val Loss: 6.7e+02, Val Acc:  70.99%, Time: 4:15:01
+[opmodule.py][TextCNNOp:train] total_batch:   7680, Train Loss:   0.02, Train Acc:  99.22%, Val Loss: 6.4e+02, Val Acc:  70.45%, Time: 4:19:07
+[opmodule.py][TextCNNOp:train] total_batch:   7808, Train Loss: 0.0026, Train Acc: 100.00%, Val Loss: 6.5e+02, Val Acc:  70.91%, Time: 4:23:13
+[opmodule.py][TextCNNOp:train] total_batch:   7936, Train Loss: 0.0044, Train Acc: 100.00%, Val Loss: 5.5e+02, Val Acc:  70.08%, Time: 4:27:18
+[opmodule.py][TextCNNOp:train] total_batch:   8064, Train Loss:    0.2, Train Acc:  97.66%, Val Loss: 6.9e+02, Val Acc:  69.86%, Time: 4:31:24
+[opmodule.py][TextCNNOp:train] total_batch:   8192, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 6.9e+02, Val Acc:  70.08%, Time: 4:35:31
+[opmodule.py][TextCNNOp:train] total_batch:   8320, Train Loss: 2.5e-05, Train Acc: 100.00%, Val Loss: 6.5e+02, Val Acc:  70.91%, Time: 4:39:37
+[opmodule.py][TextCNNOp:train] total_batch:   8448, Train Loss: 0.00034, Train Acc: 100.00%, Val Loss: 6.2e+02, Val Acc:  72.24%, Time: 4:43:42
+[opmodule.py][TextCNNOp:train] total_batch:   8576, Train Loss:  0.028, Train Acc:  99.22%, Val Loss: 5.9e+02, Val Acc:  71.67%, Time: 4:47:47
+[opmodule.py][TextCNNOp:train] total_batch:   8704, Train Loss: 0.0005, Train Acc: 100.00%, Val Loss: 6.2e+02, Val Acc:  71.95%, Time: 4:51:53
+[opmodule.py][TextCNNOp:train] total_batch:   8832, Train Loss:  0.091, Train Acc:  98.44%, Val Loss: 6.6e+02, Val Acc:  71.75%, Time: 4:55:59
+[opmodule.py][TextCNNOp:train] total_batch:   8960, Train Loss: 0.00031, Train Acc: 100.00%, Val Loss: 6.7e+02, Val Acc:  71.67%, Time: 5:00:04
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03177608549594879,平均准确率:0.9736873507499695,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:   9088, Train Loss: 2.2e-06, Train Acc: 100.00%, Val Loss:  8e+02, Val Acc:  72.69%, Time: 5:04:11
+[opmodule.py][TextCNNOp:train] total_batch:   9216, Train Loss: 0.0036, Train Acc: 100.00%, Val Loss: 7.2e+02, Val Acc:  72.11%, Time: 5:08:17
+[opmodule.py][TextCNNOp:train] total_batch:   9344, Train Loss:  0.001, Train Acc: 100.00%, Val Loss: 7.6e+02, Val Acc:  71.99%, Time: 5:12:23
+[opmodule.py][TextCNNOp:train] total_batch:   9472, Train Loss: 0.0072, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  70.71%, Time: 5:16:28
+[opmodule.py][TextCNNOp:train] total_batch:   9600, Train Loss: 0.0038, Train Acc: 100.00%, Val Loss: 9.8e+02, Val Acc:  70.28%, Time: 5:20:34
+[opmodule.py][TextCNNOp:train] total_batch:   9728, Train Loss: 0.0027, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  71.43%, Time: 5:24:40
+[opmodule.py][TextCNNOp:train] total_batch:   9856, Train Loss:  0.054, Train Acc:  99.22%, Val Loss: 7.1e+02, Val Acc:  71.85%, Time: 5:28:46
+[opmodule.py][TextCNNOp:train] total_batch:   9984, Train Loss:   0.01, Train Acc:  99.22%, Val Loss: 7.5e+02, Val Acc:  71.51%, Time: 5:32:52
+[opmodule.py][TextCNNOp:train] total_batch:  10112, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 7.8e+02, Val Acc:  72.06%, Time: 5:36:57
+[opmodule.py][TextCNNOp:train] total_batch:  10240, Train Loss:  5e-06, Train Acc: 100.00%, Val Loss: 7.4e+02, Val Acc:  72.40%, Time: 5:41:02
+[opmodule.py][TextCNNOp:train] total_batch:  10368, Train Loss: 0.0011, Train Acc: 100.00%, Val Loss: 7.7e+02, Val Acc:  71.81%, Time: 5:45:08
+[opmodule.py][TextCNNOp:train] total_batch:  10496, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  71.96%, Time: 5:49:13
+[opmodule.py][TextCNNOp:train] total_batch:  10624, Train Loss: 0.0074, Train Acc:  99.22%, Val Loss: 7.6e+02, Val Acc:  71.93%, Time: 5:53:19
+[opmodule.py][TextCNNOp:train] total_batch:  10752, Train Loss: 7.7e-05, Train Acc: 100.00%, Val Loss: 8.3e+02, Val Acc:  70.89%, Time: 5:57:24
+[opmodule.py][TextCNNOp:train] total_batch:  10880, Train Loss: 2.7e-05, Train Acc: 100.00%, Val Loss: 7.1e+02, Val Acc:  71.86%, Time: 6:01:29
+[opmodule.py][TextCNNOp:train] total_batch:  11008, Train Loss: 0.00047, Train Acc: 100.00%, Val Loss: 6.9e+02, Val Acc:  71.28%, Time: 6:05:33
+[opmodule.py][TextCNNOp:train] total_batch:  11136, Train Loss: 4.9e-06, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  71.03%, Time: 6:09:38
+[opmodule.py][TextCNNOp:train] total_batch:  11264, Train Loss:  2e-06, Train Acc: 100.00%, Val Loss: 7.4e+02, Val Acc:  71.88%, Time: 6:13:44
+[opmodule.py][TextCNNOp:train] total_batch:  11392, Train Loss: 0.0047, Train Acc: 100.00%, Val Loss: 7.6e+02, Val Acc:  71.87%, Time: 6:17:51
+[opmodule.py][TextCNNOp:train] total_batch:  11520, Train Loss: 0.00093, Train Acc: 100.00%, Val Loss: 7.1e+02, Val Acc:  72.33%, Time: 6:21:58
+[opmodule.py][TextCNNOp:train] total_batch:  11648, Train Loss:  3e-05, Train Acc: 100.00%, Val Loss: 5.6e+02, Val Acc:  71.85%, Time: 6:26:04
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.021304864436388016,平均准确率:0.9739333987236023,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  11776, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 6.9e+02, Val Acc:  73.04%, Time: 6:30:14
+[opmodule.py][TextCNNOp:train] total_batch:  11904, Train Loss:  0.011, Train Acc: 100.00%, Val Loss:  7e+02, Val Acc:  72.75%, Time: 6:34:18
+[data.py][data:get_batch_data] Epoch:3
+[opmodule.py][TextCNNOp:train] total_batch:  12032, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 7.2e+02, Val Acc:  72.43%, Time: 6:38:23
+[opmodule.py][TextCNNOp:train] total_batch:  12160, Train Loss:  0.027, Train Acc:  99.22%, Val Loss: 7.3e+02, Val Acc:  72.73%, Time: 6:42:31
+[opmodule.py][TextCNNOp:train] total_batch:  12288, Train Loss: 0.0064, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  72.40%, Time: 6:46:38
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03256610780954361,平均准确率:0.97895348072052,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  12416, Train Loss: 0.00025, Train Acc: 100.00%, Val Loss: 7.8e+02, Val Acc:  73.48%, Time: 6:50:48
+[opmodule.py][TextCNNOp:train] total_batch:  12544, Train Loss:  0.025, Train Acc:  99.22%, Val Loss: 8.5e+02, Val Acc:  71.81%, Time: 6:54:57
+[opmodule.py][TextCNNOp:train] total_batch:  12672, Train Loss: 0.0059, Train Acc: 100.00%, Val Loss: 8.2e+02, Val Acc:  73.46%, Time: 6:59:06
+[opmodule.py][TextCNNOp:train] total_batch:  12800, Train Loss:  0.001, Train Acc: 100.00%, Val Loss: 8.8e+02, Val Acc:  73.11%, Time: 7:03:18
+[opmodule.py][TextCNNOp:train] total_batch:  12928, Train Loss: 0.00097, Train Acc: 100.00%, Val Loss: 8.4e+02, Val Acc:  73.42%, Time: 7:07:53
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.04487811401486397,平均准确率:0.9795507788658142,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  13056, Train Loss: 1.2e-06, Train Acc: 100.00%, Val Loss: 8.9e+02, Val Acc:  73.68%, Time: 7:12:37
+[opmodule.py][TextCNNOp:train] total_batch:  13184, Train Loss:  0.065, Train Acc:  99.22%, Val Loss: 8.7e+02, Val Acc:  72.17%, Time: 7:17:16
+[opmodule.py][TextCNNOp:train] total_batch:  13312, Train Loss:  0.003, Train Acc: 100.00%, Val Loss: 8.8e+02, Val Acc:  72.08%, Time: 7:21:56
+[opmodule.py][TextCNNOp:train] total_batch:  13440, Train Loss: 4.5e-05, Train Acc: 100.00%, Val Loss:  9e+02, Val Acc:  71.56%, Time: 7:26:39
+[opmodule.py][TextCNNOp:train] total_batch:  13568, Train Loss: 0.00087, Train Acc: 100.00%, Val Loss: 9.6e+02, Val Acc:  71.91%, Time: 7:31:22
+[opmodule.py][TextCNNOp:train] total_batch:  13696, Train Loss: 0.0037, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.04%, Time: 7:36:00
+[opmodule.py][TextCNNOp:train] total_batch:  13824, Train Loss: 8.2e-06, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  72.53%, Time: 7:40:34
+[opmodule.py][TextCNNOp:train] total_batch:  13952, Train Loss: 0.0024, Train Acc: 100.00%, Val Loss: 7.9e+02, Val Acc:  72.18%, Time: 7:45:11
+[opmodule.py][TextCNNOp:train] total_batch:  14080, Train Loss: 1.2e-05, Train Acc: 100.00%, Val Loss: 7.5e+02, Val Acc:  72.10%, Time: 7:49:51
+[opmodule.py][TextCNNOp:train] total_batch:  14208, Train Loss:  0.053, Train Acc:  99.22%, Val Loss: 8.1e+02, Val Acc:  72.58%, Time: 7:54:23
+[opmodule.py][TextCNNOp:train] total_batch:  14336, Train Loss:  0.052, Train Acc:  98.44%, Val Loss: 7.2e+02, Val Acc:  73.67%, Time: 7:58:55
+[opmodule.py][TextCNNOp:train] total_batch:  14464, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 6.9e+02, Val Acc:  72.85%, Time: 8:03:28
+[opmodule.py][TextCNNOp:train] total_batch:  14592, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 7.7e+02, Val Acc:  72.64%, Time: 8:08:05
+[opmodule.py][TextCNNOp:train] total_batch:  14720, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 8.2e+02, Val Acc:  73.30%, Time: 8:12:46
+[opmodule.py][TextCNNOp:train] total_batch:  14848, Train Loss: 7.2e-05, Train Acc: 100.00%, Val Loss: 8.2e+02, Val Acc:  73.31%, Time: 8:17:29
+[opmodule.py][TextCNNOp:train] total_batch:  14976, Train Loss: 7.3e-05, Train Acc: 100.00%, Val Loss: 8.7e+02, Val Acc:  73.12%, Time: 8:22:40
+[opmodule.py][TextCNNOp:train] total_batch:  15104, Train Loss:   0.03, Train Acc:  98.44%, Val Loss: 9.8e+02, Val Acc:  73.41%, Time: 8:27:15
+[opmodule.py][TextCNNOp:train] total_batch:  15232, Train Loss: 2.6e-05, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.31%, Time: 8:31:23
+[opmodule.py][TextCNNOp:train] total_batch:  15360, Train Loss: 1.9e-05, Train Acc: 100.00%, Val Loss: 7.9e+02, Val Acc:  73.68%, Time: 8:35:28
+[opmodule.py][TextCNNOp:train] total_batch:  15488, Train Loss: 4.8e-05, Train Acc: 100.00%, Val Loss: 8.6e+02, Val Acc:  72.69%, Time: 8:39:33
+[opmodule.py][TextCNNOp:train] total_batch:  15616, Train Loss: 0.0025, Train Acc: 100.00%, Val Loss: 9.7e+02, Val Acc:  71.59%, Time: 8:43:40
+[opmodule.py][TextCNNOp:train] total_batch:  15744, Train Loss: 0.00066, Train Acc: 100.00%, Val Loss: 8.4e+02, Val Acc:  73.23%, Time: 8:47:46
+[opmodule.py][TextCNNOp:train] total_batch:  15872, Train Loss: 0.00034, Train Acc: 100.00%, Val Loss: 7.9e+02, Val Acc:  72.80%, Time: 8:51:51
+[opmodule.py][TextCNNOp:train] total_batch:  16000, Train Loss: 5.9e-05, Train Acc: 100.00%, Val Loss: 9.2e+02, Val Acc:  72.79%, Time: 8:55:56
+[opmodule.py][TextCNNOp:train] total_batch:  16128, Train Loss: 1.4e-05, Train Acc: 100.00%, Val Loss: 9.7e+02, Val Acc:  72.74%, Time: 9:00:02
+[opmodule.py][TextCNNOp:train] total_batch:  16256, Train Loss: 0.00074, Train Acc: 100.00%, Val Loss: 9.6e+02, Val Acc:  72.85%, Time: 9:04:06
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.03997231274843216,平均准确率:0.9813032746315002,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  16384, Train Loss: 0.0012, Train Acc: 100.00%, Val Loss: 9.4e+02, Val Acc:  73.97%, Time: 9:08:18
+[opmodule.py][TextCNNOp:train] total_batch:  16512, Train Loss: 6.4e-06, Train Acc: 100.00%, Val Loss: 8.8e+02, Val Acc:  72.61%, Time: 9:12:23
+[opmodule.py][TextCNNOp:train] total_batch:  16640, Train Loss: 0.0093, Train Acc: 100.00%, Val Loss: 9.5e+02, Val Acc:  72.40%, Time: 9:16:28
+[opmodule.py][TextCNNOp:train] total_batch:  16768, Train Loss: 0.00022, Train Acc: 100.00%, Val Loss: 9.8e+02, Val Acc:  72.93%, Time: 9:20:34
+[opmodule.py][TextCNNOp:train] total_batch:  16896, Train Loss: 0.00028, Train Acc: 100.00%, Val Loss: 9.6e+02, Val Acc:  72.70%, Time: 9:24:41
+[opmodule.py][TextCNNOp:train] total_batch:  17024, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 9.3e+02, Val Acc:  72.54%, Time: 9:28:47
+[opmodule.py][TextCNNOp:train] total_batch:  17152, Train Loss: 0.00075, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.48%, Time: 9:32:52
+[opmodule.py][TextCNNOp:train] total_batch:  17280, Train Loss: 1.6e-05, Train Acc: 100.00%, Val Loss: 8.9e+02, Val Acc:  73.86%, Time: 9:36:57
+[opmodule.py][TextCNNOp:train] total_batch:  17408, Train Loss:  0.015, Train Acc:  99.22%, Val Loss: 9.8e+02, Val Acc:  73.27%, Time: 9:41:02
+[opmodule.py][TextCNNOp:train] total_batch:  17536, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss:  9e+02, Val Acc:  72.62%, Time: 9:45:07
+[opmodule.py][TextCNNOp:train] total_batch:  17664, Train Loss: 0.0047, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  73.57%, Time: 9:49:12
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.0525473952293396,平均准确率:0.9819729328155518,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  17792, Train Loss: 0.00098, Train Acc: 100.00%, Val Loss: 9.5e+02, Val Acc:  74.14%, Time: 9:53:20
+[opmodule.py][TextCNNOp:train] total_batch:  17920, Train Loss: 0.00012, Train Acc: 100.00%, Val Loss: 9.7e+02, Val Acc:  73.17%, Time: 9:57:26
+[data.py][data:get_batch_data] Epoch:4
+[opmodule.py][TextCNNOp:train] total_batch:  18048, Train Loss: 0.00024, Train Acc: 100.00%, Val Loss:  9e+02, Val Acc:  73.72%, Time: 10:01:29
+[opmodule.py][TextCNNOp:train] total_batch:  18176, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss: 8.7e+02, Val Acc:  72.74%, Time: 10:05:35
+[opmodule.py][TextCNNOp:train] total_batch:  18304, Train Loss: 5.2e-07, Train Acc: 100.00%, Val Loss: 9.3e+02, Val Acc:  73.83%, Time: 10:09:42
+[opmodule.py][TextCNNOp:train] total_batch:  18432, Train Loss: 0.0093, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  74.14%, Time: 10:13:49
+[opmodule.py][TextCNNOp:train] total_batch:  18560, Train Loss: 0.00038, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  73.26%, Time: 10:17:56
+[opmodule.py][TextCNNOp:train] total_batch:  18688, Train Loss: 0.0052, Train Acc: 100.00%, Val Loss: 9.1e+02, Val Acc:  72.50%, Time: 10:22:01
+[opmodule.py][TextCNNOp:train] total_batch:  18816, Train Loss:  0.013, Train Acc:  99.22%, Val Loss: 9.9e+02, Val Acc:  73.11%, Time: 10:26:07
+[opmodule.py][TextCNNOp:train] total_batch:  18944, Train Loss:  0.012, Train Acc:  99.22%, Val Loss:  1e+03, Val Acc:  72.81%, Time: 10:30:14
+[opmodule.py][TextCNNOp:train] total_batch:  19072, Train Loss: 0.0019, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  73.27%, Time: 10:34:20
+[opmodule.py][TextCNNOp:train] total_batch:  19200, Train Loss:  0.015, Train Acc:  99.22%, Val Loss: 1.1e+03, Val Acc:  73.83%, Time: 10:38:25
+[opmodule.py][TextCNNOp:train] total_batch:  19328, Train Loss: 3.9e-07, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  73.87%, Time: 10:42:32
+[opmodule.py][TextCNNOp:train] total_batch:  19456, Train Loss: 1.2e-06, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.93%, Time: 10:46:38
+[opmodule.py][TextCNNOp:train] total_batch:  19584, Train Loss: 1.5e-06, Train Acc: 100.00%, Val Loss: 9.6e+02, Val Acc:  73.07%, Time: 10:50:44
+[opmodule.py][TextCNNOp:train] total_batch:  19712, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 9.4e+02, Val Acc:  72.97%, Time: 10:54:50
+[opmodule.py][TextCNNOp:train] total_batch:  19840, Train Loss: 0.00011, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.73%, Time: 10:58:54
+[opmodule.py][TextCNNOp:train] total_batch:  19968, Train Loss: 0.00069, Train Acc: 100.00%, Val Loss: 9.2e+02, Val Acc:  72.66%, Time: 11:03:00
+[opmodule.py][TextCNNOp:train] total_batch:  20096, Train Loss: 0.00016, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.70%, Time: 11:07:06
+[opmodule.py][TextCNNOp:train] total_batch:  20224, Train Loss: 2.5e-06, Train Acc: 100.00%, Val Loss:  1e+03, Val Acc:  72.34%, Time: 11:11:12
+[opmodule.py][TextCNNOp:train] total_batch:  20352, Train Loss: 0.0085, Train Acc:  99.22%, Val Loss: 9.1e+02, Val Acc:  72.53%, Time: 11:15:17
+[opmodule.py][TextCNNOp:train] total_batch:  20480, Train Loss: 7.1e-05, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.29%, Time: 11:19:23
+[opmodule.py][TextCNNOp:train] total_batch:  20608, Train Loss: 0.00046, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  71.87%, Time: 11:23:28
+[opmodule.py][TextCNNOp:train] total_batch:  20736, Train Loss: 1.1e-05, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  72.57%, Time: 11:27:33
+[opmodule.py][TextCNNOp:train] total_batch:  20864, Train Loss:  2e-06, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  73.49%, Time: 11:31:38
+[opmodule.py][TextCNNOp:train] total_batch:  20992, Train Loss: 0.0014, Train Acc: 100.00%, Val Loss: 9.4e+02, Val Acc:  73.64%, Time: 11:35:43
+[opmodule.py][TextCNNOp:train] total_batch:  21120, Train Loss: 7.5e-05, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  74.04%, Time: 11:39:49
+[data.py][data:get_accuracy_rate] 准确率最低要求:0.12240645289421082,平均准确率:0.9858464002609253,最高准确率:1.0
+[opmodule.py][TextCNNOp:train] total_batch:  21248, Train Loss: 8.9e-07, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  74.42%, Time: 11:43:57
+[opmodule.py][TextCNNOp:train] total_batch:  21376, Train Loss: 5.1e-07, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  73.24%, Time: 11:48:02
+[opmodule.py][TextCNNOp:train] total_batch:  21504, Train Loss: 9.1e-08, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  73.42%, Time: 11:52:08
+[opmodule.py][TextCNNOp:train] total_batch:  21632, Train Loss: 0.0077, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  73.45%, Time: 11:56:12
+[opmodule.py][TextCNNOp:train] total_batch:  21760, Train Loss: 4.7e-08, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.65%, Time: 12:00:18
+[opmodule.py][TextCNNOp:train] total_batch:  21888, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  73.73%, Time: 12:04:23
+[opmodule.py][TextCNNOp:train] total_batch:  22016, Train Loss: 2.8e-07, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  73.66%, Time: 12:08:28
+[opmodule.py][TextCNNOp:train] total_batch:  22144, Train Loss: 1.4e-07, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.26%, Time: 12:12:33
+[opmodule.py][TextCNNOp:train] total_batch:  22272, Train Loss: 6.3e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.08%, Time: 12:16:39
+[opmodule.py][TextCNNOp:train] total_batch:  22400, Train Loss: 0.0015, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.17%, Time: 12:20:45
+[opmodule.py][TextCNNOp:train] total_batch:  22528, Train Loss: 0.0034, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.11%, Time: 12:24:49
+[opmodule.py][TextCNNOp:train] total_batch:  22656, Train Loss: 6.5e-06, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.67%, Time: 12:28:53
+[opmodule.py][TextCNNOp:train] total_batch:  22784, Train Loss: 4.5e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.16%, Time: 12:32:59
+[opmodule.py][TextCNNOp:train] total_batch:  22912, Train Loss: 1.9e-05, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  72.43%, Time: 12:37:05
+[opmodule.py][TextCNNOp:train] total_batch:  23040, Train Loss: 2.8e-05, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  73.06%, Time: 12:41:10
+[opmodule.py][TextCNNOp:train] total_batch:  23168, Train Loss:  9e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.23%, Time: 12:45:15
+[opmodule.py][TextCNNOp:train] total_batch:  23296, Train Loss: 6.1e-07, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  73.06%, Time: 12:49:21
+[opmodule.py][TextCNNOp:train] total_batch:  23424, Train Loss: 7.4e-08, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  73.37%, Time: 12:53:25
+[opmodule.py][TextCNNOp:train] total_batch:  23552, Train Loss: 0.00023, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.49%, Time: 12:57:31
+[opmodule.py][TextCNNOp:train] total_batch:  23680, Train Loss: 6.8e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.43%, Time: 13:01:36
+[opmodule.py][TextCNNOp:train] total_batch:  23808, Train Loss:  0.012, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.76%, Time: 13:05:42
+[opmodule.py][TextCNNOp:train] total_batch:  23936, Train Loss: 0.0021, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.53%, Time: 13:09:46
+[data.py][data:get_batch_data] Epoch:5
+[opmodule.py][TextCNNOp:train] total_batch:  24064, Train Loss: 5.7e-06, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.36%, Time: 13:13:49
+[opmodule.py][TextCNNOp:train] total_batch:  24192, Train Loss: 0.00026, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  71.40%, Time: 13:17:54
+[opmodule.py][TextCNNOp:train] total_batch:  24320, Train Loss: 6.4e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.38%, Time: 13:21:59
+[opmodule.py][TextCNNOp:train] total_batch:  24448, Train Loss:  0.018, Train Acc:  99.22%, Val Loss: 1.4e+03, Val Acc:  72.63%, Time: 13:26:05
+[opmodule.py][TextCNNOp:train] total_batch:  24576, Train Loss:  0.024, Train Acc:  99.22%, Val Loss: 1.5e+03, Val Acc:  72.46%, Time: 13:30:09
+[opmodule.py][TextCNNOp:train] total_batch:  24704, Train Loss: 1.8e-05, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  73.23%, Time: 13:34:16
+[opmodule.py][TextCNNOp:train] total_batch:  24832, Train Loss:   0.01, Train Acc:  99.22%, Val Loss: 1.3e+03, Val Acc:  72.64%, Time: 13:38:22
+[opmodule.py][TextCNNOp:train] total_batch:  24960, Train Loss: 0.00013, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.31%, Time: 13:42:28
+[opmodule.py][TextCNNOp:train] total_batch:  25088, Train Loss: 1.4e-06, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.28%, Time: 13:46:35
+[opmodule.py][TextCNNOp:train] total_batch:  25216, Train Loss: 0.0028, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.01%, Time: 13:50:41
+[opmodule.py][TextCNNOp:train] total_batch:  25344, Train Loss: 8.4e-09, Train Acc: 100.00%, Val Loss: 1.1e+03, Val Acc:  72.31%, Time: 13:54:47
+[opmodule.py][TextCNNOp:train] total_batch:  25472, Train Loss: 9.8e-07, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  71.24%, Time: 13:58:50
+[opmodule.py][TextCNNOp:train] total_batch:  25600, Train Loss: 0.00031, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  72.05%, Time: 14:02:56
+[opmodule.py][TextCNNOp:train] total_batch:  25728, Train Loss:  3e-07, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  72.61%, Time: 14:07:02
+[opmodule.py][TextCNNOp:train] total_batch:  25856, Train Loss: 9.1e-06, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  72.25%, Time: 14:11:08
+[opmodule.py][TextCNNOp:train] total_batch:  25984, Train Loss: 0.0001, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  71.98%, Time: 14:15:15
+[opmodule.py][TextCNNOp:train] total_batch:  26112, Train Loss: 7.5e-06, Train Acc: 100.00%, Val Loss: 1.2e+03, Val Acc:  72.08%, Time: 14:19:21
+[opmodule.py][TextCNNOp:train] total_batch:  26240, Train Loss: 7.8e-07, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.86%, Time: 14:23:27
+[opmodule.py][TextCNNOp:train] total_batch:  26368, Train Loss: 1.3e-06, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.71%, Time: 14:27:32
+[opmodule.py][TextCNNOp:train] total_batch:  26496, Train Loss: 4.1e-07, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.40%, Time: 14:31:37
+[opmodule.py][TextCNNOp:train] total_batch:  26624, Train Loss: 0.00035, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  71.67%, Time: 14:35:42
+[opmodule.py][TextCNNOp:train] total_batch:  26752, Train Loss: 4.2e-05, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.61%, Time: 14:39:48
+[opmodule.py][TextCNNOp:train] total_batch:  26880, Train Loss: 4.1e-05, Train Acc: 100.00%, Val Loss: 1.4e+03, Val Acc:  72.19%, Time: 14:43:52
+[opmodule.py][TextCNNOp:train] total_batch:  27008, Train Loss:  8e-08, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  71.98%, Time: 14:47:57
+[opmodule.py][TextCNNOp:train] total_batch:  27136, Train Loss: 4.2e-06, Train Acc: 100.00%, Val Loss: 1.3e+03, Val Acc:  72.29%, Time: 14:52:02
+[opmodule.py][TextCNNOp:train] 最佳准确率:0.7442129629629629
+[module.py][TextCNN:construct] embedding:(?, 567, 128), (?, 567, 128, 1)
+[module.py][TextCNN:construct] h:conv-maxpool-0, (?, 567, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-0, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-1, (?, 566, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-1, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-2, (?, 565, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-2, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-3, (?, 564, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-3, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-4, (?, 563, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-4, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-5, (?, 562, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-5, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-6, (?, 561, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-6, (?, 1, 1, 128)
+[module.py][TextCNN:construct] h:conv-maxpool-7, (?, 560, 1, 128)
+[module.py][TextCNN:construct] pooled:conv-maxpool-7, (?, 1, 1, 128)
+[module.py][TextCNN:construct] combine:Tensor("concat:0", shape=(?, 1, 1, 1024), dtype=float32), (?, 1024)
+[module.py][TextCNN:construct] z_t:(?, 1)
+[opmodule.py][TextCNNOp:get_sets_accracy] 最终的准确率为:0.47237076648841353,0.9510318720234461,0.9203428571428571
+[opmodule.py][TextCNNOp:get_accuracy_rate] 最终的准确率阈值为:0.12240645289421082,训练数据最低准确率要求:0.12240645289421082,过滤掉90%的闲聊数据的准确率要求:1.0
