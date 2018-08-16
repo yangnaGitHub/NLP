@@ -31,8 +31,9 @@ class TextCNNOp():
         else:
             module_conf = 'module.cfg'
         self.params.read('./' + self.module_name + '/' + module_conf)
-        self.module_path = self.get_params('summary', 'module_path')
-        self.module_file = self.module_path + '/' + self.get_params('summary', 'module_file')
+        #self.params.read('module.cfg')
+        self.module_path = self.get_option('summary', 'module_path', 'str')
+        self.module_file = self.module_path + '/' + self.get_option('summary', 'module_file', 'str')
         #self.pickle_file = self.module_path + '/' + self.get_params('summary', 'pickle_file')
     
     def print_log(self, message):
@@ -42,13 +43,15 @@ class TextCNNOp():
             if self.log:
                 self.log.print_to_file(message)
     
-    def print_parmas(self):
-        print(float(self.get_params('summary', 'test_ratio')), int(self.get_params('summary', 'batch_size')), int(self.get_params('summary', 'num_epochs')))
-        print(float(self.get_params('summary', 'dropout_keep_prob')), int(self.get_params('embedding', 'embedding_size')), float(self.get_params('summary', 'l2_reg_lambda')))
-        print(float(self.get_params('summary', 'learning_rate')))
-
-    def get_params(self, name, var):
-        return self.params.get(name, var)
+    def get_option(self, section, option, wclass='str'):
+        if 'str' == wclass:
+            return self.params.get(section, option)
+        elif 'bool' == wclass:
+            return self.params.getboolean(section, option)
+        elif 'int' == wclass:
+            return self.params.getint(section, option)
+        elif 'float' == wclass:
+            return self.params.getfloat(section, option)
         
     def get_time_dif(self, start_time):
         """获取已使用时间"""
@@ -93,9 +96,9 @@ class TextCNNOp():
         
     def make_autodict(self):
         return dict({
-                'window_size':int(self.get_params('embedding', 'window_size')),
-                'embedding_size':int(self.get_params('embedding', 'embedding_size')),
-                'learning_rate':float(self.get_params('embedding', 'learning_rate'))
+                'window_size':self.get_option('embedding', 'window_size', 'int'),
+                'embedding_size':self.get_option('embedding', 'embedding_size', 'int'),
+                'learning_rate':self.get_option('embedding', 'learning_rate', 'float')
                 })
             
     def get_embedded_w(self):
@@ -105,15 +108,14 @@ class TextCNNOp():
             return None
     
     def train(self):
-        print_per_batch = int(self.get_params('summary', 'print_per_batch'))
-        #self.print_log('print_per_batch:{}'.format(print_per_batch))
+        print_per_batch = self.get_option('summary', 'print_per_batch', 'int')
         if not os.path.exists(self.module_path):
             os.makedirs(self.module_path)
         with tf.Graph().as_default() as g:
-            if 0 == int(self.get_params('embedding', 'use_embedding_tf')):
+            if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
                 autodict = self.make_autodict()
                 self.embedded_module = Embed(self.args, self.params, self.log, **autodict)
-                self.embed_file = self.module_path + '/' + self.get_params('summary', 'embed_file')
+                self.embed_file = self.module_path + '/' + self.get_option('summary', 'embed_file', 'str')
                 with tf.Session(graph=g).as_default() as sess:
                     sess.run(tf.global_variables_initializer())
                     saver = tf.train.Saver()#保存模型
@@ -121,14 +123,15 @@ class TextCNNOp():
                     start_time = time.time()
                     embed_total_batch = 0
                     #embeding train
-                    if 0 == int(self.get_params('embedding', 'embedding_train')):
+                    if 0 == self.get_option('embedding', 'embedding_train', 'int'):
                         saver.restore(sess=sess, save_path=self.embed_file)
                     else:
-                        batches = self.data.get_embed_batch_data(float(self.get_params('embedding', 'embed_test_ratio')), int(self.get_params('embedding', 'embed_batch_size')), int(self.get_params('embedding', 'embed_num_epochs')), window_size=int(self.get_params('embedding', 'window_size')))
+                        batches = self.data.get_embed_batch_data(self.get_option('embedding', 'embed_test_ratio', 'float'), self.get_option('embedding', 'embed_batch_size', 'int'), self.get_option('embedding', 'embed_num_epochs', 'int'), window_size=self.get_option('embedding', 'window_size', 'int'))
                         for index, batch in enumerate(batches):
                             x_batch, y_batch = batch
+                            x_batch = np.array(x_batch)
                             y_batch = np.array(y_batch)[:, None]
-                            if (1 != len(x_batch)) or (2 != len(y_batch)):
+                            if (1 != len(x_batch.shape)) or (2 != len(y_batch.shape)):
                                 continue
                             #self.print_log('batch:{},{}'.format(np.array(x_batch).shape, y_batch.shape))
                             cost, _ = sess.run([self.embedded_module.cost, self.embedded_module.optimizer], feed_dict={self.embedded_module.input_x: x_batch, self.embedded_module.input_y: y_batch})
@@ -146,20 +149,20 @@ class TextCNNOp():
             self.session = tf.Session(graph=g)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())#初始化所有Variable定义的变量
-                saver = tf.train.Saver()
+                saver = tf.train.Saver()#保存模型
                 
                 start_time = time.time()
                 total_batch = 0              # 总批次
                 best_acc_val = 0.0           # 最佳验证集准确率
                 last_improved = 0            # 记录上一次提升批次
-                require_improvement = int(len(self.data.quest_label.keys()) / int(self.get_params('summary', 'batch_size')))   # 如果超过1000轮未提升，提前结束训练
-                #require_improvement = int(self.get_params('summary', 'require_improvement'))
-                #self.print_log('require_improvement: {}'.format(require_improvement))
+                require_improvement = int(len(self.data.quest_label.keys()) / self.get_option('summary', 'batch_size', 'int'))   # 如果超过1000轮未提升，提前结束训练
+                #require_improvement = self.args.get_option('summary', 'require_improvement', 'int')
+                self.print_log('require_improvement: {}'.format(require_improvement))
                 
-                batches = self.data.get_batch_data(float(self.get_params('summary', 'test_ratio')), int(self.get_params('summary', 'batch_size')), int(self.get_params('summary', 'num_epochs')))
+                batches = self.data.get_batch_data(self.get_option('summary', 'test_ratio', 'float'), self.get_option('summary', 'batch_size', 'int'), self.get_option('summary', 'num_epochs', 'int')) 
                 for index, batch in enumerate(batches):
                     x_batch, y_batch, x_val, y_val = batch#x_batch, y_batch ==> train
-                    feed_dict = self.feed_data(x_batch, y_batch, float(self.get_params('summary', 'dropout_keep_prob')))#dropout_keep_prob正则系数
+                    feed_dict = self.feed_data(x_batch, y_batch, self.get_option('summary', 'dropout_keep_prob', 'float'))#dropout_keep_prob正则系数
                     #test shape
                     #self.print_shape(self.model.input_x, feed_dict)
                     #self.print_shape(self.model.embedding, feed_dict)
@@ -169,7 +172,7 @@ class TextCNNOp():
                         #每多少轮次输出在训练集和验证集上的性能
                         feed_dict[self.model.keep_prob] = 1.0
                         loss_train, acc_train = self.session.run([self.model.loss, self.model.acc], feed_dict=feed_dict)
-                        loss_val, acc_val, scores, correct_predictions = self.evaluate(self.session, x_val, y_val, int(self.get_params('summary', 'batch_size')))#x_val,y_val是测试集合
+                        loss_val, acc_val, scores, correct_predictions = self.evaluate(self.session, x_val, y_val, self.get_option('summary', 'batch_size', 'int'))#x_val,y_val是测试集合
                         
                         if acc_val > best_acc_val:#求最大的准确率
                                # 保存最好结果
@@ -184,7 +187,7 @@ class TextCNNOp():
                      
                     self.session.run(self.model.optim, feed_dict = feed_dict)#运行优化
                     total_batch += 1
-                    if total_batch == (int(len(self.data.quest_label.keys()) / int(self.get_params('summary', 'batch_size'))) + 1):
+                    if total_batch == (int(len(self.data.quest_label.keys()) / self.get_option('summary', 'batch_size', 'int')) + 1):
                         last_improved = total_batch
                     if total_batch - last_improved > require_improvement:
                         # 验证集正确率长期不提升，提前结束训练
@@ -206,7 +209,7 @@ class TextCNNOp():
                 self.embedded_w = sess.run(self.embedded_module.W)
     
     def load_model(self):
-        if 0 == int(self.get_params('embedding', 'use_embedding_tf')):
+        if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
             self.load_embed_model()
         with tf.Graph().as_default() as g:
             self.model = TextCNN(self.args, self.params, self.log, self)
@@ -227,13 +230,16 @@ class TextCNNOp():
         #self.print_log('问题:{}\n向量:{}'.format(raw_quest,quest))
         return np.array(quest)
 
-    def predict(self, quest):
-        if hasattr(self.data, 'build_one_vector'):
-            feed_dict = {self.model.input_x: [self.data.build_one_vector(quest)], self.model.keep_prob: 1.0}
-        else:
-            feed_dict = {self.model.input_x: [self.restore_build_one_vector(quest)], self.model.keep_prob: 1.0}
+    def predict(self, quest, need_hot_vector=1):
+        if 0 == need_hot_vector:
+            feed_dict = {self.model.input_x: [quest], self.model.keep_prob: 1.0}
+        elif 1 == need_hot_vector:
+            if hasattr(self.data, 'build_one_vector'):
+                feed_dict = {self.model.input_x: [self.data.build_one_vector(quest)], self.model.keep_prob: 1.0}
+            else:
+                feed_dict = {self.model.input_x: [self.restore_build_one_vector(quest)], self.model.keep_prob: 1.0}
         return self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
-    
+
 #    def predict_all(self, num_epochs=10, batch_size=32):
 #        allquests, alllabels = self.data.get_all_quests_and_label(num_epochs, batch_size)
 #        for index, batch in enumerate(allquests):

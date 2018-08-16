@@ -129,9 +129,10 @@ class LSTMOp():
                         batches = self.data.get_embed_batch_data(self.get_option('embedding', 'embed_test_ratio', 'float'), self.get_option('embedding', 'embed_batch_size', 'int'), self.get_option('embedding', 'embed_num_epochs', 'int'), window_size=self.get_option('embedding', 'window_size', 'int'))
                         for index, batch in enumerate(batches):
                             x_batch, y_batch = batch
+                            #x_batch = np.array(x_batch)
                             y_batch = np.array(y_batch)[:, None]
-                            if (1 != len(x_batch.shape)) or (2 != len(y_batch.shape)):
-                                continue
+                            #if (1 != len(x_batch.shape)) or (2 != len(y_batch.shape)):
+                                #continue
                             #self.print_log('batch:{},{}'.format(np.array(x_batch).shape, y_batch.shape))
                             cost, _ = sess.run([self.embedded_module.cost, self.embedded_module.optimizer], feed_dict={self.embedded_module.input_x: x_batch, self.embedded_module.input_y: y_batch})
                             if embed_total_batch % print_per_batch == 0:
@@ -145,7 +146,6 @@ class LSTMOp():
     
         with tf.Graph().as_default() as g:
             self.model = Lstm(self.args, self.params, self.log, self)
-            #return
             self.session = tf.Session(graph=g)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())#初始化所有Variable定义的变量
@@ -166,10 +166,6 @@ class LSTMOp():
                     #test shape
 #                    self.print_shape(self.model.input_x, feed_dict)
 #                    self.print_shape(self.model.embedding, feed_dict)
-#                    self.print_shape(self.model.outputs[0], feed_dict)
-#                    self.print_shape(self.model.outputs[1], feed_dict)
-#                    self.print_shape(self.model.alpha, feed_dict)
-                    
                     if len(self.data.quest_label) < 1000:#少于1000个问题(原问题和扩展问题算一个)
                         print_per_batch = 1#默认值是50
                     if total_batch % print_per_batch == 0:#以及第一次,多少个batch打印一次
@@ -234,13 +230,16 @@ class LSTMOp():
         #self.print_log('问题:{}\n向量:{}'.format(raw_quest,quest))
         return np.array(quest)
 
-    def predict(self, quest):
-        if hasattr(self.data, 'build_one_vector'):
-            feed_dict = {self.model.input_x: [self.data.build_one_vector(quest)], self.model.keep_prob: 1.0}
-        else:
-            feed_dict = {self.model.input_x: [self.restore_build_one_vector(quest)], self.model.keep_prob: 1.0}
+    def predict(self, quest, need_hot_vector=1):
+        if 0 == need_hot_vector:
+            feed_dict = {self.model.input_x: [quest], self.model.keep_prob: 1.0}
+        elif 1 == need_hot_vector:
+            if hasattr(self.data, 'build_one_vector'):
+                feed_dict = {self.model.input_x: [self.data.build_one_vector(quest)], self.model.keep_prob: 1.0}
+            else:
+                feed_dict = {self.model.input_x: [self.restore_build_one_vector(quest)], self.model.keep_prob: 1.0}
         return self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
-    
+
 #    def predict_all(self, num_epochs=10, batch_size=32):
 #        allquests, alllabels = self.data.get_all_quests_and_label(num_epochs, batch_size)
 #        for index, batch in enumerate(allquests):

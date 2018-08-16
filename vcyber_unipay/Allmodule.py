@@ -182,7 +182,7 @@ class module():
                         break
                 else:
                     self.DML_methods[method] = eval(method + '(self.args, self.data, self.log)')
-                    thread_list.append(Thread(target=self.run_module, args=self.DML_methods[method]))
+                    thread_list.append(Thread(target=self.run_module, args=(self.DML_methods[method],)))
             
             if 0 == self.multi_module:
                 if '' == single_module:
@@ -222,9 +222,9 @@ class module():
         result_dict = self.make_result_dict()
         self.result = DLOp(self.args, self.data, self.log, **result_dict)
         self.result.train()
-        module.load_model()
-        module.get_sets_accracy()
-        module.get_accuracy_rate()
+        self.result.load_model()
+        self.result.get_sets_accracy()
+        self.result.get_accuracy_rate()
 
     def lookup(self, **kwargs):
         params = {} 

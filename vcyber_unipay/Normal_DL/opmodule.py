@@ -18,7 +18,7 @@ import configparser
 
 class DLOp():
     def __init__(self, args, data, log=None, **result_dict):
-        self.module_name = 'DL'
+        self.module_name = 'Normal_DL'
         self.model = None
         self.session = None
         self.args = args
@@ -44,6 +44,16 @@ class DLOp():
         if self.args.print_to_log:
             if self.log:
                 self.log.print_to_file(message)
+    
+    def get_option(self, section, option, wclass='str'):
+        if 'str' == wclass:
+            return self.params.get(section, option)
+        elif 'bool' == wclass:
+            return self.params.getboolean(section, option)
+        elif 'int' == wclass:
+            return self.params.getint(section, option)
+        elif 'float' == wclass:
+            return self.params.getfloat(section, option)
     
     def get_time_dif(self, start_time):
         """获取已使用时间"""
@@ -95,13 +105,23 @@ class DLOp():
 #                tmp, _ = score
 #                quests.extend(tmp) 
 #            yield quests, labels
-    def pre_predict(self, quest):
+
+    def pre_predict(self, quest, result_method=1, need_hot_vector=0):
         quest_module = []
-        try: 
-            for module in self.autodict['result_module']:
-                quest_module.extend(module.predict(quest))
+        try:
+            for module in self.autodict['result_module'].values():
+                #self.print_log('quest:{}'.format(quest))
+                predictions, scores = module.predict(quest, need_hot_vector=need_hot_vector)
+                #self.print_log('quest:{},{},{},{}'.format(predictions, predictions.shape, scores, scores.shape))
+                if 0 == result_method:
+                    quest_module.extend(list(predictions))
+                elif 1 == result_method:
+                    for score in scores:
+                        quest_module.extend(score)
+                    #quest_module.extend(list(scores))
         except Exception as e:
             self.print_log(e)
+        #self.print_log('module:{}'.format(quest_module))
         return quest_module
         
     def train(self):
@@ -141,7 +161,7 @@ class DLOp():
                         #每多少轮次输出在训练集和验证集上的性能
                         feed_dict[self.model.keep_prob] = 1.0
                         loss_train, acc_train = self.session.run([self.model.loss, self.model.acc], feed_dict=feed_dict)
-                        loss_val, acc_val, scores, correct_predictions = self.evaluate(self.session, x_val, y_val, self.get_option('summary', 'batch_size', 'int'))#x_val,y_val是测试集合
+                        loss_val, acc_val, scores, correct_predictions = self.evaluate(self.session, np.array([self.pre_predict(quest) for quest in x_val]), y_val, self.get_option('summary', 'batch_size', 'int'))#x_val,y_val是测试集合
                         
                         if acc_val > best_acc_val:#求最大的准确率
                                # 保存最好结果
@@ -154,10 +174,10 @@ class DLOp():
                         
                         self.print_log('total_batch: {0:>6}, Train Loss: {1:>6.2}, Train Acc: {2:>7.2%}, Val Loss: {3:>6.2}, Val Acc: {4:>7.2%}, Time: {5}'.format(total_batch, loss_train, acc_train, loss_val, acc_val, time_dif))
                      
-                    self.session.run(self.model.optim, feed_dict = feed_dict)#运行优化
+                    self.session.run(self.model.optimizer, feed_dict = feed_dict)#运行优化
                     total_batch += 1
                     
-                    if total_batch == (int(len(self.data.quest_label.keys()) / int(self.get_params('summary', 'batch_size'))) + 1):
+                    if total_batch == (int(len(self.data.quest_label.keys()) / self.get_option('summary', 'batch_size', 'int')) + 1):
                         last_improved = total_batch
                     if total_batch - last_improved > require_improvement:
                         # 验证集正确率长期不提升，提前结束训练
@@ -166,7 +186,7 @@ class DLOp():
     
     def load_model(self):
         with tf.Graph().as_default() as g:
-            self.model = NormalDL(self.args, self.params)
+            self.model = NormalDL(self.args, self.params, self.log, **self.autodict)
             self.session = tf.Session(graph=g)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())
@@ -174,7 +194,7 @@ class DLOp():
                 saver.restore(sess=self.session, save_path=self.module_path)
 
     def predict(self, quest):
-        feed_dict = {self.model.input_x:self.pre_predict(quest), self.model.keep_prob: 1.0}
+        feed_dict = {self.model.input_x:np.array([self.pre_predict(quest, need_hot_vector=1)]), self.model.keep_prob: 1.0}
         return self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
     
     def get_sets_accracy(self, testfile='NONAME'):
@@ -197,14 +217,14 @@ class DLOp():
                 
                     for quest in line[2].split('#&#&#'):
                         train_total_quest += 1
-                        predict, probs = self.predict(self.pre_predict(quest))
+                        predict, probs = self.predict(quest)
                         
                         if label_id == self.data.id_to_label[str(predict[0])]:
                             train_correct_count += 1
                     
                     for quest in line[3].split('#&#&#'):
                         test_total_quest += 1
-                        predict, probs = self.predict(self.pre_predict(quest))
+                        predict, probs = self.predict(quest)
                         
                         if label_id == self.data.id_to_label[str(predict[0])]:
                             test_correct_count += 1
@@ -217,10 +237,7 @@ class DLOp():
         with open(self.data.file_path['final_test_file'], 'r', encoding='utf-8') as f:
             for line in f.readlines():
                 line = line.strip().split('\t')
-                if self.data is None:
-                    feed_dict = {self.model.input_x: self.pre_predict(line[0]), self.model.keep_prob: 1.0}
-                else:
-                    feed_dict = {self.model.input_x: self.pre_predict(line[0]), self.model.keep_prob: 1.0}
+                feed_dict = {self.model.input_x: np.array([self.pre_predict(line[0], need_hot_vector=1)]), self.model.keep_prob: 1.0}
                 predict, probs = self.session.run([self.model.predictions, self.model.scores], feed_dict=feed_dict)
                 result.append(probs[0][predict])#predict是预测的概率最大分类的下标,所以此处是probs[0][predict]最大的概率
         #允许90%的闲聊数据通过

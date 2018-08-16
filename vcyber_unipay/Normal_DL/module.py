@@ -55,6 +55,7 @@ class NormalDL():
             self.input_x = tf.placeholder(tf.float32, [None, lastsize], name="input_x")
             self.input_y = tf.placeholder(tf.float32, [None, self.args.num_class], name="input_y")
             self.keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")#正则化
+            #self.print_log('input_x.shape{}'.format(self.input_x.shape))
         
 #        activate_fun_map = {
 #                'sigmoid':'sigmoid',
@@ -67,7 +68,7 @@ class NormalDL():
 #                }
         
         with tf.name_scope('layer'):
-            self.o_hidden_0 = self.input_x
+            self.r_hidden_0 = self.input_x
             hidden_layers = self.get_option('summary', 'hidden_layer', 'str').split(',')
             activate_function = self.get_option('summary', 'activate_function', 'str')
             hidden_lists = []
@@ -81,7 +82,7 @@ class NormalDL():
                 hidden_lists.append(tf.Variable(tf.truncated_normal([lastsize, cellcount], stddev=0.1), name=w_name))
                 hidden_lists.append(tf.Variable(tf.zeros([cellcount]), name=b_name))
                 setattr(self, o_name, tf.matmul(eval('self.' + r_name_last), hidden_lists[2*index]) + hidden_lists[2*index + 1])
-                setattr(self, r_name, tf.nn.dropout(eval('tf.nn.' + activate_function + '(' + o_name + ', name=' + r_name + ')'), self.keep_prob))
+                setattr(self, r_name, tf.nn.dropout(eval('tf.nn.' + activate_function + '(self.' + o_name + ')'), self.keep_prob))
                 #setattr(self, o_name, tf.matmul(eval('self.' + r_name_last), tf.Variable(tf.truncated_normal([lastsize, cellcount], stddev=0.1), name=w_name)) + tf.Variable(tf.zeros([cellcount]), name=b_name))
                 lastsize = cellcount
             
@@ -98,7 +99,7 @@ class NormalDL():
             o_output = tf.matmul(eval('self.' + r_name), w_output) + b_output
             #self.r_output = eval('tf.nn.' + activate_function + '(' + o_output + ', name=r_output)')
             self.scores = tf.nn.softmax(o_output)
-            self.predictions = tf.argmax(self.r_output, 1, name="predictions")
+            self.predictions = tf.argmax(o_output, 1, name="predictions")
         
         with tf.name_scope("accuracy"):
             #self.acc = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(self.input_y, axis=1), self.predictions), tf.float32))
@@ -106,6 +107,6 @@ class NormalDL():
             self.acc = tf.reduce_mean(tf.cast(self.correct_predictions, "float"), name="accuracy")
         
         with tf.name_scope('train'):
-            losses = tf.nn.softmax_cross_entropy_with_logits(logits=self.r_output, labels=self.input_y)
+            losses = tf.nn.softmax_cross_entropy_with_logits(logits=o_output, labels=self.input_y)
             self.loss = tf.reduce_mean(losses) + float(self.get_params('summary', 'l2_reg_lambda')) * l2_loss
             self.optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.get_option('summary', 'learning_rate', 'float')).minimize(self.loss)

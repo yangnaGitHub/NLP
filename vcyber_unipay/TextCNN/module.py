@@ -20,8 +20,15 @@ class TextCNN(object):
         self.opmodule = opmodule
         self.construct()
     
-    def get_params(self, layer, var):
-        return self.params.get(layer, var)
+    def get_option(self, section, option, wclass='str'):
+        if 'str' == wclass:
+            return self.params.get(section, option)
+        elif 'bool' == wclass:
+            return self.params.getboolean(section, option)
+        elif 'int' == wclass:
+            return self.params.getint(section, option)
+        elif 'float' == wclass:
+            return self.params.getfloat(section, option)
 
     def print_log(self, message):
         if self.args.local_debug:
@@ -45,7 +52,7 @@ class TextCNN(object):
         
         # Embedding layer
         with tf.device('/cpu:0'), tf.name_scope('embedding'):#词向量#tf.device('/cpu:0')
-            if 0 == int(self.get_params('embedding', 'use_embedding_tf')):
+            if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
                 #self.embedded_module.o_input_x = self.input_x
                 #self.embedded_w = tf.placeholder(tf.float32, [self.args.vocab_size, int(self.get_params('embedding', 'embedding_size'))], name='embedded_w')
                 #self.embedded_chars = tf.nn.embedding_lookup(self.embedded_w, self.input_x)#self.embedded_module.o_embedding
@@ -56,7 +63,7 @@ class TextCNN(object):
                     self.print_log('lack embedded_w')
             else:
                 self.W = tf.Variable(
-                        tf.random_uniform([self.args.vocab_size, int(self.get_params('embedding', 'embedding_size'))], -1.0, 1.0),#vocab_size(build_vocab_size 最大5000字) * embedding_size [-1, 1]
+                        tf.random_uniform([self.args.vocab_size, self.get_option('embedding', 'embedding_size', 'int')], -1.0, 1.0),#vocab_size(build_vocab_size 最大5000字) * embedding_size [-1, 1]
                         name="W")
                 #self.update =tf.assign(self.W,words_embedding)
                 self.embedded_chars = tf.nn.embedding_lookup(self.W, self.input_x)#这个的shape
@@ -66,15 +73,15 @@ class TextCNN(object):
 
         # Create a convolution + maxpool layer for each filter size
         pooled_outputs = []
-        conv_maxpool_count = int(self.get_params('summary', 'conv_maxpool_count'))
+        conv_maxpool_count = self.get_option('summary', 'conv_maxpool_count', 'int')
         for index in range(conv_maxpool_count):
             layername = 'conv-maxpool-%s' % index
             with tf.name_scope(layername):
                 # Convolution Layer
                 #卷积核 高度 宽度 通道数 卷积核个数
-                filter_size = int(self.get_params(layername, 'filter_size'))
-                num_filters = int(self.get_params(layername, 'num_filters'))
-                filter_shape = [filter_size, int(self.get_params('embedding', 'embedding_size')), 1, num_filters]#[1, 2, 3, 4, 5] 128 1 128
+                filter_size = self.get_option(layername, 'filter_size', 'int')
+                num_filters = self.get_option(layername, 'num_filters', 'int')
+                filter_shape = [filter_size, self.get_option('embedding', 'embedding_size', 'int'), 1, num_filters]#[1, 2, 3, 4, 5] 128 1 128
                 W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
                 b = tf.Variable(tf.constant(0.1, shape=[num_filters]), name="b")#128
                 conv = tf.nn.conv2d(
@@ -102,11 +109,11 @@ class TextCNN(object):
         self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
         self.print_log('combine:{}, {}'.format(self.h_pool, self.h_pool_flat.shape))#natasha here
             
-        use_attention = int(self.get_params('summary', 'use_attention'))
+        use_attention = self.get_option('summary', 'use_attention', 'int')
         if 1 == use_attention:
             #定义attention layer 
             #attention_size = num_filters_total
-            attention_size = int(self.get_params('summary', 'attention_size'))
+            attention_size = self.get_option('summary', 'attention_size', 'int')
             with tf.name_scope('attention'), tf.variable_scope('attention'):
                 attention_w = tf.Variable(tf.truncated_normal([num_filters_total, attention_size], stddev=0.1), name='attention_w')
                 attention_b = tf.Variable(tf.constant(0.1, shape=[attention_size]), name='attention_b')
@@ -154,11 +161,11 @@ class TextCNN(object):
         #学习率
         with tf.name_scope("loss"):
             losses = tf.nn.softmax_cross_entropy_with_logits(logits=self.logits, labels=self.input_y)
-            self.loss = tf.reduce_mean(losses) + float(self.get_params('summary', 'l2_reg_lambda')) * l2_loss#l2正则 ==> 网络中加入dropout,后面的线性L2正则
+            self.loss = tf.reduce_mean(losses) + self.get_option('summary', 'l2_reg_lambda', 'float') * l2_loss#l2正则 ==> 网络中加入dropout,后面的线性L2正则
 
         # Accuracy
         with tf.name_scope("accuracy"):
             self.correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))#准确率
             self.acc = tf.reduce_mean(tf.cast(self.correct_predictions, "float"), name="accuracy")
             
-        self.optim = tf.train.AdamOptimizer(learning_rate=float(self.get_params('summary', 'learning_rate'))).minimize(self.loss)
+        self.optim = tf.train.AdamOptimizer(learning_rate=self.get_option('summary', 'learning_rate', 'float')).minimize(self.loss)
