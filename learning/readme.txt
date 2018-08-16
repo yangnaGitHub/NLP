@@ -7,3 +7,4 @@
  traditional:传统的机器学习的方法
  dqn:增强学习
  gan:生成对抗网络
+ function:是平常函数使用例子
