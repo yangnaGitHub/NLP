@@ -18,6 +18,9 @@ PS:图例对应的代码就在图例附近的目录中
  tfidf: 
  https://github.com/yangnaGitHub/NLP/blob/master/vcyber_unipay/TFIDF/model_record/TFIDF_01/TFIDF_01.pdf
  
+ dqn:
+ https://github.com/yangnaGitHub/NLP/blob/master/learning/dqn/dqn.pdf
+ 
  hmm: 
  https://github.com/yangnaGitHub/NLP/blob/master/learning/tranditional/hmm/HMM.pdf
  
