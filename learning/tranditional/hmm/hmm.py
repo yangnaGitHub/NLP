@@ -24,8 +24,8 @@ class hmm():
 #                'Fever':{'normal': 0.1, 'cold': 0.5, 'dizzy': 0.4}
 #                }
 #        
-        self.S = ('one', 'two', 'three')
-        self.K = ('red', 'white')
+        self.S = ['one', 'two', 'three']
+        self.K = ['red', 'white']
         self.PI = {'one':0.2, 'two':0.4, 'three':0.4}
         self.A = {
                 'one':{'one':0.5, 'two':0.2, 'three':0.3},
@@ -43,6 +43,35 @@ class hmm():
         
         self.predict_value = []
         self.predict_state = []
+    
+    def generate_data(self, times):
+        def _generate_data_by_P(P):
+            return np.where(np.random.multinomial(1, P) == 1)[0][0]
+        
+        #init
+        S = []
+        O = []
+        S.append(self.S[_generate_data_by_P(list(self.PI.values()))])
+        O.append(self.K[_generate_data_by_P(list(self.B[S[0]].values()))])
+        for time in range(1, times):
+            S.append(self.S[_generate_data_by_P(list(self.A[S[time-1]].values()))])
+            O.append(self.K[_generate_data_by_P(list(self.B[S[time]].values()))])
+        return S, O
+        
+    def generateData(self,T):
+        #根据分布列表，返回可能返回的Index
+        def _getFromProbs(probs):
+            return np.where(np.random.multinomial(1, probs) == 1)[0][0]
+
+        hiddenStates = np.zeros(T,dtype=int)
+        observationsStates = np.zeros(T,dtype=int)
+        hiddenStates[0] = _getFromProbs(self.pi) #产生第一个hiddenStates
+        observationsStates[0] = _getFromProbs(self.B[hiddenStates[0]]) #产生第一个observationStates
+        for t in range(1,T):
+            hiddenStates[t] = _getFromProbs(self.A[hiddenStates[t-1]])
+            observationsStates[t] = _getFromProbs((self.B[hiddenStates[t]]))
+
+        return hiddenStates,observationsStates
     
     #question 1
     def evaluate_probability_forward(self, O, times, endpos=0):
@@ -109,39 +138,107 @@ class hmm():
                     break
         return generate_list
     
-    def study_unsupervise(self, O):
+    def study_unsupervise(self, O, diff=0.002):
         #init
-        self.PI = {'one':0.2, 'two':0.4, 'three':0.4}
         self.PI = {}
         temp_list = self.generate(len(self.S))
+        oldPI = temp_list
         [self.PI.update(dictvaule) for dictvaule in [{sub:temp_list[index]} for index, sub in enumerate(self.S)]]
         
         self.A = {}
+        oldA = []
         for state in self.S:
             temp_list = self.generate(len(self.S))
             self.A[state] = {}
+            oldA.append(temp_list)
             [self.A[state].update(dictvaule) for dictvaule in [{sub:temp_list[index]} for index, sub in enumerate(self.S)]]
         
         self.B = {}
+        oldB = []
         for state in self.S:
             temp_list = self.generate(len(self.K))
             self.B[state] = {}
+            oldB.append(temp_list)
             [self.B[state].update(dictvaule) for dictvaule in [{sub:temp_list[index]} for index, sub in enumerate(self.K)]]
         
-#        print(self.PI)
-#        print(self.A)
-#        print(self.B)
+        print(self.PI)
+        print(self.A)
+        print(self.B)
         
-        #EM算法还是没有理解透彻,还是没有搞清楚,不知道要怎么计算,等我后期再看看来补上
-        #E_step求联合概率的期望
-        #expect = np.zeros([len(O), len(self.S)])
-        #for index, value in enumerate(O):
-            #P(Z|X)=P(Z)*P(X|Z) / P(X)
-            #x_given_z = [self.B[state][value] * self.PI[state] for state in self.S]
-            #x_given_z = np.array(x_given_z) / sum(x_given_z)
+        #为退出做准备
+        count = 0
+        while True:
+            self.evaluate_probability(O, method='forward')
+            self.evaluate_probability(O, method='backward')
             
-                
-        #M_step最大化
+            #P(q_t=S_t,q_t+1=S_t+1 | O,λ)
+            #t=0:S_t[self.S] S_t+1[self.S] ==> len(self.S) * len(self.S)
+            #t=0...T-1:T-1 * N * N
+            P_union = np.zeros((len(O)-1, len(self.S), len(self.S)))
+            for time in range(len(O)-1):
+                for st_index, st in enumerate(self.S):
+                    for st_1_index, st_1 in enumerate(self.S):
+                        P_union[time][st_index][st_1_index] = self.forward[time][st_index] * self.A[st][st_1] * self.B[st_1][O[time+1]] * self.backward[time+1][st_1_index]
+                #还有一个除的操作(归一化)
+                P_union[time] / P_union[time].sum()
+            #print(P_union)
+                #数组简化代码
+                #norm = self.forward[time, :] * self.A * self.B[:, O[time+1]] * self.backward[time+1, :]
+            
+            #gamma ==> 就是st_1固定,st取值不定
+            gamma = np.sum(P_union, axis=2)#只有T-1,还有T状态
+            #(alpha[T-1,:] * beta[T-1,:])要多思考
+            temp = []
+            for sT_index, sT in enumerate(self.S):
+                temp.append(self.forward[-1][sT_index] * self.backward[-1][sT_index])
+            temp = np.array(temp) / np.array(temp).sum()
+            gamma = np.vstack((gamma, temp))
+            #print(gamma)
+            
+            newPI = gamma[0,:]
+            newA = []
+            for st_index, st in enumerate(self.S):
+                lower = [gamma[time][st_index] for time in range(len(O)-1)]
+                newA.append([P_union[:, st_index, st_1_index].sum() / sum(lower) for st_1_index in range(len(self.S))])
+            newB = []
+            for st_index, st in enumerate(self.S):
+                lower = [gamma[time][st_index] for time in range(len(O))]
+                newB.append([sum([gamma[time][st_index] for time, O_val in enumerate(O) if kt == O_val]) / sum(lower) for kt in self.K])
+            
+            #print(newPI)
+            #print(newA)
+            #print(newB)
+            
+            #结束条件 迭代次数 + 收敛
+            if count > 1000:
+                print('count over')
+                break
+            else:
+                count += 1
+            
+            differ = [] 
+            differ.append(np.fabs(np.array(newPI) - np.array(oldPI)).max())
+            differ.append(np.fabs(np.array(newA) - np.array(oldA)).max())
+            differ.append(np.fabs(np.array(newB) - np.array(oldB)).max())
+            if max(differ) < diff:
+                print(max(differ))
+                break
+            
+            oldPI = newPI
+            oldA = newA
+            oldB = newB
+            
+            #update
+            [self.PI.update(dictvaule) for dictvaule in [{sub:newPI[index]} for index, sub in enumerate(self.S)]]
+            for s_index, state in enumerate(self.S):
+                [self.A[state].update(dictvaule) for dictvaule in [{sub:newA[s_index][index]} for index, sub in enumerate(self.S)]]
+        
+            for s_index, state in enumerate(self.S):
+                [self.B[state].update(dictvaule) for dictvaule in [{sub:newB[s_index][index]} for index, sub in enumerate(self.K)]]
+            
+        print(self.PI)
+        print(self.A)
+        print(self.B)
     
     def study_supervise(self):#这个需要大量数据
         self.S = ('end', 'not end')
@@ -237,7 +334,9 @@ class hmm():
 
 if __name__ == '__main__':
     hmm_test = hmm()
-    hmm_test.study_unsupervise(['red', 'white', 'red'])
+    S, O = hmm_test.generate_data(5)
+    hmm_test.study_unsupervise(O)
+    
 #    print(hmm_test.evaluate_probability(['red', 'white', 'red'], method='backward', steptime=2))
 #    print(hmm_test.pre_predict(['red', 'white', 'red']))
 #    https://www.cnblogs.com/skyme/p/4651331.html    
