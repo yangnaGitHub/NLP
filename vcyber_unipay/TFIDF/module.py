@@ -14,6 +14,9 @@ from sklearn.svm import SVC
 from sklearn import metrics
 import time
 from datetime import timedelta
+from collections import defaultdict
+import pandas as pd
+import numpy as np
 
 class TFIDF(object):
     """
@@ -46,11 +49,79 @@ class TFIDF(object):
         #return self.feature.transform(quests)
         return self.feature.transform(self.vectorizer.transform(quests))
     
+#    def use_gpu_calcScore(self, originals, des):
+#        import pycuda.autoinit
+#        import pycuda.driver as drv
+#        from pycuda.compiler import SourceModule
+#        mod = SourceModule("""
+#                           __global__ void calc_them(float *dest, float *a, float *b)
+#                           {
+#                           const int i = threadIdx.x;
+#                           dest[i] = a[i] * b[i];
+#                           }
+#                           """)
+#        calc_them = mod.get_function("calc_them")
+#        
+#        originals = self.get_quest_tfidf(originals).toarray()
+#        des = des.transpose()
+#        des_abs = np.linalg.norm(des)
+#        
+#        calc_them(drv.Out(dest), drv.In(a), drv.In(b), block=(400,1,1), grid=(1,1))
+    
+    def calcScore(self, originals, des):
+        originals = self.get_quest_tfidf(originals).toarray()
+        des = des.transpose()
+        des_abs = np.linalg.norm(des)
+        score = 0
+        for ori in originals:
+#            try:
+#                score += np.dot(des, ori) / np.linalg.norm(ori)*des_abs
+#            except RuntimeWarning:
+#                self.print_log('calcScore:{}:{}+{}'.format(np.linalg.norm(ori)*des_abs, ori, des))
+#                score += 0
+            if 0 == np.linalg.norm(ori)*des_abs:
+                self.print_log('calcScore:{}:{}+{}'.format(np.linalg.norm(ori)*des_abs, ori, des))
+                score += 0
+            else:
+                score += np.dot(des, ori) / np.linalg.norm(ori)*des_abs
+        return score/originals.shape[0]
+
+    #pandas
+    #      question1
+    #type1
+    #
+    def similarity(self, features):
+        if hasattr(self, 'saveData'):
+            print_per_batch = self.get_option('summary', 'print_per_batch', 'int')
+            start_time = time.time()
+            total_batch = 0
+            labels = self.saveData.keys()
+            score = {'labels':list(labels)}
+            for index in range(features.shape[0]):
+                score['test_{}'.format(index)] = [0.0] * len(labels)
+            score = pd.DataFrame(score)
+            for vindex, feature in enumerate(features.toarray()):
+                for hindex, label in enumerate(labels):
+                    score.loc[hindex, 'test_{}'.format(vindex)] = self.calcScore(self.saveData[label], feature)
+                    total_batch += 1
+                    if total_batch % print_per_batch == 0:
+                        time_dif = self.get_time_dif(start_time)
+                        self.print_log('total_batch: {0}, Train Loss: {1}, Time: {2}'.format(total_batch, score[1:2], time_dif)) 
+            #self.print_log('{}'.format(score))
+            return [list(labels)[score['test_{}'.format(index)].idxmax()] for index in range(features.shape[0])]
+        else:
+            self.print_log('there not exist original question')
+            return None
+    
     def predict(self, x_):
         features = self.get_quest_tfidf(x_)
         #print(x_, features)
         #self.print_tfidf(features)
-        return self.model.predict(features)
+        method = self.get_option('summary', 'classfication', 'str')
+        if method in ['SVM', 'NB']:
+            return self.model.predict(features)
+        elif method in ['similarity']:
+            return self.similarity(features)
     
     def print_tfidf(self, features):
         word = self.vectorizer.get_feature_names()#获取词袋模型中的所有词语
@@ -105,7 +176,14 @@ class TFIDF(object):
         time_dif = self.get_time_dif(start_time)
         self.print_log('train_features_Time:{0}'.format(time_dif))
         #self.print_tfidf(train_features)
-        self.model.fit(train_features, train_y)
+        method = self.get_option('summary', 'classfication', 'str')
+        if method in ['SVM', 'NB']:
+            self.model.fit(train_features, train_y)
+        elif method in ['similarity']:
+            if not hasattr(self, 'saveData'):
+                self.saveData = defaultdict(set)
+            for save_x, save_y in zip(train_x, train_y):
+                self.saveData[save_y].add(save_x)
         time_dif = self.get_time_dif(start_time)
         self.print_log('model_train_Time:{0}'.format(time_dif))
 
@@ -209,6 +287,31 @@ def tfidf_01(docs):
 #对于Q-A这种问题始终认为是不同问题
 def tfidf_02(docs):
     pass
+
+#from numba import vectorize
+#@vectorize(["float32(float32, float32)"], target='cuda')
+#def vectorAdd(a, b):
+#    return a * b
+
+#def use_gpu_calcScore(self, originals, des):
+#    import pycuda.autoinit
+#    import pycuda.driver as drv
+#    from pycuda.compiler import SourceModule
+#    mod = SourceModule("""
+#                       __global__ void calc_them(float *dest, float *a, float *b)
+#                       {
+#                       const int i = threadIdx.x;
+#                       dest[i] = a[i] * b[i];
+#                       }
+#                       """)
+#    calc_them = mod.get_function("calc_them")
+    
+    #a = np.array([[1, 2, 3], [2, 2, 3], [3, 2, 3], [4, 2, 3]])
+    #b = np.array([[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]])
+#    a = np.array([1, 2, 3, 4])
+#    b = np.array([1, 2, 3, 4])
+#    print(vectorAdd(a, b))
+    
 
 #if __name__ == '__main__':
 #    import numpy as np

@@ -57,21 +57,6 @@ class hmm():
             S.append(self.S[_generate_data_by_P(list(self.A[S[time-1]].values()))])
             O.append(self.K[_generate_data_by_P(list(self.B[S[time]].values()))])
         return S, O
-        
-    def generateData(self,T):
-        #根据分布列表，返回可能返回的Index
-        def _getFromProbs(probs):
-            return np.where(np.random.multinomial(1, probs) == 1)[0][0]
-
-        hiddenStates = np.zeros(T,dtype=int)
-        observationsStates = np.zeros(T,dtype=int)
-        hiddenStates[0] = _getFromProbs(self.pi) #产生第一个hiddenStates
-        observationsStates[0] = _getFromProbs(self.B[hiddenStates[0]]) #产生第一个observationStates
-        for t in range(1,T):
-            hiddenStates[t] = _getFromProbs(self.A[hiddenStates[t-1]])
-            observationsStates[t] = _getFromProbs((self.B[hiddenStates[t]]))
-
-        return hiddenStates,observationsStates
     
     #question 1
     def evaluate_probability_forward(self, O, times, endpos=0):

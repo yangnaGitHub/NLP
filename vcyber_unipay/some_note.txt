@@ -1,7 +1,7 @@
 IP: 180.167.152.66
 SSH端口: 8006
 账号: chenpeng
-密码: Chenpeng201804
+密码: Chenpeng201804_yangna
 
 运行命令:nohup python main.py &
 
@@ -12,3 +12,6 @@ SSH端口: 8006
  
 %matplotlib qt5
 find . -type f |xargs grep os.chdir
+
+Spyder 正则替换:
+print (.+) ==> print(\1)

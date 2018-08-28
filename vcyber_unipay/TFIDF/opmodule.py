@@ -13,9 +13,9 @@ import os
 import traceback
 import time
 import configparser
-#import pickle
+import pickle
 import numpy as np
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 
 class TFIDFOp():
     def __init__(self, args, data, log):
@@ -32,7 +32,7 @@ class TFIDFOp():
             module_conf = 'module.cfg'
         self.params.read('./' + self.module_name + '/' + module_conf)
         self.module_path = self.get_option('summary', 'module_path', 'str')
-#        self.pickle_file = self.module_path + '/' + self.get_option('summary', 'pickle_file', 'str')
+        self.pickle_file = self.module_path + '/' + self.get_option('summary', 'pickle_file', 'str')
     
     def print_log(self, message):
         if self.args.local_debug:
@@ -85,10 +85,12 @@ class TFIDFOp():
         
         
         batch_x, batch_y = self.reconstruct_input(train_source, combine=combine)
+        self.print_log('batch_x:{0}, batch_y:{1}'.format(batch_x.shape, batch_y.shape))
         self.tfidf.process(batch_x, batch_y)
         
         test_source = self.data.testquest_label
         test_x, test_y = self.reconstruct_input(test_source)
+        self.print_log('test_x:{0}, test_y:{1}'.format(test_x.shape, test_y.shape))
         predict = self.tfidf.predict(test_x)
         try:
             accuracy, recall, f1_score = self.tfidf.metrics_result(test_y, predict)
@@ -96,43 +98,36 @@ class TFIDFOp():
             self.print_log(e)
         self.conuter = self.tfidf.vectorizer
         self.feature = self.tfidf.feature
-        self.model = self.tfidf.model
+        method = self.get_option('summary', 'classfication', 'str')
+        if method in ['SVM', 'NB']:
+            self.model = self.tfidf.model
         time_dif = self.get_time_dif(start_time)
         self.print_log('精度:{0:>6.2}, 召回:{1:>6.2}, f1-score:{2:>6.2}, Time:{3}'.format(accuracy, recall, f1_score, time_dif))
-        
+
         if not os.path.exists(self.module_path):
             os.makedirs(self.module_path)
-        joblib.dump(self.conuter, self.module_path+'/'+self.get_option('summary', 'module_conuter'))
-        joblib.dump(self.feature, self.module_path+'/'+self.get_option('summary', 'module_feature'))
-        joblib.dump(self.model, self.module_path+'/'+self.get_option('summary', 'module_filename'))
-        #self.top_n_important('什么是App Store')
+#        joblib.dump(self.conuter, self.module_path+'/'+self.get_option('summary', 'module_conuter'))
+#        joblib.dump(self.feature, self.module_path+'/'+self.get_option('summary', 'module_feature'))
+#        if method in ['SVM', 'NB']:
+#            joblib.dump(self.model, self.module_path+'/'+self.get_option('summary', 'module_filename'))
         
-#        self.pickleop(mode='save')
-    
-#    def pickleop(self, mode='load'):
-#        if 'load' == mode:
-#            with open(self.pickle_file, 'rb') as fd:
-#                data = pickle.load(fd)
-#                return data
-#        elif 'save' == mode:
-#            #self.data.id_to_label
-#            #self.data.word_to_id
-#            #self.data.min_accuracy
-#            #self.args.max_document_lenth = 122
-#            #self.args.num_class = 561
-#            #self.args.vocab_size = 4012
-#            savetuple = (self.data.id_to_label)
-#            with open(self.pickle_file, 'wb') as fd:
-#                pickle.dump(savetuple, fd, protocol=2)
-    
-#    def restore(self, savedata):
-#        self.id_to_label = savedata[0]
+        self.pickleop(mode='save')
+            
+    def pickleop(self, mode='load'):
+        if 'load' == mode:
+            with open(self.pickle_file, 'rb') as fd:
+                data = pickle.load(fd)
+                return data
+        elif 'save' == mode:
+            with open(self.pickle_file, 'wb') as fd:
+                pickle.dump(self.tfidf, fd, protocol=2)
     
     def top_n_important(self, quest, top_n=1):
         result_dict = {}
         features = self.tfidf.feature.transform(self.conuter.transform(self.pre_text(quest)))
         word = self.conuter.get_feature_names()#获取词袋模型中的所有词语
         weights = features.toarray()#将tf-idf矩阵抽取出来，元素a[i][j]表示j词在i类文本中的tf-idf权重
+        #print(word, weights)
         import heapq
         max_ns = heapq.nlargest(top_n, weights)
         for index, weight in enumerate(weights):
@@ -152,13 +147,27 @@ class TFIDFOp():
         return np.array(return_list)
     
     def predict(self, quest):
-        features = self.feature.transform(self.conuter.transform(self.pre_text(quest)))
-        return self.model.predict(features)
+        quest = self.pre_text(quest)
+        method = self.get_option('summary', 'classfication', 'str')
+        if method in ['SVM', 'NB']:
+            return self.model.predict(self.feature.transform(self.conuter.transform(quest)))
+        elif method in ['similarity']:
+            return self.tfidf.predict(quest)
     
     def load_model(self):
-        self.conuter = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_conuter'))
-        self.feature = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_feature'))
-        self.model = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_filename'))
+        self.tfidf = self.pickleop(mode='load')
+        self.conuter = self.tfidf.vectorizer
+        self.feature = self.tfidf.feature
+        method = self.get_option('summary', 'classfication', 'str')
+        if method in ['SVM', 'NB']:
+            self.model = self.tfidf.model
+#        self.conuter = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_conuter'))
+#        self.feature = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_feature'))
+#        method = self.get_option('summary', 'classfication', 'str')
+#        if method in ['SVM', 'NB']:
+#            self.model = joblib.load(self.module_path+'/'+self.get_option('summary', 'module_filename'))
+#        elif method in ['similarity']:
+#            #
     
     def get_sets_accracy(self, testfile='NONAME'):
         train_total_quest = 0
@@ -179,17 +188,18 @@ class TFIDFOp():
                 
                     for quest in line[2].split('#&#&#'):
                         train_total_quest += 1
-                        predict = self.predict(quest)
+                        predict = self.predict(quest)[0]
                         if label_id == predict:
                             train_correct_count += 1
                     
                     for quest in line[3].split('#&#&#'):
                         test_total_quest += 1
-                        predict = self.predict(quest)
+                        predict = self.predict(quest)[0]
                         if label_id == predict:
                             test_correct_count += 1
         
         self.accuracy = (train_correct_count + test_correct_count) / (train_total_quest + test_total_quest)
+        self.print_log('{}, {}, {}, {}'.format(train_correct_count, test_correct_count, train_total_quest, test_total_quest))
         self.print_log('最终的准确率为:{},{},{}'.format(test_correct_count / test_total_quest, train_correct_count / train_total_quest, self.accuracy))
     
     def get_accuracy_rate(self):
