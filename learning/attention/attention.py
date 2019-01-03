@@ -11,7 +11,11 @@ Created on Tue Sep 25 15:52:16 2018
 #可以提高序列的自然方式下的系统表现
 #
 #空间注意力spatial attention+时间注意力temporal attention
-#soft/hard ==> 输出的向量分布是one-hot的独热分布还是soft的软分布
+#soft attention:可被嵌入到模型中去进行训练并传播梯度
+#hard attention:不计算所有输出,依据概率对encoder的输出采样,在反向传播时需采用蒙特卡洛进行梯度估计
+#global attention:对所有encoder输出进行计算
+#local attention:介于soft和hard之间,会预测一个位置并选取一个窗口进行计算
+#Self Attention:分别计算Q和K自身的依赖关系
 #
 #1>为何要加入attention
 #  序列的不断增长,原始根据时间步的方式表现的越来越差(上下文输入信息被限制到固定长度)
@@ -20,6 +24,12 @@ Created on Tue Sep 25 15:52:16 2018
 #
 #seq2seq:一个encoder和一个decoder,将一个输入的句子
 
+#蕴含关系推理（Entailment Reasoning）
+ #Reasoning about Entailment with Neural Attention
+
+#tf相关函数的解析
+#https://zhuanlan.zhihu.com/p/27769667
+#https://blog.csdn.net/u012436149/article/details/52976413
 
 import tensorflow as tf
 
@@ -93,9 +103,9 @@ def attention(Q, K, V, c_head, size_per_head, Q_len=None, V_len=None):
     
     #没有弄清楚多维矩阵的乘法:1,2,3,4*4,3,2,1=1,2,3,3
     temp = tf.matmul(Q, K, transpose_b=True) / tf.sqrt(float(size_per_head))
-    temp = tf.transpose(temp, [0, 3, 2, 1])
-    temp = Mask(temp, V_len, mode='add')
-    temp = tf.transpose(temp, [0, 3, 2, 1])
+#    temp = tf.transpose(temp, [0, 3, 2, 1])
+#    temp = Mask(temp, V_len, mode='add')
+#    temp = tf.transpose(temp, [0, 3, 2, 1])
     temp = tf.nn.softmax(temp)
     
     O = tf.matmul(temp, V)
