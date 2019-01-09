@@ -35,7 +35,10 @@ BATCH_SIZE = 50
 train_loader = Data.DataLoader(train_data, batch_size=BATCH_SIZE, shuffle=True)
 #节省时间所以只测试前面的2000个,可以按照train的一样全部测试
 test_x = Variable(torch.unsqueeze(test_data.test_data, dim=1)).type(torch.FloatTensor)[:2000]/255.
-test_y = test_data.test_labels[:2000]
+#!!!将数据的形式变成GPU能读的形式
+#test_x = Variable(torch.unsqueeze(test_data.test_data, dim=1)).type(torch.FloatTensor)[:2000].cuda()/255.
+#test_y = test_data.test_labels[:2000].cuda()
+test_y = test_data.test_labels[:2000].data.numpy()
 
 ####构建网络
 class CNN(torch.nn.Module):
@@ -63,6 +66,8 @@ class CNN(torch.nn.Module):
         return self.output(x_data), x_data
 
 firstCNN = CNN()
+#!!!GPU加速
+#firstCNN.cuda()
 print(firstCNN)
 
 ####可视化
@@ -97,6 +102,8 @@ EPOCH = 1
 for epoch in range(EPOCH):
     for step, (batch_x, batch_y) in enumerate(train_loader):
         x_val,y_val = Variable(batch_x),Variable(batch_y)
+        #!!!GPU加速
+        #x_val,y_val = x_val.cuda(),y_val.cuda()
         output = firstCNN(x_val)[0]
         loss = loss_func(output, y_val)
         optimizer.zero_grad()
@@ -106,17 +113,22 @@ for epoch in range(EPOCH):
         if 0 == step % 50:
             test_o, last = firstCNN(test_x)
             pred_y = torch.max(test_o, 1)[1].data.numpy()
-            accuracy = float((pred_y == test_y.data.numpy()).astype(int).sum()) / float(test_y.size(0))
+            accuracy = float((pred_y == test_y).astype(int).sum()) / float(test_y.size)
+            #!!!GPU加速
+            #pred_y = torch.max(test_o, 1)[1].cuda().data.squeeze()
+            #accuracy = torch.sum(pred_y == test_y) / test_y.size(0)
             print('Epoch: ', epoch, '| train loss: %.4f' % loss.data.numpy(), '| test accuracy: %.2f' % accuracy)
             if HAS_SK:
                 tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)#n_components降到2维
                 plot_only = 500
                 low_dim_embs = tsne.fit_transform(last.data.numpy()[:plot_only, :])
-                labels = test_y.numpy()[:plot_only]
+                labels = test_y[:plot_only]
                 plot_with_labels(low_dim_embs, labels)
 plt.ioff()
 
 test_output = firstCNN(test_x[:10])
 pred_y = torch.max(test_output, 1)[1].data.numpy().squeeze()
+#!!!GPU加速
+#pred_y = torch.max(test_output, 1)[1].cuda().data.squeeze()
 print(pred_y, 'prediction number')
 print(test_y[:10].numpy(), 'real number')
