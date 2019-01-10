@@ -1,0 +1,6 @@
+使用模型:
+TFIDF ==> TFIDF\model_record\TFIDF_01
+
+
+使用模型配置文件:
+TFIDF ==> TFIDF\model_record\TFIDF_01\conf\module_001.cfg

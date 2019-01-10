@@ -1,4 +1,18 @@
-代码和目录说明:
+目录和重要文件说明:
+ data:数据以及数据处理相关
+ Embed:词embedding相关,自己的embedding
+ LSTM:RNN,LSTM等相关模型
+ Normal_DL:normal深度学习相关
+ procedure:一部分实验记录
+ Test:测试文件
+ TextCNN:cnn,textcnn模型相关
+ TFIDF:tfidf模型相关
+ visio:各个模型相关的visio图
+ Allmodule.cfg:总配置文件
+ main.py:启动文件
+ some_note.txt:备忘
+
+代码说明:
  1>启动函数是main.py
   启动不用带任何参数,具体的关于模型的配置在Allmodule.cfg文件中
   修改的方法见文件中具体的说明,如果修改规则不满足你的要求,请修改conf.py中的load规则

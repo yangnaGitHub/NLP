@@ -17,6 +17,8 @@ import configparser
 import numpy as np
 from Embed.module import Embed as Embed
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '1, 2, 3'
+
 class TextCNNOp():
     def __init__(self, args, data, log=None):
         self.module_name = 'TextCNN'
@@ -111,12 +113,15 @@ class TextCNNOp():
         print_per_batch = self.get_option('summary', 'print_per_batch', 'int')
         if not os.path.exists(self.module_path):
             os.makedirs(self.module_path)
+        gpuConfig = tf.ConfigProto(allow_soft_placement=True)
+        gpuConfig.gpu_options.per_process_gpu_memory_fraction = 0.85
+        #gpuConfig.gpu_options.allow_growth = True
         with tf.Graph().as_default() as g:
             if 0 == self.get_option('embedding', 'use_embedding_tf', 'int'):
                 autodict = self.make_autodict()
                 self.embedded_module = Embed(self.args, self.params, self.log, **autodict)
                 self.embed_file = self.module_path + '/' + self.get_option('summary', 'embed_file', 'str')
-                with tf.Session(graph=g).as_default() as sess:
+                with tf.Session(graph=g, config=gpuConfig).as_default() as sess:
                     sess.run(tf.global_variables_initializer())
                     saver = tf.train.Saver()#保存模型
                 
@@ -146,7 +151,7 @@ class TextCNNOp():
     
         with tf.Graph().as_default() as g:
             self.model = TextCNN(self.args, self.params, self.log, self)
-            self.session = tf.Session(graph=g)
+            self.session = tf.Session(graph=g, config=gpuConfig)
             with self.session.as_default():
                 self.session.run(tf.global_variables_initializer())#初始化所有Variable定义的变量
                 saver = tf.train.Saver()#保存模型

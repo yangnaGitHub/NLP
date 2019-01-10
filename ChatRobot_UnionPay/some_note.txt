@@ -1,0 +1,90 @@
+IP: 180.167.152.667
+SSH端口: 8006
+账号: chenpeng_7
+密码: Chenpeng201804_yangna
+
+运行命令:nohup python main.py &
+GPU的几个问题
+ 查看GPU运行情况:nvidia-smi
+ 查看CUDA的版本号:cat /usr/local/cuda/version.txt
+ 几个GPU是可见的os.environ['CUDA_VISIBLE_DEVICES'] = '1, 2, 3'
+ GPU的配置
+  gpuConfig = tf.ConfigProto(allow_soft_placement=True)#GPU不能运算的自动进CPU
+  gpuConfig.gpu_options.per_process_gpu_memory_fraction = 0.85#可看见的GPU中最多用多少资源
+  gpuConfig.gpu_options.allow_growth = True#要多少分配多少
+  with tf.Session(graph=g, config=gpuConfig).as_default() as sess#生效
+
+一些想法:
+ 训练多个模型,然后模型赋值权重,这个权重是怎么得来的,可以在来一个模型来训练
+ 训练模型,使用模型,新来数据直接在上面学习,得到新模型,保证最新的模型一般总是好于原来的模型,就像人类学习东西是一直在迭代,不是每次重新来学
+ 模型具有能力自己去网上挖掘数据,自己学习,就想我们自己找资料学习(蠕虫)
+ 
+画图单独生成一个框%matplotlib qt5
+Jupyter:%matplotlib notebook
+找当前目录下所有文件中存在的关键字
+ http://www.runoob.com/linux/linux-command-manual.html
+ find 路径 -type f(寻找路径下的一般文件) | xargs grep 关键字
+ grep -r 关键字 路径
+
+http://www.pythontutor.com/visualize.html#mode=edit ==> 可以看见详细的执行程序,选择py2.7更详细
+帮助查找python的bug和进行静态的代码分析:
+ PyChecker + Pylint
+
+Spyder正则替换:
+ print (.+) ==> print(\1)
+
+数据集的网站
+ http://archive.ics.uci.edu/ml/超过 350 个不同的数据集，专门为机器学习提供训练数据
+ https://www.kaggle.com/datasets
+ https://www.data.gov/
+
+python有用的库
+ Seaborn主要关注统计模型的可视化,高度依赖Matplotlib
+ Bokeh交互式可视化,独立于Matplotlib
+ Plotly
+
+算法必须:有限性,明确性,有效性
+主要的算法:
+ 链接分析==>PageRank等
+ 数据压缩==>zip等
+ RSA加密算法
+ 安全散列算法
+ 归并排序,快速排序和堆排序
+ 比例-积分-微分
+ 傅里叶变换和快速傅里叶变换算法==>数字世界中的一切或具有计算机系统的任何东西都使用这些算法
+ Dijkstra’s迪杰特斯拉算法==>最短路径
+ 整数分解
+
+conda的安装和更新的使用命令
+ conda install/update package=version
+ conda search package
+ conda install --channel channel_url package
+ conda install -c package
+
+遇到错误怎么解决
+
+学习网站
+ https://www.bilibili.com/video/av13260183/#page=1 CV
+ https://github.com/salesforce/decaNLP
+
+删除文件:
+ os.remove(), os.unlink()
+
+python发送邮件:
+ import smtplib
+ 
+正则匹配:
+ s = '<html><head><title>Title</title>'
+ re.match('<.*>', s).group()#贪心
+ re.match('<.*?>', s).group()#非贪心
+ match()#是不是在string的开始位置匹配,只有在0位置匹配成功的话才有返回
+ search()#扫描整个string查找匹
+
+FlashText:什么时候应用FlashText(当关键词数量>500时)
+ 将要替换/search的字组成trie树,然后看输入文本是不是在词典中,做替换/search(index)
+
+机器阅读理解领域
+ (MS)=>R-Net+
+ (ali)=>SLQA
+ (baidu)=>V-Net
+ (google)=>BERT

@@ -1,0 +1,11 @@
+[data.py][data:__init__] data initial
+[data.py][data:get_data] expend count:8189, 737203, 561, 8936
+[data.py][data:add_outdata] add out count:767119, 20986
+[Allmodule.py][module:retrain] DML_methods_str['TFIDFOp']
+[opmodule.py][TFIDFOp:train] batch_x:(767119,), batch_y:(767119,)
+[module.py][TFIDF:process] train_features_Time:0:00:28
+[module.py][TFIDF:process] model_train_Time:1 day, 3:48:47
+[opmodule.py][TFIDFOp:train] test_x:(20986,), test_y:(20986,)
+[opmodule.py][TFIDFOp:train] 精度:  0.67, 召回:   0.7, f1-score:  0.68, Time:1 day, 4:29:15
+[opmodule.py][TFIDFOp:get_sets_accracy] 6878, 250, 8189, 561
+[opmodule.py][TFIDFOp:get_sets_accracy] 最终的准确率为:0.44563279857397503,0.839907192575406,0.8146285714285715

@@ -11,6 +11,8 @@ import tensorflow as tf
 import os
 import traceback
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '1, 2, 3'
+
 class TextCNN(object):
     def __init__(self, args, params, log=None, opmodule=None):
         os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
@@ -111,6 +113,14 @@ class TextCNN(object):
             
         use_attention = self.get_option('summary', 'use_attention', 'int')
         if 1 == use_attention:
+            with tf.name_scope('attention'), tf.variable_scope('attention'):
+                attention_w = tf.Variable(tf.truncated_normal([num_filters_total, num_filters_total], stddev=0.1), name='attention_w')
+                attention_b = tf.Variable(tf.constant(0.1, shape=[num_filters_total]), name='attention_b')
+                u_t = tf.tanh(tf.matmul(self.h_pool_flat, attention_w) + attention_b)
+                self.alpha = tf.nn.softmax(u_t)
+                self.final_output = self.h_pool_flat * self.alpha
+        
+        if 2 == use_attention:
             #定义attention layer 
             #attention_size = num_filters_total
             attention_size = self.get_option('summary', 'attention_size', 'int')
