@@ -25,6 +25,12 @@ Jupyter:%matplotlib notebook
  http://www.runoob.com/linux/linux-command-manual.html
  find 路径 -type f(寻找路径下的一般文件) | xargs grep 关键字
  grep -r 关键字 路径
+找当前目录下某种文件中存在的关键字
+ grep -rn --include=*.xml 银联在线支付和无卡支付是一样的吗
+ grep -rn --include=semantic.txt 银联在线支付和无卡支付是一样的吗
+ 查找当前目录和其子目录下文件名包含semantic.txt的文件中内容有'银联在线支付和无卡支付是一样的吗'的
+ find ./ -name '*.xml'| xargs grep 银联在线支付和无卡支付是一样的吗
+ find ./ -name semantic.txt | xargs grep 银联在线支付和无卡支付是一样的吗
 
 http://www.pythontutor.com/visualize.html#mode=edit ==> 可以看见详细的执行程序,选择py2.7更详细
 帮助查找python的bug和进行静态的代码分析:
@@ -66,6 +72,7 @@ conda的安装和更新的使用命令
 学习网站
  https://www.bilibili.com/video/av13260183/#page=1 CV
  https://github.com/salesforce/decaNLP
+ https://www.ibilibili.com/video/av39548965/?p=5
 
 删除文件:
  os.remove(), os.unlink()
@@ -88,3 +95,32 @@ FlashText:什么时候应用FlashText(当关键词数量>500时)
  (ali)=>SLQA
  (baidu)=>V-Net
  (google)=>BERT
+
+1.那么人类到底是如何沟通,如何理解,判断,处理语言的?
+  文本是什么?语言是什么?声音是什么?
+  文本是一种符号,用来记录语言==>人类通过视觉(扫描)+认识(比对)+理解(如何理解)
+  声音是一段振动,耳朵可以识别这段振动的波(mic)==>识别是哪些文字(比对波段)+理解(如何理解)
+  语言是一种大家约定俗成的用来沟通的和理解的表达
+  1.1各个字组合在一起是如何理解??机器要如何理解?
+     
+2.中国人学习英语是怎么学习的,就像机器该怎么学习人类的表达方式
+  先学字母->学习单词(多个字母组合在一起,可能不具备任何意义)->学习语法(多个单词组合在一起,形成有一定意义的表达)
+3.机器的理解,判断和处理是否真要和人类一样?不一样的话,出路在哪里?
+
+4.人类的大脑是不是一直是增量学习,接收任意格式的数据
+  所以要怎么提取有效数据,组成有效的数据格式
+
+http://www.ggfwzs.com/
+
+embedding是用什么做的目标label
+为何这么设计模型,为何那个结构要放在那儿
+transform,position_embedding
+
+修改jupyter notebook默认启动目录:https://blog.csdn.net/tintinetmilou/article/details/78697357
+
+自动抢购系统
+看房自动推荐系统
+
+tf的中文文档:https://www.w3cschool.cn/tensorflow_python/
+opencv的中文文档:https://www.w3cschool.cn/opencv/
+python的中文文档:https://www.w3cschool.cn/python3/
