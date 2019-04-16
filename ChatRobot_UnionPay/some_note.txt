@@ -124,3 +124,6 @@ transform,position_embedding
 tf的中文文档:https://www.w3cschool.cn/tensorflow_python/
 opencv的中文文档:https://www.w3cschool.cn/opencv/
 python的中文文档:https://www.w3cschool.cn/python3/
+
+windows在路径中查找*.py类型的文件
+for /r 目录路径 %i in (*.py) do @echo %i
